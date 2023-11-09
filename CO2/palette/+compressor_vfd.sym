@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="Compressor_vfd" >
+
+		<line id="Line_4" points="68.248,212.501 75.249,212.501"  end_arrow="true" dx="127.752" dy="-20.501" lineColor="85,170,0"   />
+
+		<line id="Line_5" points="-34.751,212.501 -44.751,212.501"  end_arrow="true" rotation="180" flipY="true" dx="156.751" dy="-20.501" lineColor="85,170,0"   />
+
+		<polygon id="Polygon_5" points="47.248,192.501 47.248,232.501 -24.752,248.501 -24.751,180.501 -24.752,176.501" dx="148.752" dy="-20.501" lineWidth="1.5"  color="80,140,255"  />
+
+		<line id="Line_6" points="34.249,195.783 34.249,231.013" dx="147.752" dy="-21.501"  />
+
+		<line id="Line_7" points="27.249,194.367 27.249,232.428" dx="147.752" dy="-21.501"  />
+
+		<line id="Line_8" points="20.249,193.924 20.249,234.186" rotation="-180" dx="147.752" dy="-22.001"  />
+
+		<line id="Line_9" points="41.249,198.501 41.249,231.069" dx="147.752" dy="-22.501"  />
+
+		<line id="Line_10" points="12.249,191.851 12.249,235.102" dx="148.752" dy="-21.501"  />
+
+		<line id="Line_11" points="-1.751,190.02 -1.751,238.776" dx="148.752" dy="-22.501"  />
+
+		<line id="Line_13" points="5.249,191.935 5.249,238.017" dx="148.752" dy="-23.001"  />
+
+		<polygon id="Polygon_6" points="47.248,204.501 -8.751,204.501 -8.751,220.501 47.248,220.501" dx="148.752" dy="-20.501" color="192,192,192"  />
+
+		<line id="Line_15" points="-8.751,187.919 -8.751,239.034" dx="148.752" dy="-21.501"  />
+
+		<line id="Line_1" points="160,224 160,236"  end_arrow="true" lineColor="170,0,0"   />
+
+		<bezier id="Bezier_10" points="320,160 320,152 324,152 324,160 324,168 328,168 328,160 328,152 332,152 332,160 332,168 336,168 336,160 336,152 340,152 340,160 340,168 344,168 344,160 344,152 348,152 348,160 352,160 356,160 356,160" rotation="90" dx="-178" dy="46" lineColor="170,0,0"   />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="112" dy="192" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="76" dy="180" />
+		
+		</port>
+
+		<port id="start" library="PORTS_LIB" type="bool_signal"  hotPort="start" >
+		
+				<symbol dx="112" dy="216" onLabel="true" />
+		
+				<label cx="17" cy="12" dx="70" dy="204" />
+		
+		</port>
+
+		<port id="speed" library="PORTS_LIB" type="analog_signal"  hotPort="speed" >
+		
+				<symbol dx="112" dy="168" onLabel="true" />
+		
+				<label cx="21.5" cy="12" dx="61" dy="156" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="208" dy="192" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="216" dy="180" />
+		
+		</port>
+
+		<port id="Q_loss" library="PORTS_LIB" type="analog_signal"  hotPort="Q_loss" >
+		
+				<symbol dx="160" dy="240" onLabel="true" />
+		
+				<label cx="24.5" cy="12" dx="168" dy="228" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="General">
+				<var name="nCyl"/>
+				<var name="bore"/>
+				<var name="stroke"/>
+				<var name="MaxFrequency"/>
+				<var name="FrequencyRange"/>
+				<var name="MotorRPM"/>
+				<var name="etaVol"/>
+				<var name="etaIse"/>
+				<var name="etaMot"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

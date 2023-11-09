@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="SplitRangeController" >
+
+		<rect id="Rectangle_1" cx="185.336" cy="112.119" sx="16" sy="16" dx="-113.336" dy="-56.119" color="255,170,0"  />
+
+		<line id="Line_1" points="88,48 72,56 88,64"  />
+
+		<line id="Line_2" points="72,56 56,56"  />
+
+		<rect id="Rectangle_2" cx="198" cy="130" sx="4" sy="4" dx="-126" dy="-74" color="0,0,0"  />
+
+		<port id="in" library="PORTS_LIB" type="analog_signal"  hotPort="in" >
+		
+				<symbol dx="56" dy="56" onLabel="true" />
+		
+				<label cx="9" cy="12" dx="30" dy="44" />
+		
+		</port>
+
+		<port id="out1" library="PORTS_LIB" type="analog_signal"  hotPort="out1" >
+		
+				<symbol dx="88" dy="48" onLabel="true" />
+		
+				<label cx="16.5" cy="12" dx="96" dy="36" />
+		
+		</port>
+
+		<port id="out2" library="PORTS_LIB" type="analog_signal"  hotPort="out2" >
+		
+				<symbol dx="88" dy="64" onLabel="true" />
+		
+				<label cx="16.5" cy="12" dx="96" dy="52" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

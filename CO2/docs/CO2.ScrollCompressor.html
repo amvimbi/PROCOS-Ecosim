@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.ScrollCompressor<br /><small></small></h1><hr><br><font size="5" color="black">COMPONENT <a name="ScrollCompressor">ScrollCompressor</a>
+</font><br/>
+<br/>
+<font size="4" color="black">ICON: </font><br/>
+<p><img src="icons/CO2.ScrollCompressor.png"></p><br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Inlet must connect to resistive component. Outlet to capacitive</font><br/>
+<br/>
+<font size="4" color="black">CONSTRUCTION PARAMETERS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>ConstantRefHTC&nbsp;</td><td>BOOLEAN &nbsp;</td><td> TRUE &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ConstantAirHTC&nbsp;</td><td>BOOLEAN &nbsp;</td><td> TRUE &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Q_dis&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Q_suc&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>RPM&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>Rotational Speed&nbsp;</td></tr>
+
+<tr><td>T_amb&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_in&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>D_i[1]&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>SUction chamber inlet port height&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>D_motor&nbsp;</td><td>REAL &nbsp;</td><td>0.08&nbsp;</td><td>&nbsp;</td><td>Motor diameter - motor is inside suction chamber, and as tall as the suction chamber itself&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>D_o[1]&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Suction chamber outlet port height&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Do_dis&nbsp;</td><td>REAL &nbsp;</td><td>0.1396&nbsp;</td><td>&nbsp;</td><td>Discharge chamber shell outer diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Do_suc&nbsp;</td><td>REAL &nbsp;</td><td>0.1396&nbsp;</td><td>&nbsp;</td><td>Suction chamber shell outer diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>H_i[1]&nbsp;</td><td>REAL &nbsp;</td><td>0.4&nbsp;</td><td>&nbsp;</td><td>Suction chamber inlet port height&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>H_o[1]&nbsp;</td><td>REAL &nbsp;</td><td>0.4&nbsp;</td><td>&nbsp;</td><td>Suction chamber outlet port height&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>L_dis&nbsp;</td><td>REAL &nbsp;</td><td>0.06&nbsp;</td><td>&nbsp;</td><td>Discharge chamber height&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>L_suc&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Suction chamber height&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>P0_dis&nbsp;</td><td>REAL &nbsp;</td><td>17&nbsp;</td><td>&nbsp;</td><td>Initial discharge pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>P0_suc&nbsp;</td><td>REAL &nbsp;</td><td>17&nbsp;</td><td>&nbsp;</td><td>Initial suction pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>T0_dis&nbsp;</td><td>REAL &nbsp;</td><td>300&nbsp;</td><td>&nbsp;</td><td>Initial discharge temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>T0_suc&nbsp;</td><td>REAL &nbsp;</td><td>300&nbsp;</td><td>&nbsp;</td><td>Initial suction temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Th_dis&nbsp;</td><td>REAL &nbsp;</td><td>0.005&nbsp;</td><td>&nbsp;</td><td>Discharge chamber shell thickness&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Th_suc&nbsp;</td><td>REAL &nbsp;</td><td>0.005&nbsp;</td><td>&nbsp;</td><td>Suction chamber shell thickness&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Tw0_dis&nbsp;</td><td>REAL &nbsp;</td><td>300&nbsp;</td><td>&nbsp;</td><td>Initial discharge chamber shell temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Tw0_suc&nbsp;</td><td>REAL &nbsp;</td><td>300&nbsp;</td><td>&nbsp;</td><td>Initial suction chamber shell temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>alpha_a_dis&nbsp;</td><td>REAL &nbsp;</td><td>10&nbsp;</td><td>&nbsp;</td><td>Discharge chamber natural-convective HTC&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_a_suc&nbsp;</td><td>REAL &nbsp;</td><td>10&nbsp;</td><td>&nbsp;</td><td>Suction chamber natural-convective HTC&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_g_dis&nbsp;</td><td>REAL &nbsp;</td><td>150&nbsp;</td><td>&nbsp;</td><td>Discharge chamber - Vapour heat transfer coefficient&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_l_dis&nbsp;</td><td>REAL &nbsp;</td><td>150&nbsp;</td><td>&nbsp;</td><td>Discharge chamber - Liquid heat transfer coefficient&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_suc&nbsp;</td><td>REAL &nbsp;</td><td>200&nbsp;</td><td>&nbsp;</td><td>Suction chamber heat transfer coefficient&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_tp_dis&nbsp;</td><td>REAL &nbsp;</td><td>200&nbsp;</td><td>&nbsp;</td><td>Discharge chamber - Two phase heat transfer coefficient&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>dP0&nbsp;</td><td>REAL &nbsp;</td><td>0.02&nbsp;</td><td>&nbsp;</td><td>Nominal pressure drop&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>disp&nbsp;</td><td>REAL &nbsp;</td><td>2.742e-05&nbsp;</td><td>&nbsp;</td><td>Displacement volume&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>etaIse&nbsp;</td><td>REAL &nbsp;</td><td>0.69&nbsp;</td><td>&nbsp;</td><td>Isentropic efficiency&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>etaMot&nbsp;</td><td>REAL &nbsp;</td><td>0.9&nbsp;</td><td>&nbsp;</td><td>Motor efficiency&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>etaVol&nbsp;</td><td>REAL &nbsp;</td><td>0.94&nbsp;</td><td>&nbsp;</td><td>Volumetric efficiency&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>h0_dis&nbsp;</td><td>REAL &nbsp;</td><td>300000&nbsp;</td><td>&nbsp;</td><td>Initial discharge enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>h0_suc&nbsp;</td><td>REAL &nbsp;</td><td>300000&nbsp;</td><td>&nbsp;</td><td>Initial suction enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>init_dis&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Ph&nbsp;</td><td>&nbsp;</td><td>Initial conditions specification for discharge chamber&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>init_suc&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditionsAccu">InitialConditionsAccu</a>&nbsp;</td><td>P_h&nbsp;</td><td>&nbsp;</td><td>Initial conditions specification for suction chamber&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>m0&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Nominal mass flow rate&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>m_steady&nbsp;</td><td>REAL &nbsp;</td><td>0.05&nbsp;</td><td>&nbsp;</td><td>Steady state refrigerant mass flow rate at which HTCs were calculated&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>mat&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#Material" data-ajax='false'>THERMAL.Material</a>&nbsp;</td><td>SS_304&nbsp;</td><td>&nbsp;</td><td>Compressor shell material&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DECLS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>D_ii&nbsp;</td><td>CONST REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Mw&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Metal weight&nbsp;</td><td>kg&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES (TOPOLOGY BLOCK):</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>OBJECT&nbsp;</b></color></td>
+<td><color="black"><b>COMPONENT TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Compressor&nbsp;</td><td><a href="CO2.Compressor.html">Compressor</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SuctionChamber&nbsp;</td><td><a href="CO2.SuctionChamberVolume.html">SuctionChamberVolume</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SuctionChamberWall&nbsp;</td><td><a href="CO2.LumpedShell.html">LumpedShell</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Motor&nbsp;</td><td><a href="CO2.CartridgeHeater.html">CartridgeHeater</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>DischargeChamber&nbsp;</td><td><a href="CO2.CV_Ph.html">CV_Ph</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>DischargeChamberWall&nbsp;</td><td><a href="CO2.LumpedShell.html">LumpedShell</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>dp&nbsp;</td><td><a href="CO2.dP.html">dP</a>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<br/>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES DATA:</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>DATUM&nbsp;</b></color></td>
+<td><color="black"><b>VALUE&nbsp;</b></color></td>
+<td><color="black"><b>POS&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Compressor.disp&nbsp;</td><td>disp&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Displacement volume&nbsp;</td><td>"m^3"&nbsp;</td></tr>
+
+<tr><td>Compressor.etaIse&nbsp;</td><td>etaIse&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Isentropic efficiency&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Compressor.etaMot&nbsp;</td><td>etaMot&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Motor efficiency&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Compressor.etaVol&nbsp;</td><td>etaVol&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Volumetric efficiency&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>DischargeChamber.D&nbsp;</td><td>Do_dis - 2 * Th_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>DischargeChamber.L&nbsp;</td><td>L_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Length&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>DischargeChamber.P0&nbsp;</td><td>P0_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial pressure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>DischargeChamber.T0&nbsp;</td><td>T0_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>DischargeChamber.alpha_g&nbsp;</td><td>alpha_g_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Vapour HTC, for ConstantHTC==TRUE&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>DischargeChamber.alpha_l&nbsp;</td><td>alpha_l_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Liquid HTC, for ConstantHTC==TRUE&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>DischargeChamber.alpha_tp&nbsp;</td><td>alpha_tp_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Two Phase HTC, for ConstantHTC==TRUE&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>DischargeChamber.h0&nbsp;</td><td>h0_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial specific enthalpy&nbsp;</td><td>"J/kg"&nbsp;</td></tr>
+
+<tr><td>DischargeChamber.init&nbsp;</td><td>init_dis&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Initial condition specification&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>DischargeChamber.m_steady&nbsp;</td><td>m_steady&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Steady state mass flow rate for which HTCs calculated&nbsp;</td><td>"kg/s"&nbsp;</td></tr>
+
+<tr><td>DischargeChamberWall.ConstantAirHTC&nbsp;</td><td>ConstantAirHTC&nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>If FALSE, uses Churchill-Chu 1975 natural convective correlation&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>DischargeChamberWall.Do&nbsp;</td><td>Do_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Outer diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>DischargeChamberWall.L&nbsp;</td><td>L_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>DischargeChamberWall.Th&nbsp;</td><td>Th_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Thickness&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>DischargeChamberWall.Tw0&nbsp;</td><td>Tw0_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial wall temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>DischargeChamberWall.accountForRadiation&nbsp;</td><td> TRUE &nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>Recommended true if high surface temperatures&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>DischargeChamberWall.alpha_a0&nbsp;</td><td>alpha_a_dis&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Constant convective heat transfer coefficient&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>DischargeChamberWall.mat&nbsp;</td><td>mat&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#PipeMat" data-ajax='false'>THERMAL.PipeMat</a>&nbsp;</td><td>Wall material&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Motor.D&nbsp;</td><td>D_motor&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>Motor.L&nbsp;</td><td>L_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>Motor.Tw0_i&nbsp;</td><td>Tw0_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial wall temperature - first segment&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>Motor.Tw0_o&nbsp;</td><td>Tw0_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial wall temperature - last segment&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>Motor.mat&nbsp;</td><td>mat&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#PipeMat" data-ajax='false'>THERMAL.PipeMat</a>&nbsp;</td><td>Wall material&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Motor.n&nbsp;</td><td>1&nbsp;</td><td>PARA&nbsp;</td><td>INTEGER &nbsp;</td><td>Number of control volumes&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.D&nbsp;</td><td>Do_suc - 2 * Th_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.D_in[nports_in]&nbsp;</td><td>D_i&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Inlet port diameters&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.D_out[nports_out]&nbsp;</td><td>D_o&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Outlet port diameters&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.Di&nbsp;</td><td>D_motor&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Inner diameter&nbsp;</td><td>"m^2"&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.L&nbsp;</td><td>L_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Height&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.P0&nbsp;</td><td>P0_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial refrigerant pressure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.T0&nbsp;</td><td>T0_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial refrigerant temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.alpha_ref&nbsp;</td><td>alpha_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Refrigerant-to-shell HTC&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.h0&nbsp;</td><td>h0_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial refrigerant enthalpy&nbsp;</td><td>"J/kg"&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.init&nbsp;</td><td>init_suc&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditionsAccu">InitialConditionsAccu</a>&nbsp;</td><td>Specify initial conditions&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.z_in[nports_in]&nbsp;</td><td>H_i&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Inlet port heights&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>SuctionChamber.z_out[nports_out]&nbsp;</td><td>H_o&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Outlet port heights&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>SuctionChamberWall.ConstantAirHTC&nbsp;</td><td>ConstantAirHTC&nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>If FALSE, uses Churchill-Chu 1975 natural convective correlation&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>SuctionChamberWall.Do&nbsp;</td><td>Do_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Outer diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>SuctionChamberWall.L&nbsp;</td><td>L_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>SuctionChamberWall.Th&nbsp;</td><td>Th_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Thickness&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>SuctionChamberWall.Tw0&nbsp;</td><td>Tw0_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial wall temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>SuctionChamberWall.accountForRadiation&nbsp;</td><td> FALSE &nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>Recommended true if high surface temperatures&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>SuctionChamberWall.alpha_a0&nbsp;</td><td>alpha_a_suc&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Constant convective heat transfer coefficient&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>SuctionChamberWall.mat&nbsp;</td><td>mat&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#PipeMat" data-ajax='false'>THERMAL.PipeMat</a>&nbsp;</td><td>Wall material&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>dp.dP0&nbsp;</td><td>dP0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal pressure drop&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>dp.m0&nbsp;</td><td>m0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal mass flow rate&nbsp;</td><td>"kg/s"&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:39)</font></p>
+</body>
+</html>

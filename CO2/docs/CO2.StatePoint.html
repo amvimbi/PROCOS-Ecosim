@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.StatePoint<br /><small></small></h1><hr><br><font size="5" color="black">COMPONENT <a name="StatePoint">StatePoint</a>
+</font><br/>
+<br/>
+<font size="4" color="black">ICON: </font><br/>
+<p><img src="icons/CO2.StatePoint.png"></p><br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>PTout&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>SCout&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>STout&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>TTout&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_in&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES (TOPOLOGY BLOCK):</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>OBJECT&nbsp;</b></color></td>
+<td><color="black"><b>COMPONENT TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>TT&nbsp;</td><td><a href="CO2.TemperatureSensor_Celsius.html">TemperatureSensor_Celsius</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>SC&nbsp;</td><td><a href="CO2.SuperheatSensor.html">SuperheatSensor</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>ST&nbsp;</td><td><a href="CO2.SaturationSensor.html">SaturationSensor</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>PT&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.PressureSensor.html">CRYOLIB.PressureSensor</a>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<br/>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES DATA:</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>DATUM&nbsp;</b></color></td>
+<td><color="black"><b>VALUE&nbsp;</b></color></td>
+<td><color="black"><b>POS&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>PT.bias&nbsp;</td><td>0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Bias: zero shift&nbsp;</td><td>"-"&nbsp;</td></tr>
+
+<tr><td>PT.gain&nbsp;</td><td>1&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Gain of the sensor&nbsp;</td><td>"-"&nbsp;</td></tr>
+
+<tr><td>SC.bias&nbsp;</td><td>0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Bias: zero shift&nbsp;</td><td>"-"&nbsp;</td></tr>
+
+<tr><td>SC.gain&nbsp;</td><td>1&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Gain of the sensor&nbsp;</td><td>"-"&nbsp;</td></tr>
+
+<tr><td>ST.OutputCelsius&nbsp;</td><td> TRUE &nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>If FALSE, Kelvin&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>ST.OutputTemperature&nbsp;</td><td> TRUE &nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>If FALSE, outputs saturation pressure&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>ST.bias&nbsp;</td><td>0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Bias: zero shift&nbsp;</td><td>"-"&nbsp;</td></tr>
+
+<tr><td>ST.gain&nbsp;</td><td>1&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Gain of the sensor&nbsp;</td><td>"-"&nbsp;</td></tr>
+
+<tr><td>TT.Threshold&nbsp;</td><td> FALSE &nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>TT.bias&nbsp;</td><td>0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Bias: zero shift&nbsp;</td><td>"-"&nbsp;</td></tr>
+
+<tr><td>TT.gain&nbsp;</td><td>1&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Gain of the sensor&nbsp;</td><td>"-"&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:39)</font></p>
+</body>
+</html>

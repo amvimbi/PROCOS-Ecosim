@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.DEMO_PCO_CO2<br /><small></small></h1><hr><br><font size="5" color="black">COMPONENT <a name="DEMO_PCO_CO2">DEMO_PCO_CO2</a>
+</font><br/>
+<br/>
+<font size="4" color="black">ICON: </font><br/>
+<p><img src="icons/CO2.DEMO_PCO_CO2.png"></p><br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Process Control Object for the DEMO plant [OBSOLETE]</font><br/>
+<br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Bool_out&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.bool_signal.html">PORTS_LIB.bool_signal</a>&nbsp;</td><td> (n = 5) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Control_in&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 20) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Control_out&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 14) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Run_Order&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.bool_signal.html">PORTS_LIB.bool_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>TrTime&nbsp;</td><td>REAL &nbsp;</td><td>120&nbsp;</td><td>&nbsp;</td><td>Minimum transition time between steps&nbsp;</td><td>s&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DECLS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>AC4080_Usp&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>User set point for accumulator&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>CV4c80_PosR&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Surface storage low pressure valve&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>CV4c80_TR_S&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>CV7008_PosR&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>CV7008_SP&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pump outlet pressure control valve&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>CV7008_TR_S&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>CV7a10_PosR&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>CV7a10_SP&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>CV7a10_SPval&nbsp;</td><td>CONST REAL &nbsp;</td><td>12&nbsp;</td><td>&nbsp;</td><td>Set point value for detector bypass valve&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>CV7a10_TR_S&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Detector flow rate control valve&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>CV7c08_PosR&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>CV7c08_TR_S&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Surface storage high pressure valve&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>CV7c08_feedback&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Actual position of valve&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>DP7a10&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pressure drop across detector volume&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>DP7c08&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pressure drop across SS high-pressure valve&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>EH3006&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Heater power&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>FT1a16&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Detector bypass mass flow rate&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>GP5002&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Compressor speed&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>LC4080_AtOutH&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Accumulator level controller output higher limit&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>LC4080_AtOutL&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Accumulator level controller output lower limit&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>LC4080_PV&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Accumulator level controller PID Process Value&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>LC4080_SP&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Accumulator level controller PID Set Point&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>LP1a02&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pump speed&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>LP1a02_SC_OK&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pump subcooling OK flag&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>LP1a02_start&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>PT4c80&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pressure at outlet of surface storage low pressure valve&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>PT6030&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pressure at the base of surface storage&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>PT7008&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pump outlet pressure&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>PV7c10&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>SC1a98&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Subcooling at pump inlet&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>SC1a98_TtH&nbsp;</td><td>CONST REAL &nbsp;</td><td>5&nbsp;</td><td>&nbsp;</td><td>Subcooling threshold SET for pump inlet&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>SC1a98_TtL&nbsp;</td><td>CONST REAL &nbsp;</td><td>2&nbsp;</td><td>&nbsp;</td><td>Subcooling threshold RESET for pump inlet&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>SC3004&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Subcooling at detector inlet&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ST3004&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Saturation temperature at detector inlet&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ST4080&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Accumulator saturation temperature&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ST6010&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Stp&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Stepper position&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Stp_prev&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Previous step&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>TT3004&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Actual temperature at detector inlet&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Tr0&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Tr1&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Tr2&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Tr3&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Tr4&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Tr5&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Tr6&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Tr7&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Tr8&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Tr[8]&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>WT4080&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Local accumulator liquid level&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>bypassHH&nbsp;</td><td>CONST REAL &nbsp;</td><td>0.1&nbsp;</td><td>&nbsp;</td><td>Value of bypass flow at which to start limiting surface storage valve&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>bypassLL&nbsp;</td><td>CONST REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Minimum value for bypass flow&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>dP_ctrl&nbsp;</td><td>CONST REAL &nbsp;</td><td>0.1&nbsp;</td><td>&nbsp;</td><td>Deadband dP for checking stepper conditions&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>ePos&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Emptying valve position&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>emptyHH&nbsp;</td><td>CONST REAL &nbsp;</td><td>40&nbsp;</td><td>&nbsp;</td><td>Level at which maxiumum emptying speed&nbsp;</td><td>%&nbsp;</td></tr>
+
+<tr><td>emptyLL&nbsp;</td><td>REAL &nbsp;</td><td>12&nbsp;</td><td>&nbsp;</td><td>Level at which to stop emptying, should be a bit higher than setPoint&nbsp;</td><td>%&nbsp;</td></tr>
+
+<tr><td>epsilon&nbsp;</td><td>CONST REAL &nbsp;</td><td>2&nbsp;</td><td>&nbsp;</td><td>Deadband&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>fPos&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Filling valve position&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>fillLL&nbsp;</td><td>CONST REAL &nbsp;</td><td>5&nbsp;</td><td>&nbsp;</td><td>Level low-limit for maximum filling speed&nbsp;</td><td>%&nbsp;</td></tr>
+
+<tr><td>fluid&nbsp;</td><td>CONST ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/CRYOLIB/docs/CRYOLIB.enumerativeTypes.html#ChemName" data-ajax='false'>CRYOLIB.ChemName</a>&nbsp;</td><td>Carbon_Dioxide&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ier&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ipx&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ipy&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>maxPos&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>limiter on HH of emptying valve&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>posHH&nbsp;</td><td>CONST REAL &nbsp;</td><td>100&nbsp;</td><td>&nbsp;</td><td>Max opening (%) of surface storage valves&nbsp;</td><td>%&nbsp;</td></tr>
+
+<tr><td>posLL&nbsp;</td><td>CONST REAL &nbsp;</td><td>0&nbsp;</td><td>&nbsp;</td><td>Minimum opening (%) of surface storage valves&nbsp;</td><td>%&nbsp;</td></tr>
+
+<tr><td>setPoint&nbsp;</td><td>CONST REAL &nbsp;</td><td>10&nbsp;</td><td>&nbsp;</td><td>Set point for accumulator level&nbsp;</td><td>%&nbsp;</td></tr>
+
+<tr><td>time_prev&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Time at which to start counting&nbsp;</td><td>s&nbsp;</td></tr>
+
+<tr><td>timer&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Time counter&nbsp;</td><td>s&nbsp;</td></tr>
+
+</table>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:38)</font></p>
+</body>
+</html>

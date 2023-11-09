@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="RefSource" >
+
+		<polygon id="Polygon_1" points="104,112 104,116 112,116 112,120 124,112 112,104 112,108 104,108" dx="-34" dy="56" color="85,170,0"  />
+
+		<port id="var1" library="PORTS_LIB" type="analog_signal"  hotPort="var1" >
+		
+				<symbol dx="64" dy="160" onLabel="true" />
+		
+				<label cx="15.5" cy="12" dx="25" dy="148" />
+		
+		</port>
+
+		<port id="var2" library="PORTS_LIB" type="analog_signal"  hotPort="var2" >
+		
+				<symbol dx="64" dy="176" onLabel="true" />
+		
+				<label cx="15.5" cy="12" dx="25" dy="164" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="96" dy="168" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="104" dy="156" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

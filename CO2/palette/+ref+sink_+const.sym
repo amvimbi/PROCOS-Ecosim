@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="RefSink_Const" >
+
+		<polygon id="Polygon_1" points="104,112 104,116 112,116 112,120 124,112 112,104 112,108 104,108" dx="-24" dy="48" color="85,170,0"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="72" dy="160" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="36" dy="148" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="General">
+				<var name="CapacitiveBoundary"/>
+				<var name="bound"/>
+				<var name="P" conditionVar="CapacitiveBoundary" conditionVals="TRUE"/>
+				<var name="m" conditionVar="CapacitiveBoundary" conditionVals="FALSE"/>
+				<var name="h" conditionVar="bound" conditionVals="Enthalpy"/>
+				<var name="T" conditionVar="bound" conditionVals="Temperature"/>
+				<var name="x" conditionVar="bound" conditionVals="Quality"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

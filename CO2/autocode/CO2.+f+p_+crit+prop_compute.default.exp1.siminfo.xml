@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<usedInputFiles version="1.0" library="CO2" component="FP_CritProp_compute" partition="default" experiment="exp1" date="2023:06:15" time="14:59:34">
+  <rboundlaw id="h"/>
+  <rboundlaw id="rho"/>
+  <rboundlaw id="u"/>
+  <rboundlaw id="x"/>
+</usedInputFiles>

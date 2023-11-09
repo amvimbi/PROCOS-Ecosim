@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.TubeFinGeometry<br /><small></small></h1><hr><br><font size="5" color="black">CLASS <a name="TubeFinGeometry">TubeFinGeometry</a></font><br/>
+<br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Record of tube and fin geometry (not material properties)</font><br/>
+<br/>
+<font size="4" color="black">VARS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>A_pri&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Primary area&nbsp;</td><td>m^2&nbsp;</td></tr>
+
+<tr><td>A_sec&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Secondary area&nbsp;</td><td>m^2&nbsp;</td></tr>
+
+<tr><td>Dc&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Collar diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Di&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Tube inner diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Do&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Tube outer diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>FPI&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Fins per inch&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>FPM&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Fins per meter&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Fp&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Fin spacing&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>HX_d&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>HX_h&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>HX_l&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>L&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Tube length&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Pl&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Tube horizontal spacing&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Pt&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Tube vertical spacing&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Th_f&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Fin thickness&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Th_t&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Tube wall thickness&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>V_f&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Fin material volume&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>V_t&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Tube material volume&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>ftype&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#PlateFinType">PlateFinType</a>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>nBank&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Number of banks of tubes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>nTube&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Number of tubes per bank&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>staggered&nbsp;</td><td>BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>False means inline tubes&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="5" color="black">PUBLIC_METHODS for class TubeFinGeometry:</font><br/>
+<br/>
+<hr><font size="5" color="black">METHOD <a href="#TubeFinGeometry">TubeFinGeometry</a>::<a name="setProps">setProps</a></font><br/>
+<br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Sets geometry and material properties for the entire heat exchanger</font><br/>
+<font size="4" color="black">RETURN TYPE: NO_TYPE </font><br/>
+<br/>
+<br/>
+<font size="4" color="black">ARGUMENTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>nTube_val&nbsp;</td><td>IN INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>nBank_val&nbsp;</td><td>IN INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>staggered_val&nbsp;</td><td>IN BOOLEAN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Do_val&nbsp;</td><td>IN REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Th_t_val&nbsp;</td><td>IN REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>L_val&nbsp;</td><td>IN REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Pt_val&nbsp;</td><td>IN REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Pl_val&nbsp;</td><td>IN REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ftype_val&nbsp;</td><td>IN ENUM <a href="CO2.enumerativeTypes.html#PlateFinType">PlateFinType</a>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>FPI_val&nbsp;</td><td>IN REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Th_f_val&nbsp;</td><td>IN REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black"></font><br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:39)</font></p>
+</body>
+</html>

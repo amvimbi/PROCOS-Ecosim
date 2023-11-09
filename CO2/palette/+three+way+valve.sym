@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="ThreeWayValve" >
+
+		<polygon id="Polygon_3" points="120,180 104,168 104,192" rotation="-90" dx="7.95" dy="-28.15" color="80,140,255"  />
+
+		<polygon id="Polygon_1" points="120,180 104,168 104,192" rotation="-270" dx="7.85" dy="-43.95" color="80,140,255"  />
+
+		<polygon id="Polygon_2" points="120,180 104,168 104,192" dy="-36" color="253,219,41"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="96" dy="144" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="60" dy="132" />
+		
+		</port>
+
+		<port id="K" library="PORTS_LIB" type="bool_signal"  hotPort="K" >
+		
+				<symbol dx="136" dy="144" onLabel="true" />
+		
+				<label cx="8.5" cy="12" dx="148" dy="132" />
+		
+		</port>
+
+		<port id="f_out1" library="CRYOLIB" type="fluid"  hotPort="f_out1" >
+		
+				<symbol dx="120" dy="120" onLabel="true" />
+		
+				<label cx="21.5" cy="12" dx="128" dy="108" />
+		
+		</port>
+
+		<port id="f_out2" library="CRYOLIB" type="fluid"  hotPort="f_out2" >
+		
+				<symbol dx="120" dy="168" onLabel="true" />
+		
+				<label cx="21.5" cy="12" dx="128" dy="156" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="Design Parameters">
+				<var name="Cv" conditionVar="eqnChoice" conditionVals="Swagelok"/>
+				<var name="Cd" conditionVar="eqnChoice" conditionVals="DischargeCoefficient"/>
+				<var name="D" conditionVar="eqnChoice" conditionVals="DischargeCoefficient"/>
+				<var name="m0" conditionVar="eqnChoice" conditionVals="Quadratic"/>
+				<var name="dP0" conditionVar="eqnChoice" conditionVals="Quadratic"/>
+				<var name="dP_small" conditionVar="eqnChoice" conditionVals="Quadratic"/>
+				<var name="phi_init"/>
+				<var name="phi_min"/>
+				<var name="tau"/>
+				<var name="eqnChoice"/>
+			</tab>
+			<tab name="Initial Conditions">
+				<var name="init"/>
+				<var name="P0"/>
+				<var name="h0" conditionVar="init" conditionVals="Ph"/>
+				<var name="T0" conditionVar="init" conditionVals="PT"/>
+				<var name="x0" conditionVar="init" conditionVals="Px"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.CO2Accumulator_heater<br /><small></small></h1><hr><br><font size="5" color="black">COMPONENT <a name="CO2Accumulator_heater">CO2Accumulator_heater</a> IS_A <a href="CO2.CO2Accumulator.html">CO2Accumulator</a>
+</font><br/>
+<br/>
+<font size="4" color="black">ICON: </font><br/>
+<p><img src="icons/CO2.CO2Accumulator_heater.png"></p><br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">CO2 Accumulator with cartridge heater component</font><br/>
+<br/>
+<font size="4" color="black">CONSTRUCTION PARAMETERS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>ConstantRefHTC&nbsp;</td><td>BOOLEAN &nbsp;</td><td> TRUE &nbsp;</td><td>If FALSE, uses Cooper pool boiling correlation&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>DynamicRefHTC&nbsp;</td><td>BOOLEAN &nbsp;</td><td> FALSE &nbsp;</td><td>If TRUE, applies a low-pass filter to HTC calculations&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>AccountforGravity&nbsp;</td><td>BOOLEAN &nbsp;</td><td> TRUE &nbsp;</td><td>If TRUE, applies static head to pressure calcs&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>TsatInCelsius&nbsp;</td><td>BOOLEAN &nbsp;</td><td> TRUE &nbsp;</td><td>If FALSE SaturationTemp port outputs Tsat in Kelvin&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>D_out&nbsp;</td><td>REAL &nbsp;</td><td>0.001&nbsp;</td><td>Outlet pipe diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>z_out&nbsp;</td><td>REAL &nbsp;</td><td>0.005&nbsp;</td><td>Outlet pipe elevation above bottom&nbsp;</td><td>m&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>K_cool&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>Cooling power control signal (in %)&nbsp;</td></tr>
+
+<tr><td>K_heat&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>Heater power control signal (in %)&nbsp;</td></tr>
+
+<tr><td>Level&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>Liquid level inside vessel in % of volume&nbsp;</td></tr>
+
+<tr><td>Pressure&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>SaturationTemp&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>T_heater&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>Heater temperature&nbsp;</td></tr>
+
+<tr><td>f_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>D&nbsp;</td><td>REAL &nbsp;</td><td>1&nbsp;</td><td>&nbsp;</td><td>Shell diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>D_heater&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Heater diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>L&nbsp;</td><td>REAL &nbsp;</td><td>1.5&nbsp;</td><td>&nbsp;</td><td>Shell height&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>L_heater&nbsp;</td><td>REAL &nbsp;</td><td>0.25&nbsp;</td><td>&nbsp;</td><td>Heater length&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Level0&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Initial liquid level in %&nbsp;</td><td>%&nbsp;</td></tr>
+
+<tr><td>P0&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Initial pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>Q_cool_max&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Maximum cooling power&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>Q_heat_max&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Maximum heater power&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>T0&nbsp;</td><td>REAL &nbsp;</td><td>255&nbsp;</td><td>&nbsp;</td><td>Initial temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Th&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Shell thickness&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Tw0&nbsp;</td><td>REAL &nbsp;</td><td>243.15&nbsp;</td><td>&nbsp;</td><td>Initial wall temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Tw0_heater&nbsp;</td><td>REAL &nbsp;</td><td>293.15&nbsp;</td><td>&nbsp;</td><td>Initial heater temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>alpha_heater_l&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Liquid HTC heater to refrigerant&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_heater_tp&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Two-phase HTC heater to refrigerant&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_heater_v&nbsp;</td><td>REAL &nbsp;</td><td>100&nbsp;</td><td>&nbsp;</td><td>Vapour HTC heater to refrigerant&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_ref&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Refrigerant to shell heat transfer coefficient&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>h0&nbsp;</td><td>REAL &nbsp;</td><td>250000&nbsp;</td><td>&nbsp;</td><td>Initial enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>heaterMat&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#Material" data-ajax='false'>THERMAL.Material</a>&nbsp;</td><td>SS_304&nbsp;</td><td>&nbsp;</td><td>Heater material&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>init&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditionsAccu">InitialConditionsAccu</a>&nbsp;</td><td>P_h&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>mat&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#PipeMat" data-ajax='false'>THERMAL.PipeMat</a>&nbsp;</td><td>SS_304&nbsp;</td><td>&nbsp;</td><td>Shell material&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>tauAlpha&nbsp;</td><td>REAL &nbsp;</td><td>3&nbsp;</td><td>&nbsp;</td><td>Time constant for low-pass HTC calculations&nbsp;</td><td>s&nbsp;</td></tr>
+
+<tr><td>x0&nbsp;</td><td>REAL &nbsp;</td><td>0.1&nbsp;</td><td>&nbsp;</td><td>Initial vapour quality&nbsp;</td><td>-&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES (TOPOLOGY BLOCK):</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>OBJECT&nbsp;</b></color></td>
+<td><color="black"><b>COMPONENT TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>wall&nbsp;</td><td><a href="CO2.LumpedShell_insulated.html">LumpedShell_insulated</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>ref&nbsp;</td><td><a href="CO2.CO2AccumulatorBase_heater.html">CO2AccumulatorBase_heater</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>heater&nbsp;</td><td><a href="CO2.CartridgeHeaterCtrl.html">CartridgeHeaterCtrl</a>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<br/>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES DATA:</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>DATUM&nbsp;</b></color></td>
+<td><color="black"><b>VALUE&nbsp;</b></color></td>
+<td><color="black"><b>POS&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>heater.D&nbsp;</td><td>D_heater&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>heater.L&nbsp;</td><td>L_heater&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>heater.Q_max&nbsp;</td><td>Q_heat_max&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Maximum heater power&nbsp;</td><td>"W"&nbsp;</td></tr>
+
+<tr><td>heater.Tw0_i&nbsp;</td><td>Tw0_heater&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial wall temperature - first segment&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>heater.Tw0_o&nbsp;</td><td>Tw0_heater&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial wall temperature - last segment&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>heater.mat&nbsp;</td><td>heaterMat&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#PipeMat" data-ajax='false'>THERMAL.PipeMat</a>&nbsp;</td><td>Wall material&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>heater.n&nbsp;</td><td>1&nbsp;</td><td>PARA&nbsp;</td><td>INTEGER &nbsp;</td><td>Number of control volumes&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>ref.AccountforGravity&nbsp;</td><td>AccountforGravity&nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>If TRUE, adds static pressure at fluid ports&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>ref.ConstantRefHTC&nbsp;</td><td>ConstantRefHTC&nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>If FALSE, uses Cooper pool-boiling correlation&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>ref.D&nbsp;</td><td>D - 2 * Th&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>ref.D_out[nports_out]&nbsp;</td><td>{ D_out} &nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Outlet port diameters&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>ref.DynamicRefHTC&nbsp;</td><td>DynamicRefHTC&nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>If TRUE, adds low-pass fliter to HTC calculations&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>ref.L&nbsp;</td><td>L&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Height&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>ref.Level0&nbsp;</td><td>Level0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial liquid level&nbsp;</td><td>"%"&nbsp;</td></tr>
+
+<tr><td>ref.P0&nbsp;</td><td>P0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial refrigerant pressure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>ref.Q_cool_max&nbsp;</td><td>Q_cool_max&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Maximum cooling capacity&nbsp;</td><td>"W"&nbsp;</td></tr>
+
+<tr><td>ref.T0&nbsp;</td><td>T0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial refrigerant temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>ref.alpha_heater_l&nbsp;</td><td>alpha_heater_l&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Liquid Heat transfer coefficient from heater to refrigerant&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>ref.alpha_heater_tp&nbsp;</td><td>alpha_heater_tp&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Two-phase HTC heater to refrigerant&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>ref.alpha_heater_v&nbsp;</td><td>alpha_heater_v&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Vapour HTC heater to refrigerant&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>ref.alpha_ref&nbsp;</td><td>alpha_ref&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Refrigerant-to-shell HTC&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>ref.h0&nbsp;</td><td>h0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial refrigerant enthalpy&nbsp;</td><td>"J/kg"&nbsp;</td></tr>
+
+<tr><td>ref.init&nbsp;</td><td>init&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditionsAccu">InitialConditionsAccu</a>&nbsp;</td><td>Specify initial conditions&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>ref.tauAlpha&nbsp;</td><td>tauAlpha&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Time constant for HTC correlation low-pass filter&nbsp;</td><td>"s"&nbsp;</td></tr>
+
+<tr><td>ref.x0&nbsp;</td><td>x0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial vapour quality&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>ref.z_out[nports_out]&nbsp;</td><td>{ z_out} &nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Outlet port heights&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>wall.Do&nbsp;</td><td>D&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Outer diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>wall.L&nbsp;</td><td>L&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>wall.Th&nbsp;</td><td>Th&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Thickness&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>wall.Tw0&nbsp;</td><td>Tw0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial wall temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>wall.mat&nbsp;</td><td>mat&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#PipeMat" data-ajax='false'>THERMAL.PipeMat</a>&nbsp;</td><td>Wall material&nbsp;</td><td>""&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:38)</font></p>
+</body>
+</html>

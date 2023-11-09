@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="AnnularWall_onePort" >
+
+		<closedBezier id="ClosedBezier_1" points="76.0739,164 76.0967,180 76.1194,196 76.1365,208 76.1479,216 100.148,215.965 100.136,207.966 100.074,163.966 100.119,195.966 100.057,151.966 100.045,143.966 76.0455,144 76.0568,152" rotation="-90.0815" flipY="true" dx="7.90316" dy="-103.983" lineWidth="1.5"  color="172,172,172" aliasing="true"  />
+
+		<bezier id="Bezier_2" points="208,212 216,212 216,188 208,188" rotation="180" flipY="true" dx="-90" dy="-124" lineWidth="1.5"  aliasing="true"  />
+
+		<bezier id="Bezier_6" points="105,91.9993 113,91.9993 113,115.999 105,115.999" rotation="180" flipY="true" dx="-35" dy="-27.9994" lineWidth="0.5" lineType="2"  aliasing="true"  />
+
+		<bezier id="Bezier_7" points="104,91.9993 112,91.9993 112,115.999 104,115.999" rotation="180" flipY="true" dx="-18" dy="-27.9994" lineWidth="0.5" lineType="2"  aliasing="true"  />
+
+		<bezier id="Bezier_8" points="103,91.9989 111,91.9989 111,115.999 103,115.999" rotation="180" flipY="true" dx="-1.00004" dy="-27.999" lineWidth="0.5" lineType="2"  aliasing="true"  />
+
+		<ellipse id="Ellipse_1" cx="200" cy="138" rx="4" ry="10" dx="-76" dy="-62.0001" lineWidth="0.5"  color="42,42,42"  />
+
+		<line id="Line_1" points="96,108 96,100"  end_arrow="true" dx="-3.56476e-05" dy="-12.0001"  />
+
+		<port id="tp_in" library="PORTS_LIB" type="thermal"  hotPort="tp_in" >
+		
+				<symbol dx="96" dy="99.9999" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="52" dy="87.9999" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

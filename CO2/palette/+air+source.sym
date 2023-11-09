@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="AirSource" >
+
+		<polygon id="Polygon_1" points="104,112 104,116 112,116 112,120 124,112 112,104 112,108 104,108" dx="8" dy="32" color="255,255,255"  />
+
+		<port id="T_dry" library="PORTS_LIB" type="analog_signal"  hotPort="T_dry" >
+		
+				<symbol dx="104" dy="144" onLabel="true" />
+		
+				<label cx="20" cy="12" dx="61" dy="131" />
+		
+		</port>
+
+		<port id="m" library="PORTS_LIB" type="analog_signal"  hotPort="m" >
+		
+				<symbol dx="104" dy="128" onLabel="true" />
+		
+				<label cx="9.5" cy="12" dx="94" dy="104" />
+		
+		</port>
+
+		<port id="bdry" library="PORTS_LIB" type="analog_signal"  hotPort="bdry" >
+		
+				<symbol dx="104" dy="160" onLabel="true" />
+		
+				<label cx="16.5" cy="12" dx="88" dy="160" />
+		
+		</port>
+
+		<port id="a_out" library="CO2" type="air"  hotPort="a_out" >
+		
+				<symbol dx="140" dy="144" onLabel="true" />
+		
+				<label cx="20" cy="12" dx="148" dy="132" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

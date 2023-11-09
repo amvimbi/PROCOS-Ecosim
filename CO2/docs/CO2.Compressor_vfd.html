@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.Compressor_vfd<br /><small></small></h1><hr><br><font size="5" color="black">COMPONENT <a name="Compressor_vfd">Compressor_vfd</a> IS_A <a href="CO2.AbsCompressor.html">AbsCompressor</a>
+</font><br/>
+<br/>
+<font size="4" color="black">ICON: </font><br/>
+<p><img src="icons/CO2.Compressor_vfd.png"></p><br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Compressor model with Variable Frequency Drive</font><br/>
+<br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Q_loss&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>Power loss in the form of heat&nbsp;</td></tr>
+
+<tr><td>f_in&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>speed&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>Compressor speed signal in % (0-100)&nbsp;</td></tr>
+
+<tr><td>start&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.bool_signal.html">PORTS_LIB.bool_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>Start signal&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>FrequencyRange&nbsp;</td><td>TABLE_1D &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Frequencies at 0 and 100% input&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>MaxFrequency&nbsp;</td><td>REAL &nbsp;</td><td>82&nbsp;</td><td>&nbsp;</td><td>PLC imposed maximum frequency allowed&nbsp;</td><td>Hz&nbsp;</td></tr>
+
+<tr><td>MotorRPM&nbsp;</td><td>TABLE_1D &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Actual rotational speeds of motor at given frequencies&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>bore&nbsp;</td><td>REAL &nbsp;</td><td>40&nbsp;</td><td>&nbsp;</td><td>Bore diameter&nbsp;</td><td>mm&nbsp;</td></tr>
+
+<tr><td>etaIse&nbsp;</td><td>REAL &nbsp;</td><td>0.75&nbsp;</td><td>&nbsp;</td><td>Isentropic efficiency&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>etaMot&nbsp;</td><td>REAL &nbsp;</td><td>0.9&nbsp;</td><td>&nbsp;</td><td>Motor efficiency&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>etaVol&nbsp;</td><td>REAL &nbsp;</td><td>0.95&nbsp;</td><td>&nbsp;</td><td>Volumetric efficiency&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>nCyl&nbsp;</td><td>INTEGER &nbsp;</td><td>4&nbsp;</td><td>&nbsp;</td><td>No. of cylinders&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>stroke&nbsp;</td><td>REAL &nbsp;</td><td>39.3&nbsp;</td><td>&nbsp;</td><td>Stroke length&nbsp;</td><td>mm&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DECLS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>RPM&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Revolution speed of compressor crank&nbsp;</td><td>rpm&nbsp;</td></tr>
+
+<tr><td>T&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Refrigerant temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>disp&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Displacement volume per revolution of the crank&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>hs&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Isentropic outlet enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>ier&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Error codes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ipx&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Error codes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ipy&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Error codes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>m&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Refrigerant mass flow rate&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>motorLoss&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Motor power losses, dissipated as heat&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>nu&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Frequency at the inlet signal&nbsp;</td><td>Hz&nbsp;</td></tr>
+
+<tr><td>power&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Power consumption&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>rho&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Inlet density&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+<tr><td>s&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Outlet entropy&nbsp;</td><td>J/K&nbsp;</td></tr>
+
+</table>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:38)</font></p>
+</body>
+</html>

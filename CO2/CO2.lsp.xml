@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<library version="1.1.1">
+ <filedeps>
+  <file name="version.el"/>
+  <file name="FLUIDPROPS.el"/>
+  <file name="CLASSES.el"/>
+  <file name="FUNCTIONS.el"/>
+  <file name="CORRELATIONS.el"/>
+  <file name="PORTS.el"/>
+  <file name="THERMAL.el"/>
+  <file name="BOUNDARIES.el"/>
+  <file name="VOLUMES.el"/>
+  <file name="VALVES.el"/>
+  <file name="CONTROLLERS.el"/>
+  <file name="SENSORS.el"/>
+  <file name="ACCUMULATORS.el"/>
+  <file name="PIPES.el"/>
+  <file name="HEATEXCHANGERS.el"/>
+  <file name="PUMPS.el"/>
+  <file name="HEATPUMPS.el"/>
+  <file name="ROOM.el"/>
+  <file name="PLC.el"/>
+  <file name="TEST_CODE.el"/>
+  <file name="TWOFLUID.el"/>
+  <file name="ADDED_FUNCTIONALITIES.el"/>
+ </filedeps>
+ <libdeps>
+  <lib name="CONTROL" version=""/>
+  <lib name="CRYOLIB" version=""/>
+  <lib name="MATH" version=""/>
+  <lib name="PLC" version=""/>
+  <lib name="PORTS_LIB" version=""/>
+  <lib name="THERMAL" version=""/>
+  <lib name="THERMO_TABLE_INTERP" version=""/>
+ </libdeps>
+ <otherdeps>
+ </otherdeps>
+</library>

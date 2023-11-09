@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" label-status="allshowed" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="SmoothStartup" >
+
+		<rect id="Rectangle_2" cx="108" cy="116" sx="16" sy="16" dx="-36" dy="-28" color="255,128,0"  />
+
+		<bezier id="Bezier_1" points="64,128 64,124 64,120 72,120 72,120 76,120 72,120" dx="4" dy="-36"  />
+
+		<port id="output" library="PORTS_LIB" type="analog_signal"  hotPort="output" >
+		
+				<symbol dx="88" dy="88" onLabel="true" />
+		
+				<label cx="22" cy="12" dx="96" dy="76" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

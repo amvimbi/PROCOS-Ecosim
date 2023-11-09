@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="BackPressureRegulator" >
+
+		<line id="Line_1" points="136,176 148,176"  end_arrow="true" dx="-40" dy="-16" lineColor="85,170,0"   />
+
+		<line id="Line_3" points="80,160 80,144"  />
+
+		<line id="Line_5" points="80,136 80,132 56,132 56,160" lineColor="85,170,0"   />
+
+		<closedBezier id="ClosedBezier_1" points="256,160 256,148 272,148 272,160" dx="-184" dy="-16" color="80,140,255"  />
+
+		<line id="Line_6" points="68,192 92,160"  end_arrow="true" dy="-16"  />
+
+		<line id="Line_2" points="136,176 148,176"  end_arrow="true" dx="-84" dy="-16" lineColor="85,170,0"   />
+
+		<polygon id="Polygon_4" points="16.0003,209 16.0003,185 48.0003,209 48.0003,185" dx="47.9997" dy="-37" color="80,140,255" aliasing="true"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="48" dy="160" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="12" dy="148" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="112" dy="160" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="120" dy="148" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

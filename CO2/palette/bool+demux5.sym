@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="boolDemux5" >
+
+		<line id="Line_1" points="112,96 112,136" dx="16" lineWidth="4"   />
+
+		<port id="s_in" library="PORTS_LIB" type="bool_signal"  hotPort="s_in" >
+		
+				<symbol dx="120" dy="116" onLabel="true" />
+		
+				<label cx="16" cy="12" dx="80" dy="104" />
+		
+		</port>
+
+		<port id="s_out[1]" library="PORTS_LIB" type="bool_signal"  hotPort="s_out[1]" >
+		
+				<symbol dx="136" dy="100" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="144" dy="88" />
+		
+		</port>
+
+		<port id="s_out[2]" library="PORTS_LIB" type="bool_signal"  hotPort="s_out[2]" >
+		
+				<symbol dx="136" dy="108" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="144" dy="96" />
+		
+		</port>
+
+		<port id="s_out[3]" library="PORTS_LIB" type="bool_signal"  hotPort="s_out[3]" >
+		
+				<symbol dx="136" dy="116" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="144" dy="104" />
+		
+		</port>
+
+		<port id="s_out[4]" library="PORTS_LIB" type="bool_signal"  hotPort="s_out[4]" >
+		
+				<symbol dx="136" dy="124" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="144" dy="112" />
+		
+		</port>
+
+		<port id="s_out[5]" library="PORTS_LIB" type="bool_signal"  hotPort="s_out[5]" >
+		
+				<symbol dx="136" dy="132" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="144" dy="120" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

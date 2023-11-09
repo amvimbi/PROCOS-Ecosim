@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.AdiabVol_ru<br /><small></small></h1><hr><br><font size="5" color="black">COMPONENT <a name="AdiabVol_ru">AdiabVol_ru</a> IS_A <a href="CO2.LumpedAdiabaticVolume.html">LumpedAdiabaticVolume</a>
+</font><br/>
+<br/>
+<font size="4" color="black">ICON: </font><br/>
+<p><img src="icons/CO2.AdiabVol_ru.png"></p><br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Lumped adiabatic volume with rho,u state variables</font><br/>
+<br/>
+<font size="4" color="black">CONSTRUCTION PARAMETERS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>AccountForGravity&nbsp;</td><td>BOOLEAN &nbsp;</td><td> FALSE &nbsp;</td><td>If TRUE, adds static pressure calculations&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>f_in&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>D&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>Eps,Inf&nbsp;</td><td>Diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>L&nbsp;</td><td>REAL &nbsp;</td><td>1&nbsp;</td><td>Eps,Inf&nbsp;</td><td>Length&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>P0&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Initial pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>T0&nbsp;</td><td>REAL &nbsp;</td><td>255&nbsp;</td><td>&nbsp;</td><td>Initial temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>dz&nbsp;</td><td>REAL &nbsp;</td><td>0&nbsp;</td><td>&nbsp;</td><td>Elevation change between inlet and outlet, z_in - z_out, negative for upward flow&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>h0&nbsp;</td><td>REAL &nbsp;</td><td>250000&nbsp;</td><td>&nbsp;</td><td>Initial specific enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>init&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Ph&nbsp;</td><td>&nbsp;</td><td>Initial condition specification&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>x0&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Initial vapour quality&nbsp;</td><td>-&nbsp;</td></tr>
+
+<tr><td>z_in&nbsp;</td><td>REAL &nbsp;</td><td>0&nbsp;</td><td>&nbsp;</td><td>Elevation of inlet port relative to user-defined base&nbsp;</td><td>m&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DECLS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>G&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Mass flux&nbsp;</td><td>kg/(s·m^2)&nbsp;</td></tr>
+
+<tr><td>M&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Refrigerant mass&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>P&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>Pr&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Prandtl&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>T&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Tsat&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Saturation temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Vol&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Internal volume (Liters)&nbsp;</td><td>dm^3&nbsp;</td></tr>
+
+<tr><td>cp&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Specific heat capacity&nbsp;</td><td>J/(kg·K)&nbsp;</td></tr>
+
+<tr><td>delT&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Superheating/Subcooling (positive is superheat)&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>drho_dP&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Partial derivative of density wrt pressure&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>drho_dh&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Partial derivative of density wrt specific enthalpy&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>gamma&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Void fraction&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>h&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Specific enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>ier&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ipx&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ipy&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>k&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Thermal conductivity&nbsp;</td><td>W/(m·K)&nbsp;</td></tr>
+
+<tr><td>mu&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Dynamic viscosity&nbsp;</td><td>Pa·s&nbsp;</td></tr>
+
+<tr><td>phase&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/CRYOLIB/docs/CRYOLIB.enumerativeTypes.html#Phase" data-ajax='false'>CRYOLIB.Phase</a>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>rho&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Density&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+<tr><td>sigma&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Surface tension&nbsp;</td><td>N/m&nbsp;</td></tr>
+
+<tr><td>u&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Specific internal energy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>vel&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Fluid velocity&nbsp;</td><td>m/s&nbsp;</td></tr>
+
+<tr><td>vsound&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Mach number&nbsp;</td><td>m/s&nbsp;</td></tr>
+
+<tr><td>x&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">OBJECTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>CLASS&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>geo&nbsp;</td><td>&nbsp;</td><td><a href="CO2.RefGeometryRecord.html">RefGeometryRecord</a>&nbsp;</td><td></tr>
+
+<tr><td>sat&nbsp;</td><td>&nbsp;</td><td><a href="CO2.SaturationProperties.html">SaturationProperties</a>&nbsp;</td><td></tr>
+
+</table>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:38)</font></p>
+</body>
+</html>

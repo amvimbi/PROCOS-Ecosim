@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.ReversingValve<br /><small></small></h1><hr><br><font size="5" color="black">COMPONENT <a name="ReversingValve">ReversingValve</a>
+</font><br/>
+<br/>
+<font size="4" color="black">ICON: </font><br/>
+<p><img src="icons/CO2.ReversingValve.png"></p><br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Reverse flow between two input and two output streams</font><br/>
+<br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>K&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.bool_signal.html">PORTS_LIB.bool_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>1 for normal operation, 0 for reversed position&nbsp;</td></tr>
+
+<tr><td>f_in_high&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_in_low&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_out_high&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_out_low&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>P0_h&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>P0_l&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>T0_h&nbsp;</td><td>REAL &nbsp;</td><td>255&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>T0_l&nbsp;</td><td>REAL &nbsp;</td><td>255&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>dP0&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Nominal (design) pressure drop&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>dP_small&nbsp;</td><td>REAL &nbsp;</td><td>0.0001&nbsp;</td><td>&nbsp;</td><td>dP below which to apply low mass flow rate smoothing&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>h0_h&nbsp;</td><td>REAL &nbsp;</td><td>150000&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>h0_l&nbsp;</td><td>REAL &nbsp;</td><td>150000&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>init&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Ph&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>m0&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Nominal (design) mass flow rate&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>phi_init&nbsp;</td><td>REAL &nbsp;</td><td>1&nbsp;</td><td>&nbsp;</td><td>Initial opening of valves that ARE open&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>phi_min&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Minimum valve opening&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>tau&nbsp;</td><td>REAL &nbsp;</td><td>1&nbsp;</td><td>&nbsp;</td><td>Time constant for open/close toggling&nbsp;</td><td>s&nbsp;</td></tr>
+
+<tr><td>x0_h&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>x0_l&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES (TOPOLOGY BLOCK):</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>OBJECT&nbsp;</b></color></td>
+<td><color="black"><b>COMPONENT TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>HighSideCV&nbsp;</td><td><a href="CO2.AdiabVol_Ph.html">AdiabVol_Ph</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>LowSideCV&nbsp;</td><td><a href="CO2.AdiabVol_Ph.html">AdiabVol_Ph</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>HighSideValve&nbsp;</td><td><a href="CO2.CheckValve.html">CheckValve</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>LowSideValve&nbsp;</td><td><a href="CO2.CheckValve.html">CheckValve</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>LowSideValve1&nbsp;</td><td><a href="CO2.CheckValve.html">CheckValve</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>LowSideValve2&nbsp;</td><td><a href="CO2.CheckValve.html">CheckValve</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>reverse&nbsp;</td><td><a href="../../CONTROL/docs/CONTROL.Gate_NOT.html">CONTROL.Gate_NOT</a>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<br/>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES DATA:</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>DATUM&nbsp;</b></color></td>
+<td><color="black"><b>VALUE&nbsp;</b></color></td>
+<td><color="black"><b>POS&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>HighSideCV.D&nbsp;</td><td>0.01&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>HighSideCV.L&nbsp;</td><td>0.01&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Length&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>HighSideCV.P0&nbsp;</td><td>P0_h&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial pressure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>HighSideCV.T0&nbsp;</td><td>T0_h&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>HighSideCV.h0&nbsp;</td><td>h0_h&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial specific enthalpy&nbsp;</td><td>"J/kg"&nbsp;</td></tr>
+
+<tr><td>HighSideCV.init&nbsp;</td><td>init&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Initial condition specification&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>HighSideCV.x0&nbsp;</td><td>x0_h&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial vapour quality&nbsp;</td><td>"-"&nbsp;</td></tr>
+
+<tr><td>HighSideValve.dP0&nbsp;</td><td>dP0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal pressure drop&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>HighSideValve.dP_small&nbsp;</td><td>dP_small&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Threshold for low-mass-flow-rate smoothing&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>HighSideValve.eqnChoice&nbsp;</td><td>Quadratic&nbsp;</td><td>PARA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#FlowEquation">FlowEquation</a>&nbsp;</td><td>&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>HighSideValve.m0&nbsp;</td><td>m0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal mass flow rate&nbsp;</td><td>"kg/s"&nbsp;</td></tr>
+
+<tr><td>HighSideValve.phi_init&nbsp;</td><td>1&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial opening - 0 to 1&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>HighSideValve.phi_min&nbsp;</td><td>phi_min&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Minimum opening - 0 to 1&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>HighSideValve.tau&nbsp;</td><td>tau&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Time constant of the valve&nbsp;</td><td>"s"&nbsp;</td></tr>
+
+<tr><td>LowSideCV.D&nbsp;</td><td>0.01&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>LowSideCV.L&nbsp;</td><td>0.01&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Length&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>LowSideCV.P0&nbsp;</td><td>P0_l&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial pressure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>LowSideCV.T0&nbsp;</td><td>T0_l&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>LowSideCV.h0&nbsp;</td><td>h0_l&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial specific enthalpy&nbsp;</td><td>"J/kg"&nbsp;</td></tr>
+
+<tr><td>LowSideCV.init&nbsp;</td><td>init&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Initial condition specification&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>LowSideCV.x0&nbsp;</td><td>x0_l&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial vapour quality&nbsp;</td><td>"-"&nbsp;</td></tr>
+
+<tr><td>LowSideValve.dP0&nbsp;</td><td>dP0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal pressure drop&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>LowSideValve.dP_small&nbsp;</td><td>dP_small&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Threshold for low-mass-flow-rate smoothing&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>LowSideValve.eqnChoice&nbsp;</td><td>Quadratic&nbsp;</td><td>PARA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#FlowEquation">FlowEquation</a>&nbsp;</td><td>&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>LowSideValve.m0&nbsp;</td><td>m0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal mass flow rate&nbsp;</td><td>"kg/s"&nbsp;</td></tr>
+
+<tr><td>LowSideValve.phi_init&nbsp;</td><td>1&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial opening - 0 to 1&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>LowSideValve.phi_min&nbsp;</td><td>phi_min&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Minimum opening - 0 to 1&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>LowSideValve.tau&nbsp;</td><td>tau&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Time constant of the valve&nbsp;</td><td>"s"&nbsp;</td></tr>
+
+<tr><td>LowSideValve1.dP0&nbsp;</td><td>dP0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal pressure drop&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>LowSideValve1.dP_small&nbsp;</td><td>dP_small&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Threshold for low-mass-flow-rate smoothing&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>LowSideValve1.eqnChoice&nbsp;</td><td>Quadratic&nbsp;</td><td>PARA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#FlowEquation">FlowEquation</a>&nbsp;</td><td>&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>LowSideValve1.m0&nbsp;</td><td>m0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal mass flow rate&nbsp;</td><td>"kg/s"&nbsp;</td></tr>
+
+<tr><td>LowSideValve1.phi_init&nbsp;</td><td>phi_min&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial opening - 0 to 1&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>LowSideValve1.phi_min&nbsp;</td><td>phi_min&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Minimum opening - 0 to 1&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>LowSideValve1.tau&nbsp;</td><td>tau&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Time constant of the valve&nbsp;</td><td>"s"&nbsp;</td></tr>
+
+<tr><td>LowSideValve2.dP0&nbsp;</td><td>dP0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal pressure drop&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>LowSideValve2.dP_small&nbsp;</td><td>dP_small&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Threshold for low-mass-flow-rate smoothing&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>LowSideValve2.eqnChoice&nbsp;</td><td>Quadratic&nbsp;</td><td>PARA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#FlowEquation">FlowEquation</a>&nbsp;</td><td>&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>LowSideValve2.m0&nbsp;</td><td>m0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal mass flow rate&nbsp;</td><td>"kg/s"&nbsp;</td></tr>
+
+<tr><td>LowSideValve2.phi_init&nbsp;</td><td>phi_min&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial opening - 0 to 1&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>LowSideValve2.phi_min&nbsp;</td><td>phi_min&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Minimum opening - 0 to 1&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>LowSideValve2.tau&nbsp;</td><td>tau&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Time constant of the valve&nbsp;</td><td>"s"&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:39)</font></p>
+</body>
+</html>

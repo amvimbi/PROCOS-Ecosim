@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.TubeFinMaterialProperties<br /><small></small></h1><hr><br><font size="5" color="black">CLASS <a name="TubeFinMaterialProperties">TubeFinMaterialProperties</a></font><br/>
+<br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Record of tube and fin material properties</font><br/>
+<br/>
+<font size="4" color="black">VARS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>C&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/K&nbsp;</td></tr>
+
+<tr><td>M&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>M_f&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>M_t&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>V&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>cp_f&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/(kg·K)&nbsp;</td></tr>
+
+<tr><td>cp_t&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/(kg·K)&nbsp;</td></tr>
+
+<tr><td>k_f&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W/(m·K)&nbsp;</td></tr>
+
+<tr><td>k_t&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W/(m·K)&nbsp;</td></tr>
+
+<tr><td>mat_f&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#Material" data-ajax='false'>THERMAL.Material</a>&nbsp;</td><td>Aluminum&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>mat_t&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#Material" data-ajax='false'>THERMAL.Material</a>&nbsp;</td><td>Aluminum&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>rho_f&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+<tr><td>rho_t&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="5" color="black">PUBLIC_METHODS for class TubeFinMaterialProperties:</font><br/>
+<br/>
+<hr><font size="5" color="black">METHOD <a href="#TubeFinMaterialProperties">TubeFinMaterialProperties</a>::<a name="setConstProps">setConstProps</a></font><br/>
+<font size="4" color="black">RETURN TYPE: NO_TYPE </font><br/>
+<br/>
+<br/>
+<font size="4" color="black">ARGUMENTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>mat_t_val&nbsp;</td><td>IN ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#Material" data-ajax='false'>THERMAL.Material</a>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>mat_f_val&nbsp;</td><td>IN ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#Material" data-ajax='false'>THERMAL.Material</a>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>V_t_val&nbsp;</td><td>IN REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>V_f_val&nbsp;</td><td>IN REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<hr><font size="5" color="black">METHOD <a href="#TubeFinMaterialProperties">TubeFinMaterialProperties</a>::<a name="setTempProps">setTempProps</a></font><br/>
+<font size="4" color="black">RETURN TYPE: NO_TYPE </font><br/>
+<br/>
+<br/>
+<font size="4" color="black">ARGUMENTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Tw&nbsp;</td><td>IN REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>tmp&nbsp;</td><td>OUT INTEGER &nbsp;</td><td>INTEG_simula::s_dummyInt&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black"></font><br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:39)</font></p>
+</body>
+</html>

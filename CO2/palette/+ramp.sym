@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="Ramp" >
+
+		<rect id="Rectangle_2" cx="104" cy="120" sx="24" sy="24" dx="-64" dy="-64" color="255,128,0"  />
+
+		<line id="Line_1" points="32,52 40,40 48,40" dy="11"  />
+
+		<port id="output" library="PORTS_LIB" type="analog_signal"  hotPort="output" >
+		
+				<symbol dx="60" dy="56" onLabel="true" />
+		
+				<label cx="22" cy="12" dx="68" dy="44" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="Design Parameters">
+				<var name="limit"/>
+				<var name="init"/>
+				<var name="slope"/>
+				<var name="limitValue"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

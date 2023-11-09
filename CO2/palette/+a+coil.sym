@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="ACoil" >
+
+		<polygon id="Polygon_2" points="60,208 76,144 96,144 80,208" rotation="180" flipY="true" dx="52.9091" lineWidth="1.5"  color="253,219,41" aliasing="true"  />
+
+		<polygon id="Polygon_1" points="60,208 76,144 96,144 80,208" dx="16" lineWidth="1.5"  color="253,219,41" aliasing="true"  />
+
+		<ellipse id="Ellipse_8" cx="169" cy="159" rx="3" ry="3" dx="-28" dy="43" color="162,162,162"  />
+
+		<ellipse id="Ellipse_1" cx="169" cy="159" rx="3" ry="3" dx="-32" dy="28" color="162,162,162"  />
+
+		<ellipse id="Ellipse_2" cx="169" cy="159" rx="3" ry="3" dx="-36" dy="12" color="162,162,162"  />
+
+		<ellipse id="Ellipse_3" cx="169" cy="159" rx="3" ry="3" dx="-40" dy="-4" color="162,162,162"  />
+
+		<ellipse id="Ellipse_4" cx="169" cy="159" rx="3" ry="3" dx="-50" dy="-9" color="162,162,162"  />
+
+		<ellipse id="Ellipse_5" cx="169" cy="159" rx="3" ry="3" dx="-42" dy="21" color="162,162,162"  />
+
+		<ellipse id="Ellipse_6" cx="169" cy="159" rx="3" ry="3" dx="-38" dy="37" color="162,162,162"  />
+
+		<ellipse id="Ellipse_7" cx="169" cy="159" rx="3" ry="3" dx="-45" dy="6" color="162,162,162"  />
+
+		<ellipse id="Ellipse_12" cx="169" cy="159" rx="3" ry="3" dx="-85" dy="43" color="162,162,162"  />
+
+		<ellipse id="Ellipse_13" cx="169" cy="159" rx="3" ry="3" dx="-78" dy="12" color="162,162,162"  />
+
+		<ellipse id="Ellipse_14" cx="169" cy="159" rx="3" ry="3" dx="-76" dy="37" color="162,162,162"  />
+
+		<ellipse id="Ellipse_15" cx="169" cy="159" rx="3" ry="3" dx="-64" dy="-9" color="162,162,162"  />
+
+		<ellipse id="Ellipse_16" cx="169" cy="159" rx="3" ry="3" dx="-68" dy="6" color="162,162,162"  />
+
+		<ellipse id="Ellipse_17" cx="169" cy="159" rx="3" ry="3" dx="-74" dy="-3" color="162,162,162"  />
+
+		<ellipse id="Ellipse_18" cx="169" cy="159" rx="3" ry="3" dx="-81" dy="27" color="162,162,162"  />
+
+		<ellipse id="Ellipse_19" cx="169" cy="159" rx="3" ry="3" dx="-72" dy="21" color="162,162,162"  />
+
+		<line id="Line_1" points="48.869,764.458 48.869,776.458"  end_arrow="true" rotation="270" dx="97.131" dy="-594.458" lineColor="85,170,0"  aliasing="true"  />
+
+		<line id="Line_2" points="48.869,764.458 48.869,776.458"  end_arrow="true" rotation="270" dx="28.131" dy="-594.458" lineColor="85,170,0"  aliasing="true"  />
+
+		<line id="Line_3" points="48.869,764.458 48.869,776.458"  end_arrow="true" rotation="180" dx="63.131" dy="-555.458" aliasing="true"  />
+
+		<line id="Line_4" points="48.869,764.458 48.869,776.458"  end_arrow="true" rotation="180" dx="63.131" dy="-632.458" aliasing="true"  />
+
+		<polygon id="Polygon_3" points="112,144 96,208 128,208" lineWidth="1.5"   color="162,162,162" gradientColor="207,207,207" gradientType="GL" position="50" aliasing="true"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="68" dy="176" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="32" dy="164" />
+		
+		</port>
+
+		<port id="a_in" library="CO2" type="air"  hotPort="a_in" >
+		
+				<symbol dx="112" dy="224" onLabel="true" />
+		
+				<label cx="16" cy="12" dx="98" dy="221" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="157" dy="176" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="165" dy="164" />
+		
+		</port>
+
+		<port id="a_out" library="CO2" type="air"  hotPort="a_out" >
+		
+				<symbol dx="112" dy="128" onLabel="true" />
+		
+				<label cx="20" cy="12" dx="96" dy="100" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="Geometry">
+				<var name="nCoil"/>
+				<var name="nTube"/>
+				<var name="nBank"/>
+				<var name="staggered"/>
+				<var name="mat_t"/>
+				<var name="Do"/>
+				<var name="Th_t"/>
+				<var name="L"/>
+				<var name="Pt"/>
+				<var name="Pl"/>
+				<var name="ftype"/>
+				<var name="mat_f"/>
+				<var name="FPI"/>
+				<var name="Th_f"/>
+			</tab>
+			<tab name="Design Parameters">
+				<var name="UseAirHTC"/>
+				<var name="choice"/>
+				<var name="alpha_l"/>
+				<var name="alpha_tp"/>
+				<var name="alpha_g"/>
+				<var name="m_steady"/>
+				<var name="m0"/>
+				<var name="dP0"/>
+				<var name="alpha_a0" conditionVar="UseAirHTC" conditionVals="FALSE"/>
+				<var name="m0_air" conditionVar="UseAirHTC" conditionVals="FALSE"/>
+			</tab>
+			<tab name="Initial Conditions">
+				<var name="init"/>
+				<var name="P0_i"/>
+				<var name="h0_i" conditionVar="init" conditionVals="Ph"/>
+				<var name="T0_i" conditionVar="init" conditionVals="PT"/>
+				<var name="x0_i" conditionVar="init" conditionVals="Px"/>
+				<var name="P0_o"/>
+				<var name="h0_o" conditionVar="init" conditionVals="Ph"/>
+				<var name="T0_o" conditionVar="init" conditionVals="PT"/>
+				<var name="x0_o" conditionVar="init" conditionVals="Px"/>
+				<var name="Tw0_i"/>
+				<var name="Tw0_o"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

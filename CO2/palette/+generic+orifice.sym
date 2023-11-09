@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="GenericOrifice" >
+
+		<line id="Line_1" points="173,208 180,208"  end_arrow="true" dx="-61" dy="-80" lineColor="85,170,0"   />
+
+		<polygon id="Polygon_4" points="16.0003,209 16.0003,185 48.0003,209 48.0003,185" dx="63.9997" dy="-69" color="80,140,255" aliasing="true"  />
+
+		<line id="Line_2" points="170,208 180,208"  end_arrow="true" dx="-101" dy="-80" lineColor="85,170,0"   />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="68" dy="128" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="32" dy="116" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="124" dy="128" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="132" dy="116" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="General">
+				<var name="SwagelokEquation"/>
+				<var name="D" conditionVar="SwagelokEquation" conditionVals="FALSE"/>
+				<var name="Cv"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

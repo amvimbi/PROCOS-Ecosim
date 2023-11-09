@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="DummyLoad" >
+
+		<line id="Line_15" points="48.869,758.458 60.869,758.458"  end_arrow="true" dx="114.13" dy="-614.458" lineColor="85,170,0"  aliasing="true"  />
+
+		<closedBezier id="ClosedBezier_7" points="96.0682,159.971 96.0966,179.971 96.1194,195.971 96.1393,209.971 96.1507,217.971 112.151,217.948 112.139,209.948 112.074,163.949 112.119,195.949 112.017,123.949 112.006,115.949 96.0056,115.971 96.017,123.971" rotation="-90.0815" flipY="true" dx="120.921" dy="-22.9602" color="253,219,41" aliasing="true"  />
+
+		<ellipse id="Ellipse_1" cx="192" cy="138" rx="4" ry="6" dx="75.9995" dy="5.99975" lineType="-1"  color="0,0,0"  />
+
+		<bezier id="Bezier_1" points="208,204 216,204 216,188 208,188" rotation="180" flipY="true" dx="53.9995" dy="-52.0003" aliasing="true"  />
+
+		<line id="Line_1" points="44.869,758.458 60.869,758.458"  end_arrow="true" dx="223.131" dy="-614.458" lineColor="85,170,0"  aliasing="true"  />
+
+		<closedBezier id="ClosedBezier_1" points="80.0398,139.994 80.0625,155.994 80.0625,155.994 80.0625,155.994 80.0682,159.994 88.0682,159.983 88.0626,155.983 88.0398,139.983 88.0569,151.983 87.9601,83.9827 87.9544,79.9827 79.9545,79.9941 79.9601,83.9941" rotation="-90.0815" flipY="true" dx="135.988" dy="24.0114" lineWidth="0.5"  color="172,172,172" aliasing="true"  />
+
+		<bezier id="Bezier_2" points="204,212 212,212 212,196 204,196" rotation="180" flipY="true" dx="29.9995" dy="-60.0003" lineType="2"  aliasing="true"  />
+
+		<bezier id="Bezier_5" points="204,212 212,212 212,196 204,196" rotation="180" flipY="true" dx="-6.00055" dy="-60.0003" lineType="2"  aliasing="true"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="159.999" dy="144" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="123.999" dy="132" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="287.999" dy="144" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="295.999" dy="132" />
+		
+		</port>
+
+		<port id="K" library="PORTS_LIB" type="analog_signal"  hotPort="K" >
+		
+				<symbol dx="223.999" dy="144" onLabel="true" />
+		
+				<label cx="8.5" cy="12" dx="215.999" dy="148" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="Geometry">
+				<var name="n"/>
+				<var name="TubeMaterial"/>
+				<var name="HeaterMaterial"/>
+				<var name="Do"/>
+				<var name="Dh"/>
+				<var name="Th"/>
+				<var name="L"/>
+				<var name="z_bottom"/>
+				<var name="dz"/>
+				<var name="AccountForGravity"/>
+			</tab>
+			<tab name="Design Parameters">
+				<var name="ConstantRefHTC"/>
+				<var name="DynamicHTC"/>
+				<var name="vfModel"/>
+				<var name="Q_max"/>
+				<var name="tauAlpha" conditionVar="DynamicHTC" conditionVals="TRUE"/>
+				<var name="choice_1p" conditionVar="ConstantRefHTC" conditionVals="FALSE"/>
+				<var name="choice_2p" conditionVar="ConstantRefHTC" conditionVals="FALSE"/>
+				<var name="alpha_l" conditionVar="ConstantRefHTC" conditionVals="TRUE"/>
+				<var name="alpha_tp" conditionVar="ConstantRefHTC" conditionVals="TRUE"/>
+				<var name="alpha_g" conditionVar="ConstantRefHTC" conditionVals="TRUE"/>
+				<var name="m_steady"/>
+				<var name="m0"/>
+				<var name="dP0"/>
+			</tab>
+			<tab name="Initial Conditions">
+				<var name="init"/>
+				<var name="P0_i"/>
+				<var name="h0_i" conditionVar="init" conditionVals="Ph"/>
+				<var name="T0_i" conditionVar="init" conditionVals="PT"/>
+				<var name="x0_i" conditionVar="init" conditionVals="Px"/>
+				<var name="P0_o"/>
+				<var name="h0_o" conditionVar="init" conditionVals="Ph"/>
+				<var name="T0_o" conditionVar="init" conditionVals="PT"/>
+				<var name="x0_o" conditionVar="init" conditionVals="Px"/>
+				<var name="Tw0_i"/>
+				<var name="Tw0_o"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

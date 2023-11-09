@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.ACoil<br /><small></small></h1><hr><br><font size="5" color="black">COMPONENT <a name="ACoil">ACoil</a>
+</font><br/>
+<br/>
+<font size="4" color="black">ICON: </font><br/>
+<p><img src="icons/CO2.ACoil.png"></p><br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Round tube plate fin heat exchanger with multiple coils in parallel</font><br/>
+<br/>
+<font size="4" color="black">CONSTRUCTION PARAMETERS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>init&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Ph&nbsp;</td><td>Specify initial conditions&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>nCoil&nbsp;</td><td>INTEGER &nbsp;</td><td>2&nbsp;</td><td>Number of parallel coils&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>nTube&nbsp;</td><td>INTEGER &nbsp;</td><td>2&nbsp;</td><td>Number of tubes per bank&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>nBank&nbsp;</td><td>INTEGER &nbsp;</td><td>4&nbsp;</td><td>Number of banks of tubes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>staggered&nbsp;</td><td>BOOLEAN &nbsp;</td><td> TRUE &nbsp;</td><td>False if inline tubes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>choice&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#VoidFractionModel">VoidFractionModel</a>&nbsp;</td><td>Smith&nbsp;</td><td>Slip-ratio based model to implement&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>UseAirHTC&nbsp;</td><td>BOOLEAN &nbsp;</td><td> FALSE &nbsp;</td><td>If TRUE, uses ChangWang correlation&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>a_in&nbsp;</td><td><a href="CO2.air.html">air</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>a_out&nbsp;</td><td><a href="CO2.air.html">air</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_in&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Do&nbsp;</td><td>REAL &nbsp;</td><td>0.0095&nbsp;</td><td>&nbsp;</td><td>Tube outer diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>FPI&nbsp;</td><td>REAL &nbsp;</td><td>21&nbsp;</td><td>&nbsp;</td><td>Fins per inch&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>L&nbsp;</td><td>REAL &nbsp;</td><td>0.503 * 22 / 2&nbsp;</td><td>&nbsp;</td><td>Tube length&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>P0_i&nbsp;</td><td>REAL &nbsp;</td><td>17&nbsp;</td><td>&nbsp;</td><td>Initial pressure - first segment&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>P0_o&nbsp;</td><td>REAL &nbsp;</td><td>17&nbsp;</td><td>&nbsp;</td><td>Initial pressure - last segment&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>Pl&nbsp;</td><td>REAL &nbsp;</td><td>0.025&nbsp;</td><td>&nbsp;</td><td>Tube horizontal spacing&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Pt&nbsp;</td><td>REAL &nbsp;</td><td>0.025&nbsp;</td><td>&nbsp;</td><td>Tube vertical spacing&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>T0_i&nbsp;</td><td>REAL &nbsp;</td><td>300&nbsp;</td><td>&nbsp;</td><td>Initial temperature - first segment&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>T0_o&nbsp;</td><td>REAL &nbsp;</td><td>300&nbsp;</td><td>&nbsp;</td><td>Initial temperature - last segment&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Th_f&nbsp;</td><td>REAL &nbsp;</td><td>0.0001&nbsp;</td><td>&nbsp;</td><td>Fin thickness&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Th_t&nbsp;</td><td>REAL &nbsp;</td><td>0.0008&nbsp;</td><td>&nbsp;</td><td>Tube thickness&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Tw0_i&nbsp;</td><td>REAL &nbsp;</td><td>300&nbsp;</td><td>&nbsp;</td><td>Initial wall temperature - first segment&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Tw0_o&nbsp;</td><td>REAL &nbsp;</td><td>300&nbsp;</td><td>&nbsp;</td><td>Initial wall temperature - last segment&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>alpha_a0&nbsp;</td><td>REAL &nbsp;</td><td>50&nbsp;</td><td>&nbsp;</td><td>Constant air heat transfer coefficient&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_g&nbsp;</td><td>REAL &nbsp;</td><td>500&nbsp;</td><td>&nbsp;</td><td>Vapour heat transfer coefficient&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_l&nbsp;</td><td>REAL &nbsp;</td><td>750&nbsp;</td><td>&nbsp;</td><td>Liquid heat transfer coefficient&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_tp&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Two-phase heat transfer coefficient&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>dP0&nbsp;</td><td>REAL &nbsp;</td><td>0.02&nbsp;</td><td>&nbsp;</td><td>Nominal (design) pressure drop&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>ftype&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#PlateFinType">PlateFinType</a>&nbsp;</td><td>WithCollar&nbsp;</td><td>&nbsp;</td><td>BareTubes means no fins&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>h0_i&nbsp;</td><td>REAL &nbsp;</td><td>300000&nbsp;</td><td>&nbsp;</td><td>Initial enthalpy - first segment&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>h0_o&nbsp;</td><td>REAL &nbsp;</td><td>300000&nbsp;</td><td>&nbsp;</td><td>Initial enthalpy - last segment&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>m0&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Nominal (design) mass flow rate&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>m0_air&nbsp;</td><td>REAL &nbsp;</td><td>1.2&nbsp;</td><td>&nbsp;</td><td>Nominal (design) air mass flow rate&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>m_steady&nbsp;</td><td>REAL &nbsp;</td><td>0.05&nbsp;</td><td>&nbsp;</td><td>Steady state mass flow rate - used for HTC correction&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>mat_f&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#Material" data-ajax='false'>THERMAL.Material</a>&nbsp;</td><td>Aluminum&nbsp;</td><td>&nbsp;</td><td>Fin material&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>mat_t&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#Material" data-ajax='false'>THERMAL.Material</a>&nbsp;</td><td>Copper&nbsp;</td><td>&nbsp;</td><td>Tube material&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>x0_i&nbsp;</td><td>REAL &nbsp;</td><td>0.8&nbsp;</td><td>&nbsp;</td><td>Initial vapour quality - first segment&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>x0_o&nbsp;</td><td>REAL &nbsp;</td><td>0.2&nbsp;</td><td>&nbsp;</td><td>Initial vapour quality - last segment&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DECLS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Gc_air&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>M&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>P[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>P_Pa[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pa&nbsp;</td></tr>
+
+<tr><td>Pr[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Pr_air&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Prandtl number&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Qa[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>Qa_total&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>Qr[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>Qr_total&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>Re_air&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>T[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Ta[nBank + 1,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Tsat[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Tw[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Vol&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>dm^3&nbsp;</td></tr>
+
+<tr><td>alpha[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_a&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>beta_air&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Coefficient of thermal expansion&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>cp[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/(kg·K)&nbsp;</td></tr>
+
+<tr><td>cp_air&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Air specific heat&nbsp;</td><td>J/(kg·K)&nbsp;</td></tr>
+
+<tr><td>delT[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>drho_dP[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>drho_dh[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>gamma[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>h[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>h_corr[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>h_flow[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>iex&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ipx&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ipy&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>k[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W/(m·K)&nbsp;</td></tr>
+
+<tr><td>k_air&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Thermal conductivity&nbsp;</td><td>W/(m·K)&nbsp;</td></tr>
+
+<tr><td>m[nBank,nTube + 1]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>m_avg[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>medium&nbsp;</td><td>CONST ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#ThFluids" data-ajax='false'>THERMAL.ThFluids</a>&nbsp;</td><td>Air&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>mh[nBank,nTube + 1]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>mu[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pa·s&nbsp;</td></tr>
+
+<tr><td>mu_air&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Air viscosity&nbsp;</td><td>Pa·s&nbsp;</td></tr>
+
+<tr><td>phase[nBank,nTube]&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/CRYOLIB/docs/CRYOLIB.enumerativeTypes.html#Phase" data-ajax='false'>CRYOLIB.Phase</a>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>rho[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+<tr><td>rho_air&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Air density&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+<tr><td>sigma[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>N/m&nbsp;</td></tr>
+
+<tr><td>tmp[nBank,nTube]&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>u[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>u_max&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Max air velocity&nbsp;</td><td>m/s&nbsp;</td></tr>
+
+<tr><td>vsound[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>m/s&nbsp;</td></tr>
+
+<tr><td>x[nBank,nTube]&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">OBJECTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>CLASS&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>air&nbsp;</td><td>&nbsp;</td><td><a href="CO2.AirFlowPassageRecord.html">AirFlowPassageRecord</a>&nbsp;</td><td></tr>
+
+<tr><td>geo[nBank,nTube]&nbsp;</td><td>&nbsp;</td><td><a href="CO2.RefGeometryRecord.html">RefGeometryRecord</a>&nbsp;</td><td></tr>
+
+<tr><td>matProp[nBank,nTube]&nbsp;</td><td>&nbsp;</td><td><a href="CO2.TubeFinMaterialProperties.html">TubeFinMaterialProperties</a>&nbsp;</td><td></tr>
+
+<tr><td>sat[nBank,nTube]&nbsp;</td><td>&nbsp;</td><td><a href="CO2.SaturationProperties.html">SaturationProperties</a>&nbsp;</td><td></tr>
+
+<tr><td>wall&nbsp;</td><td>&nbsp;</td><td><a href="CO2.TubeFinGeometry.html">TubeFinGeometry</a>&nbsp;</td><td></tr>
+
+</table>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:38)</font></p>
+</body>
+</html>

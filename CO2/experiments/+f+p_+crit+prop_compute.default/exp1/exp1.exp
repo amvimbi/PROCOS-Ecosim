@@ -1,0 +1,43 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: CO2
+ COMPONENT: FP_CritProp_compute
+ PARTITION: default
+ EXPERIMENT: exp1
+ TEMPLATE: TRANSIENT
+ CREATION DATE: 15/06/2023
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp1 ON FP_CritProp_compute.default
+   DECLS
+   OBJECTS
+   INIT
+   BOUNDS
+      -- Set equations for boundaries: boundVar = f(TIME;...)
+      h = 0
+      rho = 0
+      u = 0
+      x = 0
+
+   BODY
+      -- creates an ASCII file with the results in table format
+      -- REPORT_TABLE("results.rpt", "*")
+
+      -- set the debug level (valid range [0,4])
+      DEBUG_LEVEL= 1   
+      -- select default integration solver. Valid methods are IDAS (_SPARSE), DASSL(_SPARSE), CVODE_BDF(_SPARSE), CVODE_AM, RK4, EULER, AM1, AM2 and AM4
+      IMETHOD= IDAS -- default is DASSL, recommended is either IDAS or IDAS_SPARSE  
+      -- set tolerances and other important inputs
+      REL_ERROR = 1e-06 -- transient solver relative tolerance
+      ABS_ERROR = 1e-06 -- transient solver absolute tolerance
+      TOLERANCE = 1e-06 -- steady solver relative tolerance
+      INIT_INTEG_STEP = -1 -- initial integration step size (-1 means use the solver estimation) 
+      MAX_INTEG_STEP = -1 -- maximum integration step size (-1 means use the solver estimation) 
+      NSTEPS = 1 -- Only for explicit solvers use CINT/NSTEPS as integration step size
+      REPORT_MODE = IS_EVENT -- by default it reports results at every CINT and event detection. Other valid options are IS_STEP, IS_CINT and IS_MANUAL_REFRESH 
+
+      -- simulate a transient in range[TIME,TSTOP] reporting every CINT
+      TIME = 0
+      TSTOP = 15
+      CINT = 0.1
+      INTEG()
+END EXPERIMENT

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="LumpedRoomModel" >
+
+		<rect id="Rectangle_1" cx="152" cy="200" sx="64" sy="64" dx="-40" dy="-72" lineWidth="1.5" lineType="1"  color="255,255,255" aliasing="true"  />
+
+		<line id="Line_2" points="48.869,764.458 48.869,776.458"  end_arrow="true" rotation="270" dx="25.131" dy="-642.458" aliasing="true"  />
+
+		<polygon id="Polygon_1" points="80,96 92,88 156,88 156,152 144,160 144,96 156,88 144,96" lineWidth="1.5" lineType="1"  color="206,206,206"  />
+
+		<line id="Line_1" points="48.869,764.458 48.869,776.458"  end_arrow="true" rotation="270" dx="109.131" dy="-642.458" aliasing="true"  />
+
+		<line id="Line_3" points="120,80 120,92" dx="-24"  />
+
+		<port id="a_in" library="CO2" type="air"  hotPort="a_in" >
+		
+				<symbol dx="64" dy="128" onLabel="true" />
+		
+				<label cx="16" cy="12" dx="24" dy="116" />
+		
+		</port>
+
+		<port id="Qsource" library="PORTS_LIB" type="analog_signal"  hotPort="Qsource" >
+		
+				<symbol dx="112" dy="128" onLabel="true" />
+		
+				<label cx="28.5" cy="12" dx="88" dy="104" />
+		
+		</port>
+
+		<port id="a_out" library="CO2" type="air"  hotPort="a_out" >
+		
+				<symbol dx="168" dy="128" onLabel="true" />
+		
+				<label cx="20" cy="12" dx="176" dy="116" />
+		
+		</port>
+
+		<port id="Temp" library="PORTS_LIB" type="analog_signal"  hotPort="Temp" >
+		
+				<symbol dx="96" dy="80" onLabel="true" />
+		
+				<label cx="19.5" cy="12" dx="52" dy="64" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="General">
+				<var name="nSource"/>
+				<var name="L"/>
+				<var name="W"/>
+				<var name="H"/>
+				<var name="T0"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

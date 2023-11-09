@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="SaturationSensor" >
+
+		<line id="Line_1" points="322.264,43.6933 354.264,43.6933" dx="-242.264" dy="84.3067" lineColor="0,85,0"  aliasing="true"  />
+
+		<ellipse id="Ellipse_1" cx="344.372" cy="43.022" rx="8.50002" ry="8.5" dx="-247.872" dy="85.478" lineWidth="1.5"  color="234,117,48" aliasing="true"  />
+
+		<text id="Text_2" cx="10" cy="8.5" sx="20" sy="17" dx="86" dy="120"  >
+			<![CDATA[&#60;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.0//EN&#34; &#34;http://www.w3.org/TR/REC-html40/strict.dtd&#34;&#62;&#60;html&#62;&#60;head&#62;&#60;meta name=&#34;qrichtext&#34; content=&#34;1&#34; /&#62;&#60;style type=&#34;text/css&#34;&#62;p, li { white-space: pre-wrap; }&#60;/style&#62;&#60;/head&#62;&#60;body style=&#34; font-family:&#39;Arial&#39;; font-size:10pt; font-weight:400; font-style:normal;&#34;&#62;&#60;p style=&#34; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62;&#60;span style=&#34; font-family:&#39;Consolas&#39;; font-size:6pt;&#34;&#62;sat&#60;/span&#62;&#60;/p&#62;&#60;/body&#62;&#60;/html&#62;]]>
+		</text>
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="80" dy="128" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="44" dy="116" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="112" dy="128" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="120" dy="116" />
+		
+		</port>
+
+		<port id="s_out" library="PORTS_LIB" type="analog_signal"  hotPort="s_out" >
+		
+				<symbol dx="96" dy="112" onLabel="true" />
+		
+				<label cx="20" cy="12" dx="104" dy="100" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

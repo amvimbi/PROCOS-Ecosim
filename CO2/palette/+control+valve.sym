@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="ControlValve" >
+
+		<line id="Line_1" points="140,176 148,176"  end_arrow="true" dx="-40" lineColor="85,170,0"   />
+
+		<line id="Line_2" points="95,176 84,176"  end_arrow="true" rotation="180" flipY="true" dx="-36" lineColor="85,170,0"   />
+
+		<polygon id="Polygon_4" points="12.0003,213 12.0003,181 52.0003,213 52.0003,181" dx="47.9997" dy="-21" color="80,140,255" aliasing="true"  />
+
+		<line id="Line_3" points="68,192 92,160"  end_arrow="true"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="48" dy="176" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="12" dy="164" />
+		
+		</port>
+
+		<port id="Pos" library="PORTS_LIB" type="analog_signal"  hotPort="Pos" >
+		
+				<symbol dx="68" dy="152" onLabel="true" />
+		
+				<label cx="15.5" cy="12" dx="52" dy="124" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="112" dy="176" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="120" dy="164" />
+		
+		</port>
+
+		<port id="feedback" library="PORTS_LIB" type="analog_signal"  hotPort="feedback" >
+		
+				<symbol dx="92" dy="152" onLabel="true" />
+		
+				<label cx="30" cy="12" dx="80" dy="124" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="General">
+				<var name="percent"/>
+				<var name="delayOpening"/>
+				<var name="SwagelokEquation"/>
+				<var name="D" conditionVar="SwagelokEquation" conditionVals="FALSE"/>
+				<var name="Cv"/>
+				<var name="tau" conditionVar="delayOpening" conditionVals="TRUE"/>
+				<var name="opening0"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

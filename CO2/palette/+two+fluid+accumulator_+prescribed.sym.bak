@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" label-status="allshowed" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="TwoFluidAccumulator_Prescribed" >
+
+		<line id="Line_3" points="112,240 112,252"  end_arrow="true" dx="80" dy="-80" lineColor="85,85,127"  aliasing="true"  />
+
+		<closedBezier id="ClosedBezier_4" points="16,100 16,68 80,68 80,100 80,100 80,120 80,148 80,180 16,180 16,148 16,124 16,100 16,100" dx="144" dy="-12" lineWidth="1.5" lineType="-1"  color="220,255,255" aliasing="true"  />
+
+		<closedBezier id="ClosedBezier_6" points="272,99 272,71 336,71 336,99 336,103 328,103 324,103 320,103 312,103 304,103 296,103 292,103 288,103 284,103 280,103 272,103" rotation="180" dx="-112" dy="64" lineType="-1"  color="85,85,127" aliasing="true"  />
+
+		<ellipse id="Ellipse_2" cx="256" cy="118" rx="32" ry="6" dx="-64" dy="18" lineWidth="0.5"  color="85,85,127" aliasing="true"  />
+
+		<line id="Line_1" points="78.3141,139.656 26.3141,139.656 38.3141,147.656 26.3141,155.656 78.3141,155.656" rotation="180" flipY="true" dx="116.573" dy="-58.656" aliasing="true"  />
+
+		<line id="Line_2" points="78.3141,139.656 26.3141,139.656 38.3141,147.656 26.3141,155.656 78.3141,155.656" rotation="180" flipY="true" dx="116.573" dy="-2.656" aliasing="true"  />
+
+		<closedBezier id="ClosedBezier_1" points="16,100 16,68 80,68 80,100 80,100 80,120 80,152 80,180 16,180 16,152 16,124 16,100 16,100" dx="144" dy="-13" lineWidth="1.5"  aliasing="true"  />
+
+		<port id="K_heat" library="PORTS_LIB" type="analog_signal"  hotPort="K_heat" >
+		
+				<symbol dx="144" dy="144" onLabel="true" />
+		
+				<label cx="24.5" cy="12" dx="87" dy="132" />
+		
+		</port>
+
+		<port id="K_cool" library="PORTS_LIB" type="analog_signal"  hotPort="K_cool" >
+		
+				<symbol dx="144" dy="88" onLabel="true" />
+		
+				<label cx="24" cy="12" dx="88" dy="76" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="192" dy="176" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="200" dy="164" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="Geometry">
+				<var name="AccountforGravity"/>
+				<var name="D_out"/>
+				<var name="z_out"/>
+				<var name="mat"/>
+				<var name="Do"/>
+				<var name="Th"/>
+				<var name="L"/>
+			</tab>
+			<tab name="Design Parameters">
+			</tab>
+			<tab name="Initital Conditions">
+				<var name="Tw0"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

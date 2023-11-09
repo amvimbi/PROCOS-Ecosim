@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" label-status="allshowed" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="BoolToggle" >
+
+		<rect id="Rectangle_1" cx="112" cy="96" sx="16" sy="16" dx="-8" dy="24" color="255,170,0"  />
+
+		<port id="in" library="PORTS_LIB" type="analog_signal"  hotPort="in" >
+		
+				<symbol dx="88" dy="120" onLabel="true" />
+		
+				<label cx="9" cy="12" dx="62" dy="108" />
+		
+		</port>
+
+		<port id="out" library="PORTS_LIB" type="bool_signal"  hotPort="out" >
+		
+				<symbol dx="120" dy="120" onLabel="true" />
+		
+				<label cx="13" cy="12" dx="128" dy="108" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="8" vspacing="8" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="BPHX_SWEP" >
+
+		<polygon id="Polygon_1" points="63.9268,144.28 128,144 63.9268,176.28" rotation="-90" dx="16.2055" dy="-0.0392614" color="200,172,32"  />
+
+		<polygon id="Polygon_2" points="96,144 128,144 95.7197,207.927" flipX="true" dx="0.225375" dy="-15.9268" color="253,219,41"  />
+
+		<line id="Line_1" points="128,168 140,168"  end_arrow="true" dy="-8" lineColor="85,170,0"   />
+
+		<line id="Line_2" points="129,168 140,168"  end_arrow="true" rotation="180" flipY="true" dx="-44" dy="-8" lineColor="85,170,0"   />
+
+		<line id="Line_3" points="120,168 136,168"  end_arrow="true" rotation="270" dx="-16" dy="33" lineColor="85,170,0"   />
+
+		<line id="Line_4" points="137,168 148,168"  end_arrow="true" rotation="270" flipX="true" dx="-30.5" dy="-46.5" lineColor="85,170,0"   />
+
+		<port id="ch_in" library="CRYOLIB" type="fluid"  hotPort="ch_in" >
+		
+				<symbol dx="112" dy="208" onLabel="true" />
+		
+				<label cx="19.5" cy="12" dx="65" dy="196" />
+		
+		</port>
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="112" dy="112" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="116" dy="99" />
+		
+		</port>
+
+		<port id="ch_out" library="CRYOLIB" type="fluid"  hotPort="ch_out" >
+		
+				<symbol dx="80" dy="160" onLabel="true" />
+		
+				<label cx="23.5" cy="12" dx="30" dy="147" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="144" dy="160" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="152" dy="148" />
+		
+		</port>
+
+		<port id="Q_ch" library="PORTS_LIB" type="analog_signal"  hotPort="Q_ch" >
+		
+				<symbol dx="88" dy="184" onLabel="true" />
+		
+				<label cx="19.5" cy="12" dx="45" dy="171" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="Geometry">
+				<var name="n"/>
+				<var name="mat"/>
+				<var name="D_port"/>
+				<var name="As"/>
+				<var name="V_i"/>
+				<var name="V_o"/>
+				<var name="Mw"/>
+			</tab>
+			<tab name="Design Parameters">
+				<var name="vfModel"/>
+				<var name="Countercurrent"/>
+				<var name="alpha_l_ch"/>
+				<var name="alpha_tp_ch"/>
+				<var name="alpha_g_ch"/>
+				<var name="m_steady_ch"/>
+				<var name="m0_ch"/>
+				<var name="dP0_ch"/>
+				<var name="dP_small_ch"/>
+				<var name="alpha_l_sec"/>
+				<var name="alpha_tp_sec"/>
+				<var name="alpha_g_sec"/>
+				<var name="m_steady_sec"/>
+				<var name="m0_sec"/>
+				<var name="dP0_sec"/>
+				<var name="dP_small_sec"/>
+			</tab>
+			<tab name="Initial Conditions">
+				<var name="init_ch"/>
+				<var name="P0_i_ch"/>
+				<var name="h0_i_ch" conditionVar="init_ch" conditionVals="Ph"/>
+				<var name="T0_i_ch" conditionVar="init_ch" conditionVals="PT"/>
+				<var name="x0_i_ch" conditionVar="init_ch" conditionVals="Px"/>
+				<var name="P0_o_ch"/>
+				<var name="h0_o_ch" conditionVar="init_ch" conditionVals="Ph"/>
+				<var name="T0_o_ch" conditionVar="init_ch" conditionVals="PT"/>
+				<var name="x0_o_ch" conditionVar="init_ch" conditionVals="Px"/>
+				<var name="init_sec"/>
+				<var name="P0_i_sec"/>
+				<var name="h0_i_sec" conditionVar="init_sec" conditionVals="Ph"/>
+				<var name="T0_i_sec" conditionVar="init_sec" conditionVals="PT"/>
+				<var name="x0_i_sec" conditionVar="init_sec" conditionVals="Px"/>
+				<var name="P0_o_sec"/>
+				<var name="h0_o_sec" conditionVar="init_sec" conditionVals="Ph"/>
+				<var name="T0_o_sec" conditionVar="init_sec" conditionVals="PT"/>
+				<var name="x0_o_sec" conditionVar="init_sec" conditionVals="Px"/>
+				<var name="Tw0_i"/>
+				<var name="Tw0_o"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.CTHX<br /><small></small></h1><hr><br><font size="5" color="black">ABSTRACT COMPONENT <a name="CTHX">CTHX</a>
+</font><br/>
+<br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Base model for concentric tube heat exchangers	</font><br/>
+<br/>
+<font size="4" color="black">CONSTRUCTION PARAMETERS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>n&nbsp;</td><td>INTEGER &nbsp;</td><td>3&nbsp;</td><td>Number of control volumes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>AccountForGravity&nbsp;</td><td>BOOLEAN &nbsp;</td><td> FALSE &nbsp;</td><td>If TRUE, accounts for static pressure and potential energy&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ConstantRefHTC&nbsp;</td><td>BOOLEAN &nbsp;</td><td> TRUE &nbsp;</td><td>False if using correlations&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>DynamicHTC&nbsp;</td><td>BOOLEAN &nbsp;</td><td> TRUE &nbsp;</td><td>If TRUE applies low-pass filter to HTC&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Countercurrent&nbsp;</td><td>BOOLEAN &nbsp;</td><td> TRUE &nbsp;</td><td>False for parallel flow&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>vfModel&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#VoidFractionModel">VoidFractionModel</a>&nbsp;</td><td>Homogeneous&nbsp;</td><td>Two-phase flow slip-ration void fraction model&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>fi_in&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>fi_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>fo_in&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>fo_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Do_i&nbsp;</td><td>REAL &nbsp;</td><td>0.003&nbsp;</td><td>&nbsp;</td><td>Inner-tube outer diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Do_o&nbsp;</td><td>REAL &nbsp;</td><td>0.008&nbsp;</td><td>&nbsp;</td><td>Outer-tube outer diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>L&nbsp;</td><td>REAL &nbsp;</td><td>10&nbsp;</td><td>&nbsp;</td><td>Tube length&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Pi0_i&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Inner tube - Initial inlet pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>Pi0_o&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Inner tube - Initial outlet pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>Po0_i&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Outer tube - Initial inlet pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>Po0_o&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Outer tube - Initial outlet pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>Th_i&nbsp;</td><td>REAL &nbsp;</td><td>0.001&nbsp;</td><td>&nbsp;</td><td>Inner-tube wall thickness&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Th_o&nbsp;</td><td>REAL &nbsp;</td><td>0.001&nbsp;</td><td>&nbsp;</td><td>Outer-tube wall thickness&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Ti0_i&nbsp;</td><td>REAL &nbsp;</td><td>255&nbsp;</td><td>&nbsp;</td><td>Inner tube - Initial inlet temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Ti0_o&nbsp;</td><td>REAL &nbsp;</td><td>255&nbsp;</td><td>&nbsp;</td><td>Inner tube - Initial outlet temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>To0_i&nbsp;</td><td>REAL &nbsp;</td><td>255&nbsp;</td><td>&nbsp;</td><td>Outer tube - Initial inlet temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>To0_o&nbsp;</td><td>REAL &nbsp;</td><td>255&nbsp;</td><td>&nbsp;</td><td>Outer tube - Initial outlet temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Twi0_i&nbsp;</td><td>REAL &nbsp;</td><td>245&nbsp;</td><td>&nbsp;</td><td>Inner tube wall - Initial temperature - first segment&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Twi0_o&nbsp;</td><td>REAL &nbsp;</td><td>245&nbsp;</td><td>&nbsp;</td><td>Inner tube wall - Initial temperature - last segment&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Two0_i&nbsp;</td><td>REAL &nbsp;</td><td>245&nbsp;</td><td>&nbsp;</td><td>Outer tube wall - Initial temperature - first segment&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Two0_o&nbsp;</td><td>REAL &nbsp;</td><td>245&nbsp;</td><td>&nbsp;</td><td>Outer tube wall - Initial temperature - last segment&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>alpha_g_i&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Inner stream vapour HTC&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_g_o&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Outer stream vapour HTC&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_l_i&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Inner stream liquid HTC&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_l_o&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Outer stream liquid HTC&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_tp_i&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Inner stream two-phase HTC&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_tp_o&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>Outer stream two-phase HTC&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>choice_1p&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#SinglePhaseHTC">SinglePhaseHTC</a>&nbsp;</td><td>UseDittusBoelter&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>choice_2p&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#TwoPhaseHTC">TwoPhaseHTC</a>&nbsp;</td><td>UseChen&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>dP0_i&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Inner tube - Nominal (design) pressure drop&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>dP0_o&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Outer tube - Nominal (design) pressure drop&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>dz&nbsp;</td><td>REAL &nbsp;</td><td>0&nbsp;</td><td>&nbsp;</td><td>Elevation change between inner-tube inlet and outlet, negative for downward slopes&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>hi0_i&nbsp;</td><td>REAL &nbsp;</td><td>250000&nbsp;</td><td>&nbsp;</td><td>Inner tube - Initial inlet specific enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>hi0_o&nbsp;</td><td>REAL &nbsp;</td><td>250000&nbsp;</td><td>&nbsp;</td><td>Inner tube - Initial outlet specific enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>ho0_i&nbsp;</td><td>REAL &nbsp;</td><td>250000&nbsp;</td><td>&nbsp;</td><td>Outer tube - Initial inlet specific enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>ho0_o&nbsp;</td><td>REAL &nbsp;</td><td>250000&nbsp;</td><td>&nbsp;</td><td>Outer tube - Initial outlet specific enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>init_i&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Ph&nbsp;</td><td>&nbsp;</td><td>Initial condition specification for inner stream&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>init_o&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Ph&nbsp;</td><td>&nbsp;</td><td>Initial condition specification for outer stream&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>m0_i&nbsp;</td><td>REAL &nbsp;</td><td>0.005&nbsp;</td><td>&nbsp;</td><td>Inner tube - Nominal (design) mass flow rate&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>m0_o&nbsp;</td><td>REAL &nbsp;</td><td>0.005&nbsp;</td><td>&nbsp;</td><td>Outer tube - Nominal (design) mass flow rate&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>m_steady_i&nbsp;</td><td>REAL &nbsp;</td><td>0.02&nbsp;</td><td>&nbsp;</td><td>Mass flow rate at which inner stream HTCs calculated&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>m_steady_o&nbsp;</td><td>REAL &nbsp;</td><td>0.015&nbsp;</td><td>&nbsp;</td><td>Mass flow rate at which outer stream HTCs calculated&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>mat&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#PipeMat" data-ajax='false'>THERMAL.PipeMat</a>&nbsp;</td><td>SS_304&nbsp;</td><td>&nbsp;</td><td>Wall material&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>tauAlpha&nbsp;</td><td>REAL &nbsp;</td><td>3&nbsp;</td><td>&nbsp;</td><td>Time constant for low-pass HTC filter&nbsp;</td><td>s&nbsp;</td></tr>
+
+<tr><td>xi0_i&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Inner tube - Initial inlet vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>xi0_o&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Inner tube - Initial outlet vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>xo0_i&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Outer tube - Initial inlet vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>xo0_o&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Outer tube - Initial outlet vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>z_bottom&nbsp;</td><td>REAL &nbsp;</td><td>0&nbsp;</td><td>&nbsp;</td><td>Elevation of inner-tube inlet wrt user-defined base&nbsp;</td><td>m&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DECLS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>dz_outer&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>z_bottom_outer&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>m&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES (TOPOLOGY BLOCK):</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>OBJECT&nbsp;</b></color></td>
+<td><color="black"><b>COMPONENT TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>InnerWall&nbsp;</td><td><a href="CO2.AnnularWall_twoPort.html">AnnularWall_twoPort</a>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<br/>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES DATA:</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>DATUM&nbsp;</b></color></td>
+<td><color="black"><b>VALUE&nbsp;</b></color></td>
+<td><color="black"><b>POS&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>InnerWall.Countercurrent&nbsp;</td><td>Countercurrent&nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>FALSE if parallel flow&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>InnerWall.Do&nbsp;</td><td>Do_i&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Outer diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>InnerWall.L&nbsp;</td><td>L&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>InnerWall.Th&nbsp;</td><td>Th_i&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Thickness&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>InnerWall.Tw0_i&nbsp;</td><td>Twi0_i&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial wall temperature - first segment&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>InnerWall.Tw0_o&nbsp;</td><td>Twi0_o&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial wall temperature - last segment&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>InnerWall.mat&nbsp;</td><td>mat&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#PipeMat" data-ajax='false'>THERMAL.PipeMat</a>&nbsp;</td><td>Wall material&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>InnerWall.n&nbsp;</td><td>n&nbsp;</td><td>PARA&nbsp;</td><td>INTEGER &nbsp;</td><td>Number of control volumes&nbsp;</td><td>""&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:38)</font></p>
+</body>
+</html>

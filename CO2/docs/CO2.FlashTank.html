@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.FlashTank<br /><small></small></h1><hr><br><font size="5" color="black">COMPONENT <a name="FlashTank">FlashTank</a>
+</font><br/>
+<br/>
+<font size="4" color="black">ICON: </font><br/>
+<p><img src="icons/CO2.FlashTank.png"></p><br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Flash tank component for phase separation</font><br/>
+<br/>
+<font size="4" color="black">CONSTRUCTION PARAMETERS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>ConstantAirHTC&nbsp;</td><td>BOOLEAN &nbsp;</td><td> TRUE &nbsp;</td><td>If FALSE, uses ChurchillChu natural convection correlation&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ConstantRefHTC&nbsp;</td><td>BOOLEAN &nbsp;</td><td> TRUE &nbsp;</td><td>If FALSE, uses Cooper pool boiling correlation&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>DynamicRefHTC&nbsp;</td><td>BOOLEAN &nbsp;</td><td> FALSE &nbsp;</td><td>If TRUE, applies low-pass filter to HTC calculations&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>D_vap&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>Vapour pipe diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>H_vap&nbsp;</td><td>REAL &nbsp;</td><td>0.28&nbsp;</td><td>Vapour pipe height&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>D_liq&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>Liquid pipe diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>H_liq&nbsp;</td><td>REAL &nbsp;</td><td>0.0001&nbsp;</td><td>Liquid pipe height&nbsp;</td><td>m&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>T_amb&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_in&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_liq&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_vap&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>D&nbsp;</td><td>REAL &nbsp;</td><td>0.1329&nbsp;</td><td>&nbsp;</td><td>Shell outer diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>D_in[1]&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Inlet pipe diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>L&nbsp;</td><td>REAL &nbsp;</td><td>0.3429&nbsp;</td><td>&nbsp;</td><td>Length (or Height for vertical components)&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Level0&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Initial liquid level in %&nbsp;</td><td>%&nbsp;</td></tr>
+
+<tr><td>P0&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Initial pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>T0&nbsp;</td><td>REAL &nbsp;</td><td>255&nbsp;</td><td>&nbsp;</td><td>Initial temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Th&nbsp;</td><td>REAL &nbsp;</td><td>0.005&nbsp;</td><td>&nbsp;</td><td>Shell thickness&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Tw0&nbsp;</td><td>REAL &nbsp;</td><td>300&nbsp;</td><td>&nbsp;</td><td>Shell initial temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>alpha_a&nbsp;</td><td>REAL &nbsp;</td><td>25&nbsp;</td><td>&nbsp;</td><td>Shell to air heat transfer coefficient&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_ref&nbsp;</td><td>REAL &nbsp;</td><td>100&nbsp;</td><td>&nbsp;</td><td>Shell to refrigerant heat transfer coefficient&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>h0&nbsp;</td><td>REAL &nbsp;</td><td>250000&nbsp;</td><td>&nbsp;</td><td>Initial specific enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>init&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditionsAccu">InitialConditionsAccu</a>&nbsp;</td><td>P_h&nbsp;</td><td>&nbsp;</td><td>Initial condition specification&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>mat&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#Material" data-ajax='false'>THERMAL.Material</a>&nbsp;</td><td>SS_304&nbsp;</td><td>&nbsp;</td><td>Shell material&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>tauAlpha&nbsp;</td><td>REAL &nbsp;</td><td>3&nbsp;</td><td>&nbsp;</td><td>Time constant for HTC correlation low-pass filter&nbsp;</td><td>s&nbsp;</td></tr>
+
+<tr><td>x0&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Initial vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>z_in[1]&nbsp;</td><td>REAL &nbsp;</td><td>0.28&nbsp;</td><td>&nbsp;</td><td>Inlet pipe height&nbsp;</td><td>m&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES (TOPOLOGY BLOCK):</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>OBJECT&nbsp;</b></color></td>
+<td><color="black"><b>COMPONENT TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>FlashTank&nbsp;</td><td><a href="CO2.FlashTankBase.html">FlashTankBase</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Wall&nbsp;</td><td><a href="CO2.LumpedShell.html">LumpedShell</a>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<br/>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES DATA:</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>DATUM&nbsp;</b></color></td>
+<td><color="black"><b>VALUE&nbsp;</b></color></td>
+<td><color="black"><b>POS&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>FlashTank.ConstantRefHTC&nbsp;</td><td>ConstantRefHTC&nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>If FALSE, uses Cooper pool-boiling correlation&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>FlashTank.D&nbsp;</td><td>D - 2 * Th&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>FlashTank.D_in[nports_in]&nbsp;</td><td>D_in&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Inlet port diameters&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>FlashTank.D_out[nports_out]&nbsp;</td><td>{ D_vap,D_liq} &nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Outlet port diameters&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>FlashTank.DynamicRefHTC&nbsp;</td><td>DynamicRefHTC&nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>If TRUE, adds low-pass fliter to HTC calculations&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>FlashTank.L&nbsp;</td><td>L&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Height&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>FlashTank.Level0&nbsp;</td><td>Level0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial liquid level&nbsp;</td><td>"%"&nbsp;</td></tr>
+
+<tr><td>FlashTank.P0&nbsp;</td><td>P0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial refrigerant pressure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>FlashTank.T0&nbsp;</td><td>T0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial refrigerant temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>FlashTank.alpha_ref&nbsp;</td><td>alpha_ref&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Refrigerant-to-shell HTC&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>FlashTank.h0&nbsp;</td><td>h0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial refrigerant enthalpy&nbsp;</td><td>"J/kg"&nbsp;</td></tr>
+
+<tr><td>FlashTank.init&nbsp;</td><td>init&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditionsAccu">InitialConditionsAccu</a>&nbsp;</td><td>Specify initial conditions&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>FlashTank.tauAlpha&nbsp;</td><td>tauAlpha&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Time constant for HTC correlation low-pass filter&nbsp;</td><td>"s"&nbsp;</td></tr>
+
+<tr><td>FlashTank.x0&nbsp;</td><td>x0&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial vapour quality&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>FlashTank.z_in[nports_in]&nbsp;</td><td>z_in&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Inlet port heights&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>FlashTank.z_out[nports_out]&nbsp;</td><td>{ H_vap,H_liq} &nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Outlet port heights&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>Wall.ConstantAirHTC&nbsp;</td><td>ConstantAirHTC&nbsp;</td><td>PARA&nbsp;</td><td>BOOLEAN &nbsp;</td><td>If FALSE, uses Churchill-Chu 1975 natural convective correlation&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Wall.Do&nbsp;</td><td>D&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Outer diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>Wall.L&nbsp;</td><td>L&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>Wall.Th&nbsp;</td><td>Th&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Thickness&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>Wall.alpha_a0&nbsp;</td><td>alpha_a&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Constant convective heat transfer coefficient&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:38)</font></p>
+</body>
+</html>

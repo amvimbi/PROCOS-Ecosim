@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<symcategories>
+ <category name="Accumulators">
+  <symbol name="Accumulator_Receiver" />
+  <symbol name="CO2Accumulator_complete" />
+  <symbol name="CO2Accumulator_externChiller" />
+  <symbol name="CO2Accumulator_heater" />
+  <symbol name="CO2Accumulator_prescribed" />
+  <symbol name="CO2Accumulator_prescribed_new" />
+  <symbol name="Damper" />
+  <symbol name="FlashTank" />
+  <symbol name="FlashTank_insulated" />
+ </category>
+ <category name="Boundaries">
+  <symbol name="AirSink" />
+  <symbol name="AirSource" />
+  <symbol name="AirSource_Const" />
+  <symbol name="Fan" />
+  <symbol name="Fan_speed" />
+  <symbol name="RefSink" />
+  <symbol name="RefSink_Const" />
+  <symbol name="RefSource" />
+  <symbol name="RefSource_Const" />
+ </category>
+ <category name="Control">
+  <symbol name="ANALOG_varLim" />
+  <symbol name="ANALOG_varLimSpd" />
+  <symbol name="CORA_PCO_CO2" />
+  <symbol name="CORA_PCO_Chiller" />
+  <symbol name="CORA_PCO_Chiller_pid" />
+  <symbol name="DEMO_PCO_Accu" />
+  <symbol name="DEMO_PCO_CO2" />
+  <symbol name="Demux12" />
+  <symbol name="Demux14" />
+  <symbol name="LevelController" />
+  <symbol name="LevelController_splice" />
+  <symbol name="Mux10" />
+  <symbol name="Mux11" />
+  <symbol name="PRCond_INT" />
+  <symbol name="PRConditioner" />
+  <symbol name="Ramp" />
+  <symbol name="SmoothStartup" />
+  <symbol name="SmoothStartupIO" />
+  <symbol name="SplitRangeController" />
+  <symbol name="SplitRangeController_phase" />
+  <symbol name="StartupRamp" />
+  <symbol name="boolDemux5" />
+  <symbol name="polynomial" />
+ </category>
+ <category name="HeatExchangers">
+  <symbol name="ACoil" />
+  <symbol name="BPHX_SWEP" />
+  <symbol name="CTHX_Ph" />
+  <symbol name="DummyLoad" />
+  <symbol name="DummyLoadTout" />
+  <symbol name="PlateFinHeatExchanger" />
+ </category>
+ <category name="LumpedVolumes">
+  <symbol name="AdiabVol_Ph" />
+  <symbol name="AdiabVol_ru" />
+  <symbol name="CV_Ph" />
+  <symbol name="CV_ru" />
+ </category>
+ <category name="Pipes">
+  <symbol name="AnnularStream_Ph" />
+  <symbol name="AnnularStream_ru" />
+  <symbol name="FluidStream_Ph" />
+  <symbol name="FluidStream_ru" />
+  <symbol name="Pipe_Ph" />
+  <symbol name="Pipe_ru" />
+ </category>
+ <category name="PumpsCompressors">
+  <symbol name="Compressor" />
+  <symbol name="Compressor_vfd" />
+  <symbol name="EconCompressor" />
+  <symbol name="Pump_Lewa" />
+  <symbol name="ScrollCompressor" />
+  <symbol name="SimplePump" />
+  <symbol name="SimplePump_Ctrl" />
+ </category>
+ <category name="Sensors">
+  <symbol name="AirTemperatureSensor" />
+  <symbol name="PressureTemperature" />
+  <symbol name="SaturationSensor" />
+  <symbol name="SuperheatSensor" />
+  <symbol name="TemperatureSensor_Celsius" />
+ </category>
+ <category name="Valves">
+  <symbol name="BackPressureRegulator" />
+  <symbol name="CheckValve" />
+  <symbol name="ControlValve" />
+  <symbol name="GenericOrifice" />
+  <symbol name="ReversingValve" />
+  <symbol name="TXV" />
+  <symbol name="dP" />
+ </category>
+</symcategories>

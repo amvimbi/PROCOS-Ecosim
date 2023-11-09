@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="SetReset" >
+
+		<rect id="Rectangle_2" cx="100" cy="116" sx="16" sy="16" dx="-12" dy="20" color="255,128,0"  />
+
+		<port id="input" library="PORTS_LIB" type="analog_signal"  hotPort="input" >
+		
+				<symbol dx="72" dy="136" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="28" dy="124" />
+		
+		</port>
+
+		<port id="output" library="PORTS_LIB" type="analog_signal"  hotPort="output" >
+		
+				<symbol dx="104" dy="136" onLabel="true" />
+		
+				<label cx="22" cy="12" dx="112" dy="124" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

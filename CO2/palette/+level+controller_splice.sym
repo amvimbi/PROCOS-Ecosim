@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="LevelController_splice" >
+
+		<ellipse id="Ellipse_1" cx="136" cy="112" rx="16" ry="16" dx="-8" color="255,255,255"  />
+
+		<closedBezier id="ClosedBezier_1" points="112,112 116,112 116,120 120,120 124,120 124,112 128,112 132,112 132,120 136,120 140,120 140,112 144,112 144,136 112,136 112,112" dy="-2" color="255,128,0"  />
+
+		<port id="level" library="PORTS_LIB" type="analog_signal"  hotPort="level" >
+		
+				<symbol dx="108" dy="104" onLabel="true" />
+		
+				<label cx="16.5" cy="12" dx="67" dy="92" />
+		
+		</port>
+
+		<port id="bypassFlow" library="PORTS_LIB" type="analog_signal"  hotPort="bypassFlow" >
+		
+				<symbol dx="108" dy="120" onLabel="true" />
+		
+				<label cx="38.5" cy="12" dx="23" dy="108" />
+		
+		</port>
+
+		<port id="emptyAccu" library="PORTS_LIB" type="analog_signal"  hotPort="emptyAccu" >
+		
+				<symbol dx="148" dy="104" onLabel="true" />
+		
+				<label cx="37" cy="12" dx="156" dy="92" />
+		
+		</port>
+
+		<port id="fillAccu" library="PORTS_LIB" type="analog_signal"  hotPort="fillAccu" >
+		
+				<symbol dx="148" dy="120" onLabel="true" />
+		
+				<label cx="25" cy="12" dx="156" dy="108" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

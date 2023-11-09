@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="RefSink" >
+
+		<polygon id="Polygon_1" points="104,112 104,116 112,116 112,120 124,112 112,104 112,108 104,108" dx="-48" dy="40" color="85,170,0"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="48" dy="152" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="12" dy="140" />
+		
+		</port>
+
+		<port id="var1" library="PORTS_LIB" type="analog_signal"  hotPort="var1" >
+		
+				<symbol dx="80" dy="144" onLabel="true" />
+		
+				<label cx="15.5" cy="12" dx="84" dy="130" />
+		
+		</port>
+
+		<port id="var2" library="PORTS_LIB" type="analog_signal"  hotPort="var2" >
+		
+				<symbol dx="80" dy="160" onLabel="true" />
+		
+				<label cx="15.5" cy="12" dx="84" dy="147" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

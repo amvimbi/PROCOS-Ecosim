@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="PRCond_INT" >
+
+		<rect id="Rectangle_2" cx="116" cy="96" sx="16" sy="16" dx="-44" dy="56" color="255,128,0"  />
+
+		<rect id="Rectangle_1" cx="110" cy="95.5" sx="12" sy="5" dx="-38" dy="54" color="255,255,255"  />
+
+		<port id="T_in" library="PORTS_LIB" type="analog_signal"  hotPort="T_in" >
+		
+				<symbol dx="56" dy="152" onLabel="true" />
+		
+				<label cx="16" cy="12" dx="16" dy="140" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

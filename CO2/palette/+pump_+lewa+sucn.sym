@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="Pump_LewaSucn" >
+
+		<line id="Line_5" points="-3.787,1442.1 60.213,1442.1" dx="131.787" dy="-1298.1" lineColor="85,170,0"  aliasing="true"  />
+
+		<ellipse id="Ellipse_2" cx="182" cy="86" rx="22" ry="22" dx="-22" dy="58" lineWidth="1.5"  color="253,219,41" aliasing="true"  />
+
+		<polygon id="Polygon_3" points="-3.001,589 -3.001,621 35.0472,605.058" dx="148.001" dy="-461" color="80,140,255" aliasing="true"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="128" dy="144" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="92" dy="132" />
+		
+		</port>
+
+		<port id="stroke" library="PORTS_LIB" type="analog_signal"  hotPort="stroke" >
+		
+				<symbol dx="144" dy="116" onLabel="true" />
+		
+				<label cx="22" cy="12" dx="92" dy="104" />
+		
+		</port>
+
+		<port id="nuSig" library="PORTS_LIB" type="analog_signal"  hotPort="nuSig" >
+		
+				<symbol dx="176" dy="116" onLabel="true" />
+		
+				<label cx="20.5" cy="12" dx="184" dy="104" />
+		
+		</port>
+
+		<port id="on" library="PORTS_LIB" type="bool_signal"  hotPort="on" >
+		
+				<symbol dx="160" dy="112" onLabel="true" />
+		
+				<label cx="11" cy="12" dx="148" dy="88" />
+		
+		</port>
+
+		<port id="T_amb" library="PORTS_LIB" type="analog_signal"  hotPort="T_amb" >
+		
+				<symbol dx="144" dy="172" onLabel="true" />
+		
+				<label cx="23.5" cy="12" dx="89" dy="160" />
+		
+		</port>
+
+		<port id="Q_heat" library="PORTS_LIB" type="analog_signal"  hotPort="Q_heat" >
+		
+				<symbol dx="176" dy="172" onLabel="true" />
+		
+				<label cx="25" cy="12" dx="180" dy="160" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="192" dy="144" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="200" dy="132" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

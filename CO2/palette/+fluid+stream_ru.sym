@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="FluidStream_ru" >
+
+		<closedBezier id="ClosedBezier_7" points="80.0905,175.994 80.0967,179.994 80.1194,195.994 80.1365,207.994 80.1469,215.994 96.1469,215.971 96.1365,207.971 96.0905,175.971 96.1198,195.971 96.0791,167.971 96.0677,159.971 80.0678,159.994 80.0791,167.994" rotation="-90.0815" flipY="true" dx="31.8928" dy="-43.9823" lineColor="40,40,40" lineWidth="0.5"  color="253,219,41"  />
+
+		<bezier id="Bezier_1" points="208,208 216,208 216,192 208,192" rotation="180" flipY="true" dx="-73.9999" dy="-56.0003" lineColor="40,40,40" lineWidth="0.5"  aliasing="true"  />
+
+		<bezier id="Bezier_5" points="104,96.0004 112,96.0006 112,112.001 104,112" rotation="180" flipY="true" dx="3.00056" dy="40.0029" lineWidth="0.5" lineType="2"  aliasing="true"  />
+
+		<bezier id="Bezier_3" points="104,96.0004 112,96.0006 112,112.001 104,112" rotation="180" flipY="true" dx="18.0002" dy="40.0029" lineWidth="0.5" lineType="2"  aliasing="true"  />
+
+		<line id="Line_1" points="120,72 136,72"  end_arrow="true" dx="20" dy="71.9997" lineColor="85,170,0"   />
+
+		<line id="Line_2" points="65,72 52,72"  end_arrow="true" rotation="180" dx="28.0002" dy="72.0012" lineColor="85,170,0"   />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="80" dy="144" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="44" dy="132" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="160" dy="144" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="168" dy="132" />
+		
+		</port>
+
+		<port id="tp_out" library="PORTS_LIB" type="thermal"  hotPort="tp_out" >
+		
+				<symbol dx="120" dy="128" onLabel="true" />
+		
+				<label cx="22" cy="12" dx="104" dy="100" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="Geometry">
+				<var name="AccountForGravity"/>
+				<var name="n"/>
+				<var name="L"/>
+				<var name="D"/>
+				<var name="dz" conditionVar="AccountForGravity" conditionVals="TRUE"/>
+				<var name="z_bottom" conditionVar="AccountForGravity" conditionVals="TRUE"/>
+			</tab>
+			<tab name="Design Parameters">
+				<var name="ConstantRefHTC"/>
+				<var name="DynamicHTC"/>
+				<var name="m0"/>
+				<var name="dP0"/>
+				<var name="choice_1p"/>
+				<var name="choice_2p"/>
+				<var name="alpha_l"/>
+				<var name="alpha_tp"/>
+				<var name="alpha_g"/>
+				<var name="m_steady"/>
+				<var name="tauAlpha"/>
+				<var name="vfModel"/>
+			</tab>
+			<tab name="Initial Conditions">
+				<var name="init"/>
+				<var name="P0_i"/>
+				<var name="h0_i"/>
+				<var name="T0_i"/>
+				<var name="x0_i"/>
+				<var name="P0_o"/>
+				<var name="h0_o"/>
+				<var name="T0_o"/>
+				<var name="x0_o"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

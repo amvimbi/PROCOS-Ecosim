@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="AnnularWall_naturalConvectionTout" >
+
+		<closedBezier id="ClosedBezier_1" points="76.0739,164 76.0967,180 76.1194,196 76.1365,208 76.1479,216 100.148,215.965 100.136,207.966 100.074,163.966 100.119,195.966 100.057,151.966 100.045,143.966 76.0455,144 76.0568,152" rotation="-90.0815" flipY="true" dx="23.9032" dy="-19.9831" lineWidth="1.5"  color="172,172,172" aliasing="true"  />
+
+		<bezier id="Bezier_2" points="208,212 216,212 216,188 208,188" rotation="180" flipY="true" dx="-74" dy="-40.0001" lineWidth="1.5"  aliasing="true"  />
+
+		<bezier id="Bezier_6" points="105,91.9993 113,91.9993 113,115.999 105,115.999" rotation="180" flipY="true" dx="-19" dy="56.0006" lineWidth="0.5" lineType="2"  aliasing="true"  />
+
+		<bezier id="Bezier_7" points="104,91.9993 112,91.9993 112,115.999 104,115.999" rotation="180" flipY="true" dx="-2.00004" dy="56.0006" lineWidth="0.5" lineType="2"  aliasing="true"  />
+
+		<bezier id="Bezier_8" points="103,91.9989 111,91.9989 111,115.999 103,115.999" rotation="180" flipY="true" dx="15" dy="56.001" lineWidth="0.5" lineType="2"  aliasing="true"  />
+
+		<ellipse id="Ellipse_1" cx="200" cy="138" rx="4" ry="10" dx="-60" dy="21.9999" lineWidth="0.5"  color="42,42,42"  />
+
+		<line id="Line_1" points="96,116 96,100"  end_arrow="true" dx="16" dy="72"  />
+
+		<port id="T_amb" library="PORTS_LIB" type="analog_signal"  hotPort="T_amb" >
+		
+				<symbol dx="100" dy="140" onLabel="true" />
+		
+				<label cx="23.5" cy="12" dx="45" dy="128" />
+		
+		</port>
+
+		<port id="tp_in" library="PORTS_LIB" type="thermal"  hotPort="tp_in" >
+		
+				<symbol dx="112" dy="192" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="68" dy="180" />
+		
+		</port>
+
+		<port id="Q_air" library="PORTS_LIB" type="analog_signal"  hotPort="Q_air" >
+		
+				<symbol dx="124" dy="140" onLabel="true" />
+		
+				<label cx="19.5" cy="12" dx="132" dy="128" />
+		
+		</port>
+
+		<port id="Tout" library="PORTS_LIB" type="analog_signal"  hotPort="Tout" >
+		
+				<symbol dx="140" dy="160" onLabel="true" />
+		
+				<label cx="16" cy="12" dx="148" dy="148" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

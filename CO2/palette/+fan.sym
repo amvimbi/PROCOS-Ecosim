@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="Fan" >
+
+		<ellipse id="Ellipse_2" cx="208" cy="144" rx="16" ry="16" color="255,255,255"  />
+
+		<closedBezier id="ClosedBezier_1" points="112,60 108,48 108,44 112,44 116,44 116,48 112,60" dx="96" dy="84" color="0,0,0"  />
+
+		<closedBezier id="ClosedBezier_2" points="112,60 108,48 108,44 112,44 116,44 116,48 112,60" rotation="126.816" dx="102.405" dy="96.794" color="0,0,0"  />
+
+		<closedBezier id="ClosedBezier_3" points="112,60 108,48 108,44 112,44 116,44 116,48 112,60" rotation="53.1842" flipY="true" dx="89.5955" dy="96.794" color="0,0,0"  />
+
+		<ellipse id="Ellipse_1" cx="114" cy="82" rx="2" ry="2" dx="94" dy="62" color="0,0,0"  />
+
+		<port id="a_in" library="CO2" type="air"  hotPort="a_in" >
+		
+				<symbol dx="208" dy="168" onLabel="true" />
+		
+				<label cx="16" cy="12" dx="212" dy="156" />
+		
+		</port>
+
+		<port id="a_out" library="CO2" type="air"  hotPort="a_out" >
+		
+				<symbol dx="208" dy="120" onLabel="true" />
+		
+				<label cx="20" cy="12" dx="212" dy="108" />
+		
+		</port>
+
+		<port id="mDot" library="PORTS_LIB" type="analog_signal"  hotPort="mDot" >
+		
+				<symbol dx="184" dy="144" onLabel="true" />
+		
+				<label cx="19.5" cy="12" dx="137" dy="132" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

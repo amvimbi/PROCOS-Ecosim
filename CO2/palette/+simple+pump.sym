@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="SimplePump" >
+
+		<line id="Line_5" points="-3.787,1442.1 60.213,1442.1" dx="195.787" dy="-1298.1" lineColor="85,170,0"  aliasing="true"  />
+
+		<ellipse id="Ellipse_2" cx="182" cy="86" rx="22" ry="22" dx="42" dy="58" lineWidth="1.5"  color="80,140,255" aliasing="true"  />
+
+		<polygon id="Polygon_3" points="-3.001,589 -3.001,621 35.0472,605.058" dx="212.001" dy="-461" aliasing="true"  />
+
+		<line id="Line_1" points="116,200 116,212" dx="108" dy="-34"  />
+
+		<bezier id="Bezier_10" points="324,160 324,160 324,160 324,160 324,168 328,168 328,160 328,152 332,152 332,160 332,168 336,168 336,160 336,152 340,152 340,160 340,168 344,168 344,160 344,152 348,152 348,160 352,160 356,160 356,160" rotation="-90" dx="-116" dy="-32" lineColor="255,170,0"   />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="192" dy="144" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="156" dy="132" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="256" dy="144" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="264" dy="132" />
+		
+		</port>
+
+		<port id="RPM" library="PORTS_LIB" type="analog_signal"  hotPort="RPM" >
+		
+				<symbol dx="224" dy="176" onLabel="true" />
+		
+				<label cx="18.5" cy="12" dx="179" dy="164" />
+		
+		</port>
+
+		<port id="Q_loss" library="PORTS_LIB" type="analog_signal"  hotPort="Q_loss" >
+		
+				<symbol dx="224" dy="112" onLabel="true" />
+		
+				<label cx="24.5" cy="12" dx="232" dy="100" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

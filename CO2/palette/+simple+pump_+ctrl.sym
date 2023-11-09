@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="SimplePump_Ctrl" >
+
+		<line id="Line_5" points="-3.787,1442.1 60.213,1442.1" dx="83.787" dy="-1250.1" lineColor="85,170,0"  aliasing="true"  />
+
+		<ellipse id="Ellipse_2" cx="182" cy="86" rx="22" ry="22" dx="-70" dy="106" lineWidth="1.5"  color="80,140,255" aliasing="true"  />
+
+		<polygon id="Polygon_3" points="-3.001,589 -3.001,621 35.0472,605.058" dx="100.001" dy="-413" aliasing="true"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="80" dy="192" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="44" dy="180" />
+		
+		</port>
+
+		<port id="start" library="PORTS_LIB" type="bool_signal"  hotPort="start" >
+		
+				<symbol dx="96" dy="216" onLabel="true" />
+		
+				<label cx="17" cy="12" dx="60" dy="204" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="144" dy="192" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="152" dy="180" />
+		
+		</port>
+
+		<port id="RPM" library="PORTS_LIB" type="analog_signal"  hotPort="RPM" >
+		
+				<symbol dx="128" dy="216" onLabel="true" />
+		
+				<label cx="18.5" cy="12" dx="132" dy="204" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="General">
+				<var name="disp"/>
+				<var name="etaVol"/>
+				<var name="etaIse"/>
+				<var name="etaMot"/>
+				<var name="minFlow"/>
+				<var name="RPM_max"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

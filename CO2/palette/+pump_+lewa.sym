@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="Pump_Lewa" >
+
+		<line id="Line_5" points="-3.787,1442.1 60.213,1442.1" dx="99.787" dy="-1266.1" lineColor="85,170,0"  aliasing="true"  />
+
+		<ellipse id="Ellipse_2" cx="182" cy="86" rx="22" ry="22" dx="-54" dy="90" lineWidth="1.5"  color="80,140,255" aliasing="true"  />
+
+		<polygon id="Polygon_3" points="-3.001,589 -3.001,621 35.0472,605.058" dx="116.001" dy="-429" aliasing="true"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="96" dy="176" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="60" dy="164" />
+		
+		</port>
+
+		<port id="stroke" library="PORTS_LIB" type="analog_signal"  hotPort="stroke" >
+		
+				<symbol dx="144" dy="148" onLabel="true" />
+		
+				<label cx="22" cy="12" dx="148" dy="136" />
+		
+		</port>
+
+		<port id="nuSig" library="PORTS_LIB" type="analog_signal"  hotPort="nuSig" >
+		
+				<symbol dx="112" dy="148" onLabel="true" />
+		
+				<label cx="20.5" cy="12" dx="63" dy="136" />
+		
+		</port>
+
+		<port id="on" library="PORTS_LIB" type="bool_signal"  hotPort="on" >
+		
+				<symbol dx="128" dy="208" onLabel="true" />
+		
+				<label cx="11" cy="12" dx="98" dy="196" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="160" dy="176" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="168" dy="164" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

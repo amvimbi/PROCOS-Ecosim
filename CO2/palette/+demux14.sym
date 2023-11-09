@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="Demux14" >
+
+		<line id="Line_1" points="160,64 160,176" lineWidth="4"   />
+
+		<port id="s_in" library="PORTS_LIB" type="analog_signal"  hotPort="s_in" >
+		
+				<symbol dx="152" dy="120" onLabel="true" />
+		
+				<label cx="16" cy="12" dx="112" dy="108" />
+		
+		</port>
+
+		<port id="s_out[1]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[1]" >
+		
+				<symbol dx="168" dy="68" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="176" dy="56" />
+		
+		</port>
+
+		<port id="s_out[2]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[2]" >
+		
+				<symbol dx="168" dy="76" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="176" dy="64" />
+		
+		</port>
+
+		<port id="s_out[3]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[3]" >
+		
+				<symbol dx="168" dy="84" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="176" dy="72" />
+		
+		</port>
+
+		<port id="s_out[4]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[4]" >
+		
+				<symbol dx="168" dy="92" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="176" dy="80" />
+		
+		</port>
+
+		<port id="s_out[5]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[5]" >
+		
+				<symbol dx="168" dy="100" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="176" dy="88" />
+		
+		</port>
+
+		<port id="s_out[6]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[6]" >
+		
+				<symbol dx="168" dy="108" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="176" dy="96" />
+		
+		</port>
+
+		<port id="s_out[7]" library="PORTS_LIB" type="analog_signal" >
+		
+				<symbol dx="168" dy="116" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="176" dy="104" />
+		
+		</port>
+
+		<port id="s_out[8]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[8]" >
+		
+				<symbol dx="168" dy="124" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="176" dy="112" />
+		
+		</port>
+
+		<port id="s_out[9]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[9]" >
+		
+				<symbol dx="168" dy="132" onLabel="true" />
+		
+				<label cx="27.5" cy="12" dx="176" dy="120" />
+		
+		</port>
+
+		<port id="s_out[10]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[10]" >
+		
+				<symbol dx="168" dy="140" onLabel="true" />
+		
+				<label cx="31" cy="12" dx="176" dy="128" />
+		
+		</port>
+
+		<port id="s_out[11]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[11]" >
+		
+				<symbol dx="168" dy="148" onLabel="true" />
+		
+				<label cx="30.5" cy="12" dx="176" dy="136" />
+		
+		</port>
+
+		<port id="s_out[12]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[12]" >
+		
+				<symbol dx="168" dy="156" onLabel="true" />
+		
+				<label cx="31" cy="12" dx="176" dy="144" />
+		
+		</port>
+
+		<port id="s_out[13]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[13]" >
+		
+				<symbol dx="168" dy="164" onLabel="true" />
+		
+				<label cx="31" cy="12" dx="176" dy="152" />
+		
+		</port>
+
+		<port id="s_out[14]" library="PORTS_LIB" type="analog_signal"  hotPort="s_out[14]" >
+		
+				<symbol dx="168" dy="172" onLabel="true" />
+		
+				<label cx="31" cy="12" dx="176" dy="160" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

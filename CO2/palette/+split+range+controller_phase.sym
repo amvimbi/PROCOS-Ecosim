@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="SplitRangeController_phase" >
+
+		<rect id="Rectangle_1" cx="185.336" cy="112.119" sx="16" sy="16" dx="-129.336" dy="-8.119" color="255,170,0"  />
+
+		<line id="Line_1" points="88,48 72,56 88,64" dx="-16" dy="48"  />
+
+		<line id="Line_2" points="72,56 56,56" dx="-16" dy="48"  />
+
+		<rect id="Rectangle_2" cx="198" cy="130" sx="4" sy="4" dx="-142" dy="-26" color="0,0,0"  />
+
+		<port id="in" library="PORTS_LIB" type="analog_signal"  hotPort="in" >
+		
+				<symbol dx="40" dy="104" onLabel="true" />
+		
+				<label cx="9" cy="12" dx="14" dy="92" />
+		
+		</port>
+
+		<port id="phase" library="PORTS_LIB" type="analog_signal"  hotPort="phase" >
+		
+				<symbol dx="56" dy="88" onLabel="true" />
+		
+				<label cx="21.5" cy="12" dx="5" dy="76" />
+		
+		</port>
+
+		<port id="out1" library="PORTS_LIB" type="analog_signal"  hotPort="out1" >
+		
+				<symbol dx="72" dy="96" onLabel="true" />
+		
+				<label cx="16.5" cy="12" dx="80" dy="84" />
+		
+		</port>
+
+		<port id="out2" library="PORTS_LIB" type="analog_signal"  hotPort="out2" >
+		
+				<symbol dx="72" dy="112" onLabel="true" />
+		
+				<label cx="16.5" cy="12" dx="80" dy="100" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

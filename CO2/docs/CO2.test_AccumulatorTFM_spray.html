@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.test_AccumulatorTFM_spray<br /><small></small></h1><hr><br><font size="5" color="black">COMPONENT <a name="test_AccumulatorTFM_spray">test_AccumulatorTFM_spray</a> IS_A <a href="CO2.test_AccumulatorTFM_pini.html">test_AccumulatorTFM_pini</a>
+</font><br/>
+<br/>
+<font size="4" color="black">ICON: </font><br/>
+<p><img src="icons/CO2.test_AccumulatorTFM_spray.png"></p><br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Cool&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Heat&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Level&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>Liquid level in %&nbsp;</td></tr>
+
+<tr><td>Pressure&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>Pressure in Pa&nbsp;</td></tr>
+
+<tr><td>f_in&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>D&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>D_in&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Diameter of spray port&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>L&nbsp;</td><td>REAL &nbsp;</td><td>1.96&nbsp;</td><td>&nbsp;</td><td>Height&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>P0&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Initial pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>Qcool_max&nbsp;</td><td>REAL &nbsp;</td><td>100000&nbsp;</td><td>&nbsp;</td><td>Maximum cooling power&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>Qheat_max&nbsp;</td><td>REAL &nbsp;</td><td>100000&nbsp;</td><td>&nbsp;</td><td>Maximum heating power&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>alpha_fg&nbsp;</td><td>REAL &nbsp;</td><td>10&nbsp;</td><td>&nbsp;</td><td>Heat transfer coefficient between liquid and vapour phases&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>tau_f&nbsp;</td><td>REAL &nbsp;</td><td>1&nbsp;</td><td>&nbsp;</td><td>Time constant for evaporation&nbsp;</td><td>s&nbsp;</td></tr>
+
+<tr><td>tau_g&nbsp;</td><td>REAL &nbsp;</td><td>1&nbsp;</td><td>&nbsp;</td><td>Time constant for condensation&nbsp;</td><td>s&nbsp;</td></tr>
+
+<tr><td>y0&nbsp;</td><td>REAL &nbsp;</td><td>0.1&nbsp;</td><td>&nbsp;</td><td>Initial level as fraction of 1&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>z_in&nbsp;</td><td>REAL &nbsp;</td><td>1.8&nbsp;</td><td>&nbsp;</td><td>Elevation of spray port&nbsp;</td><td>m&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DECLS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Ac&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Cross-sectional area&nbsp;</td><td>m^2&nbsp;</td></tr>
+
+<tr><td>M&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Total mass in vessel&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>Mf&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Mass of the two phases&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>Mg&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Mass of the two phases&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>P&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>P_Pa&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pressure in Pascal&nbsp;</td><td>Pa&nbsp;</td></tr>
+
+<tr><td>Pcrit&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Critical pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>Qc&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Overall heating and cooling powers&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>Qfg&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Heat transfer between liquid and vapour phases&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>Qh&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Overall heating and cooling powers&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>Tf&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Temperatures of liquid and vapour phases&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Tg&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Temperatures of liquid and vapour phases&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>V&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Volume&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>Vf&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Volume occupied by phases&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>Vg&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Volume occupied by phases&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>Vol&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Volume in Litres&nbsp;</td><td>dm^3&nbsp;</td></tr>
+
+<tr><td>d1&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>d2&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>drhof_dP&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>drhof_dh&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>drhog_dP&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>drhog_dh&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>h&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Averaged enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>hf&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour phase enthalpies&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>hfs&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Saturation liquid and vapour enthalpies&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>hg&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour phase enthalpies&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>hgs&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Saturation liquid and vapour enthalpies&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ier&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Error codes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>jx&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Error codes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>jy&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Error codes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>lvl&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>m_cond&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Evaporation and condensation flow rates&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>m_evap&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Evaporation and condensation flow rates&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>mh_out&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Outlet port enthalpy flow rate&nbsp;</td><td>W&nbsp;</td></tr>
+
+<tr><td>rhocrit&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Critical density&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+<tr><td>rhof&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Densities&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+<tr><td>rhog&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Densities&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+<tr><td>x&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:39)</font></p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="NonReturnValve" >
+
+		<ellipse id="Ellipse_1" cx="121.732" cy="516.39" rx="7.5" ry="7.9999" dx="157.768" dy="-420.39" lineWidth="1.5"   color="255,255,255" gradientColor="0,85,255" gradientType="GR" position="50"  />
+
+		<line id="Line_2" points="95.48,505.9 99.48,505.9 103.48,497.9 107.48,513.9 111.48,497.9 115.48,513.9 119.48,497.9 123.48,513.9 127.48,505.9 135.48,505.9" dx="192.52" dy="-409.9" lineWidth="1.5"   />
+
+		<line id="Line_1" points="272,84 260,96" dx="8" lineWidth="1.5"   />
+
+		<line id="Line_3" points="260,96 272,108" dx="8" lineWidth="1.5"   />
+
+		<line id="Line_4" points="268,96 252,96" lineWidth="1.5"   />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="251" dy="96" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="215" dy="84" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="328" dy="96" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="336" dy="84" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

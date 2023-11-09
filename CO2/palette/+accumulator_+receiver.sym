@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="8" vspacing="8" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="Accumulator_Receiver" >
+
+		<line id="Line_1" points="48.869,758.458 48.869,774.458"  end_arrow="true" rotation="270" dx="37.131" dy="-622.458" lineColor="85,170,0"  aliasing="true"  />
+
+		<line id="Line_2" points="48.869,764.458 48.869,776.458"  end_arrow="true" rotation="270" dx="85.131" dy="-626.458" lineColor="85,170,0"  aliasing="true"  />
+
+		<line id="Line_4" points="96,48 96,60"  end_arrow="true" dx="16" dy="67"  />
+
+		<closedBezier id="ClosedBezier_2" points="240,160 224,160 224,176 224,176 224,192 240,192 240,192 272,192 272,192 272,192 288,192 288,176 288,176 288,160 272,160 272,160 248,160 248,160 240,160" rotation="-90" dx="-144" dy="-16" color="253,219,41"  />
+
+		<closedBezier id="ClosedBezier_1" points="96,176 96,192 112,192 112,192 128,192 128,176 128,176 112,176 96,176 96,176" color="85,170,0"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="80" dy="144" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="44" dy="132" />
+		
+		</port>
+
+		<port id="T_amb" library="PORTS_LIB" type="analog_signal"  hotPort="T_amb" >
+		
+				<symbol dx="112" dy="112" onLabel="true" />
+		
+				<label cx="23.5" cy="12" dx="57" dy="100" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="144" dy="144" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="152" dy="132" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="Geometry">
+				<var name="mat"/>
+				<var name="D"/>
+				<var name="Th"/>
+				<var name="L"/>
+				<var name="D_in"/>
+				<var name="z_in"/>
+				<var name="D_out"/>
+				<var name="z_out"/>
+			</tab>
+			<tab name="Design Parameters">
+				<var name="ConstantAirHTC"/>
+				<var name="ConstantRefHTC"/>
+				<var name="DynamicRefHTC"/>
+				<var name="tauAlpha" conditionVar="DynamicRefHTC" conditionVals="TRUE"/>
+				<var name="alpha_ref" conditionVar="ConstantRefHTC" conditionVals="TRUE"/>
+				<var name="alpha_a" conditionVar="ConstantAirHTC" conditionVals="TRUE"/>
+			</tab>
+			<tab name="Initial Conditions">
+				<var name="init"/>
+				<var name="P0"/>
+				<var name="h0" conditionVar="init" conditionVals="P_h"/>
+				<var name="T0" conditionVar="init" conditionVals="P_T"/>
+				<var name="x0" conditionVar="init" conditionVals="P_x"/>
+				<var name="Level0" conditionVar="init" conditionVals="P_level"/>
+				<var name="Tw0"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

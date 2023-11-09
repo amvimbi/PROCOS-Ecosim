@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.BPHX_SWEP<br /><small></small></h1><hr><br><font size="5" color="black">COMPONENT <a name="BPHX_SWEP">BPHX_SWEP</a>
+</font><br/>
+<br/>
+<font size="4" color="black">ICON: </font><br/>
+<p><img src="icons/CO2.BPHX_SWEP.png"></p><br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Component model of SWEP B16DWx30/1P-SC-U Brazed Plate Heat Exchanger used in CORA</font><br/>
+<br/>
+<font size="4" color="black">CONSTRUCTION PARAMETERS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>n&nbsp;</td><td>INTEGER &nbsp;</td><td>5&nbsp;</td><td>Number of segments to discretize the HX into&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>vfModel&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#VoidFractionModel">VoidFractionModel</a>&nbsp;</td><td>Smith&nbsp;</td><td>Slip ratio based void fraction model&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>Countercurrent&nbsp;</td><td>BOOLEAN &nbsp;</td><td> FALSE &nbsp;</td><td>If TRUE, outlet of chiller matches inlet of secondary&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Q_ch&nbsp;</td><td><a href="../../PORTS_LIB/docs/PORTS_LIB.analog_signal.html">PORTS_LIB.analog_signal</a>&nbsp;</td><td> (n = 1) &nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ch_in&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ch_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_in&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>IN &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>f_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>As&nbsp;</td><td>REAL &nbsp;</td><td>1.56&nbsp;</td><td>&nbsp;</td><td>Total heat transfer surface area&nbsp;</td><td>m^2&nbsp;</td></tr>
+
+<tr><td>D_port&nbsp;</td><td>REAL &nbsp;</td><td>0.024&nbsp;</td><td>&nbsp;</td><td>Port diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Mw&nbsp;</td><td>REAL &nbsp;</td><td>14.1&nbsp;</td><td>&nbsp;</td><td>Heat exchanger weight&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>P0_i_ch&nbsp;</td><td>REAL &nbsp;</td><td>10.908&nbsp;</td><td>&nbsp;</td><td>Chiller side initial inlet pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>P0_i_sec&nbsp;</td><td>REAL &nbsp;</td><td>57.291&nbsp;</td><td>&nbsp;</td><td>Secondary side initial inlet pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>P0_o_ch&nbsp;</td><td>REAL &nbsp;</td><td>10.908&nbsp;</td><td>&nbsp;</td><td>Chiller side initial outlet pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>P0_o_sec&nbsp;</td><td>REAL &nbsp;</td><td>57.291&nbsp;</td><td>&nbsp;</td><td>Secondary side initial outlet pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>T0_i_ch&nbsp;</td><td>REAL &nbsp;</td><td>293.15&nbsp;</td><td>&nbsp;</td><td>Chiller side initial inlet temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>T0_i_sec&nbsp;</td><td>REAL &nbsp;</td><td>293.15&nbsp;</td><td>&nbsp;</td><td>Secondary side initial inlet temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>T0_o_ch&nbsp;</td><td>REAL &nbsp;</td><td>293.15&nbsp;</td><td>&nbsp;</td><td>Chiller side initial outlet temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>T0_o_sec&nbsp;</td><td>REAL &nbsp;</td><td>293.15&nbsp;</td><td>&nbsp;</td><td>Secondary side initial outlet temperature&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Tw0_i&nbsp;</td><td>REAL &nbsp;</td><td>255&nbsp;</td><td>&nbsp;</td><td>Initial wall temperature - first segment&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Tw0_o&nbsp;</td><td>REAL &nbsp;</td><td>255&nbsp;</td><td>&nbsp;</td><td>Initial wall temperature - last segment&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>V_i&nbsp;</td><td>REAL &nbsp;</td><td>0.00116&nbsp;</td><td>&nbsp;</td><td>Hold-up volume, inner circuit&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>V_o&nbsp;</td><td>REAL &nbsp;</td><td>0.00122&nbsp;</td><td>&nbsp;</td><td>Hold up volume, outer circuit&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>alpha_g_ch&nbsp;</td><td>REAL &nbsp;</td><td>500&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_g_sec&nbsp;</td><td>REAL &nbsp;</td><td>800&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_l_ch&nbsp;</td><td>REAL &nbsp;</td><td>750&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_l_sec&nbsp;</td><td>REAL &nbsp;</td><td>1000&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_tp_ch&nbsp;</td><td>REAL &nbsp;</td><td>2500&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>alpha_tp_sec&nbsp;</td><td>REAL &nbsp;</td><td>10000&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>W/(m^2·K)&nbsp;</td></tr>
+
+<tr><td>dP0_ch&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>dP0_sec&nbsp;</td><td>REAL &nbsp;</td><td>0.1&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>dP_small_ch&nbsp;</td><td>REAL &nbsp;</td><td>1&nbsp;</td><td>&nbsp;</td><td>Range for low mass flow smoothing, leave default if unsure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>dP_small_sec&nbsp;</td><td>REAL &nbsp;</td><td>1&nbsp;</td><td>&nbsp;</td><td>Range for low mass flow smoothing, leave default if unsure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>h0_i_ch&nbsp;</td><td>REAL &nbsp;</td><td>301750&nbsp;</td><td>&nbsp;</td><td>Chiller side initial inlet enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>h0_i_sec&nbsp;</td><td>REAL &nbsp;</td><td>331870&nbsp;</td><td>&nbsp;</td><td>Secondary side initial inlet enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>h0_o_ch&nbsp;</td><td>REAL &nbsp;</td><td>301750&nbsp;</td><td>&nbsp;</td><td>Chiller side initial outlet enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>h0_o_sec&nbsp;</td><td>REAL &nbsp;</td><td>331870&nbsp;</td><td>&nbsp;</td><td>Secondary side initial outlet enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>init_ch&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Ph&nbsp;</td><td>&nbsp;</td><td>Specify initial condition variables for primary side&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>init_sec&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Ph&nbsp;</td><td>&nbsp;</td><td>Specify initial condition variables for secondary side&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>m0_ch&nbsp;</td><td>REAL &nbsp;</td><td>0.02&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>m0_sec&nbsp;</td><td>REAL &nbsp;</td><td>0.015&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>m_steady_ch&nbsp;</td><td>REAL &nbsp;</td><td>0.0208&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>m_steady_sec&nbsp;</td><td>REAL &nbsp;</td><td>0.015&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>mat&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#PipeMat" data-ajax='false'>THERMAL.PipeMat</a>&nbsp;</td><td>SS_316&nbsp;</td><td>&nbsp;</td><td>Material of parts in contact with fluid&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>x0_i_ch&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Chiller side initial inlet vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>x0_i_sec&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Secondary side initial inlet vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>x0_o_ch&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Chiller side initial outlet vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>x0_o_sec&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Secondary side initial outlet vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES (TOPOLOGY BLOCK):</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>OBJECT&nbsp;</b></color></td>
+<td><color="black"><b>COMPONENT TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Chiller&nbsp;</td><td><a href="CO2.BPHXStream.html">BPHXStream</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Wall&nbsp;</td><td><a href="CO2.GenericWall.html">GenericWall</a>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Secondary&nbsp;</td><td><a href="CO2.BPHXStream.html">BPHXStream</a>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<br/>
+<br/>
+<font size="4" color="black">COMPONENT INSTANCES DATA:</font><br/>
+<br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>DATUM&nbsp;</b></color></td>
+<td><color="black"><b>VALUE&nbsp;</b></color></td>
+<td><color="black"><b>POS&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Chiller.As&nbsp;</td><td>As&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Surface area of contact&nbsp;</td><td>"m^2"&nbsp;</td></tr>
+
+<tr><td>Chiller.D_port&nbsp;</td><td>D_port&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Port diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>Chiller.P0_i&nbsp;</td><td>P0_i_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial inlet pressure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>Chiller.P0_o&nbsp;</td><td>P0_o_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial outlet pressure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>Chiller.T0_i&nbsp;</td><td>T0_i_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial inlet temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>Chiller.T0_o&nbsp;</td><td>T0_o_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial outlet temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>Chiller.V&nbsp;</td><td>V_i&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Hold up volume&nbsp;</td><td>"m^3"&nbsp;</td></tr>
+
+<tr><td>Chiller.alpha_g&nbsp;</td><td>alpha_g_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Vapour HTC, for ConstantHTC==TRUE&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>Chiller.alpha_l&nbsp;</td><td>alpha_l_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Liquid HTC, for ConstantHTC==TRUE&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>Chiller.alpha_tp&nbsp;</td><td>alpha_tp_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>2Phase HTC, for ConstantHTC==TRUE&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>Chiller.dP0&nbsp;</td><td>dP0_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal pressure drop&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>Chiller.dP_small&nbsp;</td><td>dP_small_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Range for smoothing dP correlation, leave default if unsure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>Chiller.h0_i&nbsp;</td><td>h0_i_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial inlet specific enthalpy&nbsp;</td><td>"J/kg"&nbsp;</td></tr>
+
+<tr><td>Chiller.h0_o&nbsp;</td><td>h0_o_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial outlet specific enthalpy&nbsp;</td><td>"J/kg"&nbsp;</td></tr>
+
+<tr><td>Chiller.init&nbsp;</td><td>init_ch&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Specify initial condition variables&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Chiller.m0&nbsp;</td><td>m0_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal mass flow rate&nbsp;</td><td>"kg/s"&nbsp;</td></tr>
+
+<tr><td>Chiller.m_steady&nbsp;</td><td>m_steady_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Steady state mass flow rate for which HTC calculated&nbsp;</td><td>"kg/s"&nbsp;</td></tr>
+
+<tr><td>Chiller.n&nbsp;</td><td>n&nbsp;</td><td>PARA&nbsp;</td><td>INTEGER &nbsp;</td><td>Number of segments&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Chiller.vfModel&nbsp;</td><td>vfModel&nbsp;</td><td>PARA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#VoidFractionModel">VoidFractionModel</a>&nbsp;</td><td>Slip ratio based void fraction model&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Chiller.x0_i&nbsp;</td><td>x0_i_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial inlet vapour quality&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Chiller.x0_o&nbsp;</td><td>x0_o_ch&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial outlet vapour quality&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Secondary.As&nbsp;</td><td>As&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Surface area of contact&nbsp;</td><td>"m^2"&nbsp;</td></tr>
+
+<tr><td>Secondary.D_port&nbsp;</td><td>D_port&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Port diameter&nbsp;</td><td>"m"&nbsp;</td></tr>
+
+<tr><td>Secondary.P0_i&nbsp;</td><td>P0_i_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial inlet pressure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>Secondary.P0_o&nbsp;</td><td>P0_o_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial outlet pressure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>Secondary.T0_i&nbsp;</td><td>T0_i_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial inlet temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>Secondary.T0_o&nbsp;</td><td>T0_o_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial outlet temperature&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>Secondary.V&nbsp;</td><td>V_o&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Hold up volume&nbsp;</td><td>"m^3"&nbsp;</td></tr>
+
+<tr><td>Secondary.alpha_g&nbsp;</td><td>alpha_g_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Vapour HTC, for ConstantHTC==TRUE&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>Secondary.alpha_l&nbsp;</td><td>alpha_l_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Liquid HTC, for ConstantHTC==TRUE&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>Secondary.alpha_tp&nbsp;</td><td>alpha_tp_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>2Phase HTC, for ConstantHTC==TRUE&nbsp;</td><td>"W/(m^2·K)"&nbsp;</td></tr>
+
+<tr><td>Secondary.dP0&nbsp;</td><td>dP0_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal pressure drop&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>Secondary.dP_small&nbsp;</td><td>dP_small_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Range for smoothing dP correlation, leave default if unsure&nbsp;</td><td>"bar"&nbsp;</td></tr>
+
+<tr><td>Secondary.h0_i&nbsp;</td><td>h0_i_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial inlet specific enthalpy&nbsp;</td><td>"J/kg"&nbsp;</td></tr>
+
+<tr><td>Secondary.h0_o&nbsp;</td><td>h0_o_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial outlet specific enthalpy&nbsp;</td><td>"J/kg"&nbsp;</td></tr>
+
+<tr><td>Secondary.init&nbsp;</td><td>init_sec&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions">InitialConditions</a>&nbsp;</td><td>Specify initial condition variables&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Secondary.m0&nbsp;</td><td>m0_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Nominal mass flow rate&nbsp;</td><td>"kg/s"&nbsp;</td></tr>
+
+<tr><td>Secondary.m_steady&nbsp;</td><td>m_steady_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Steady state mass flow rate for which HTC calculated&nbsp;</td><td>"kg/s"&nbsp;</td></tr>
+
+<tr><td>Secondary.n&nbsp;</td><td>n&nbsp;</td><td>PARA&nbsp;</td><td>INTEGER &nbsp;</td><td>Number of segments&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Secondary.vfModel&nbsp;</td><td>vfModel&nbsp;</td><td>PARA&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#VoidFractionModel">VoidFractionModel</a>&nbsp;</td><td>Slip ratio based void fraction model&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Secondary.x0_i&nbsp;</td><td>x0_i_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial inlet vapour quality&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Secondary.x0_o&nbsp;</td><td>x0_o_sec&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial outlet vapour quality&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Wall.Mw&nbsp;</td><td>Mw&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Wall mass&nbsp;</td><td>"kg"&nbsp;</td></tr>
+
+<tr><td>Wall.Tw0_i&nbsp;</td><td>Tw0_i&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial wall temperature - first segment&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>Wall.Tw0_o&nbsp;</td><td>Tw0_o&nbsp;</td><td>DATA&nbsp;</td><td>REAL &nbsp;</td><td>Initial wall temperature - last segment&nbsp;</td><td>"K"&nbsp;</td></tr>
+
+<tr><td>Wall.mat&nbsp;</td><td>mat&nbsp;</td><td>DATA&nbsp;</td><td>ENUM <a href="file:///C:/EcosimProLibs/STANDARD/libs/THERMAL/docs/THERMAL.enumerativeTypes.html#PipeMat" data-ajax='false'>THERMAL.PipeMat</a>&nbsp;</td><td>Wall material&nbsp;</td><td>""&nbsp;</td></tr>
+
+<tr><td>Wall.n&nbsp;</td><td>n&nbsp;</td><td>PARA&nbsp;</td><td>INTEGER &nbsp;</td><td>Number of segments&nbsp;</td><td>""&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:38)</font></p>
+</body>
+</html>

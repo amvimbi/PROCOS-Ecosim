@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" label-status="allshowed" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="Compressor" >
+
+		<line id="Line_3" points="422.543,165.863 434.543,165.863" rotation="90" dx="-292.543" dy="-27.863" lineColor="255,170,0"   />
+
+		<line id="Line_4" points="63.248,212.501 75.249,212.501"  end_arrow="true" dx="128.752" dy="-36.501" lineColor="85,170,0"   />
+
+		<line id="Line_5" points="-32.751,212.501 -48.751,212.501"  end_arrow="true" rotation="180" flipY="true" dx="150.751" dy="-36.501" lineColor="85,170,0"   />
+
+		<polygon id="Polygon_5" points="47.248,192.501 47.248,232.501 -24.752,248.501 -24.751,180.501 -24.752,176.501" dx="144.752" dy="-36.501" lineWidth="1.5"  color="80,140,255"  />
+
+		<line id="Line_6" points="34.249,195.783 34.249,231.013" dx="143.752" dy="-37.501"  />
+
+		<line id="Line_7" points="27.249,194.367 27.249,232.428" dx="143.752" dy="-37.501"  />
+
+		<line id="Line_8" points="20.249,193.924 20.249,234.186" rotation="-180" dx="143.752" dy="-38.001"  />
+
+		<line id="Line_9" points="41.249,198.501 41.249,231.069" dx="143.752" dy="-38.501"  />
+
+		<line id="Line_10" points="12.249,191.851 12.249,235.102" dx="144.752" dy="-37.501"  />
+
+		<line id="Line_11" points="-1.751,190.02 -1.751,238.776" dx="144.752" dy="-38.501"  />
+
+		<line id="Line_13" points="5.249,191.935 5.249,238.017" dx="144.752" dy="-39.001"  />
+
+		<polygon id="Polygon_6" points="47.248,204.501 -8.751,204.501 -8.751,220.501 47.248,220.501" dx="144.752" dy="-36.501" color="192,192,192"  />
+
+		<line id="Line_15" points="-8.751,187.919 -8.751,239.034" dx="144.752" dy="-37.501"  />
+
+		<line id="Line_1" points="160,228 160,236"  end_arrow="true" dy="-16" lineColor="170,0,0"   />
+
+		<bezier id="Bezier_10" points="320,160 320,152 324,152 324,160 324,168 328,168 328,160 328,152 332,152 332,160 332,168 336,168 336,160 336,152 340,152 340,160 340,168 344,168 344,160 344,152 348,152 348,160 352,160 356,160 356,160" rotation="90" dx="-178" dy="34" lineColor="170,0,0"   />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="104" dy="176" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="68" dy="164" />
+		
+		</port>
+
+		<port id="f_out" library="CRYOLIB" type="fluid"  hotPort="f_out" >
+		
+				<symbol dx="208" dy="176" onLabel="true" />
+		
+				<label cx="18" cy="12" dx="216" dy="164" />
+		
+		</port>
+
+		<port id="RPM" library="PORTS_LIB" type="analog_signal"  hotPort="RPM" >
+		
+				<symbol dx="136" dy="128" onLabel="true" />
+		
+				<label cx="18.5" cy="12" dx="91" dy="116" />
+		
+		</port>
+
+		<port id="Q_loss" library="PORTS_LIB" type="analog_signal"  hotPort="Q_loss" >
+		
+				<symbol dx="160" dy="224" onLabel="true" />
+		
+				<label cx="24.5" cy="12" dx="168" dy="212" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

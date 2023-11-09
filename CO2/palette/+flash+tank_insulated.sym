@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="FlashTank_insulated" >
+
+		<line id="Line_1" points="48.869,758.458 48.869,774.458"  end_arrow="true" rotation="270" dx="37.131" dy="-654.458" lineColor="85,170,0"  aliasing="true"  />
+
+		<line id="Line_2" points="48.869,764.458 48.869,776.458"  end_arrow="true" rotation="270" dx="85.131" dy="-658.458" lineColor="85,170,0"  aliasing="true"  />
+
+		<closedBezier id="ClosedBezier_2" points="240,160 224,160 224,176 224,176 224,192 240,192 240,192 272,192 272,192 272,192 288,192 288,176 288,176 288,160 272,160 272,160 248,160 248,160 240,160" rotation="-90" dx="-144" dy="-48" color="253,219,41"  />
+
+		<closedBezier id="ClosedBezier_1" points="96,176 96,192 112,192 112,192 128,192 128,176 128,176 112,176 96,176 96,176" dy="-32" color="85,170,0"  />
+
+		<line id="Line_3" points="48.869,764.458 48.869,776.458"  end_arrow="true" dx="63.131" dy="-604.458" lineColor="85,170,0"  aliasing="true"  />
+
+		<port id="f_in" library="CRYOLIB" type="fluid"  hotPort="f_in" >
+		
+				<symbol dx="80" dy="112" onLabel="true" />
+		
+				<label cx="14" cy="12" dx="44" dy="100" />
+		
+		</port>
+
+		<port id="f_vap" library="CRYOLIB" type="fluid"  hotPort="f_vap" >
+		
+				<symbol dx="144" dy="112" onLabel="true" />
+		
+				<label cx="18.5" cy="12" dx="152" dy="100" />
+		
+		</port>
+
+		<port id="f_liq" library="CRYOLIB" type="fluid"  hotPort="f_liq" >
+		
+				<symbol dx="112" dy="176" onLabel="true" />
+		
+				<label cx="15.5" cy="12" dx="120" dy="164" />
+		
+		</port>
+
+		<editor used="true">
+			<tab name="Geometry">
+				<var name="H_vap"/>
+				<var name="D_vap"/>
+				<var name="D_liq"/>
+				<var name="H_liq"/>
+				<var name="mat"/>
+				<var name="D"/>
+				<var name="Th"/>
+				<var name="L"/>
+				<var name="D_in"/>
+				<var name="z_in"/>
+			</tab>
+			<tab name="Design Parameters">
+				<var name="ConstantRefHTC"/>
+				<var name="DynamicRefHTC"/>
+				<var name="tauAlpha" conditionVar="DynamicRefHTC" conditionVals="TRUE"/>
+				<var name="alpha_ref" conditionVar="ConstantRefHTC" conditionVals="FALSE"/>
+			</tab>
+			<tab name="Initial Conditions">
+				<var name="init"/>
+				<var name="P0"/>
+				<var name="h0" conditionVar="init" conditionVals="P_h"/>
+				<var name="T0" conditionVar="init" conditionVals="P_T"/>
+				<var name="x0" conditionVar="init" conditionVals="P_x"/>
+				<var name="Level0" conditionVar="init" conditionVals="P_level"/>
+				<var name="Tw0"/>
+			</tab>
+		</editor>
+
+	</componentType>
+</palette>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE eds SYSTEM "DTDFILE_FULLPATH">
+
+<schematic version="1.2.0" paper="A4" orientation="Landscape" sorting="alphabetic" aliasingInShapes="true" aliasingInUnitSymbols="true" connector-status="allshowed" connector-creation="true" >
+
+	<grid enabled="true" snap="true" hspacing="8" vspacing="8" colorMain="230,230,230" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<layers>
+			<layer id="1" name="Layer_1" isVisible="true" isActive="true" />
+	</layers>
+	
+	<text id="Text_1" cx="229.5" cy="44" sx="459" sy="88" lineType="0"  color="255,255,220" dx="632" dy="674" layer="1"  >
+		<![CDATA[&#60;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.0//EN&#34; &#34;http://www.w3.org/TR/REC-html40/strict.dtd&#34;&#62;&#60;html&#62;&#60;head&#62;&#60;meta name=&#34;qrichtext&#34; content=&#34;1&#34; /&#62;&#60;style type=&#34;text/css&#34;&#62;p, li { white-space: pre-wrap; }&#60;/style&#62;&#60;/head&#62;&#60;body style=&#34; font-family:&#39;Arial&#39;; font-size:10pt; font-weight:400; font-style:normal;&#34;&#62;&#60;p style=&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62;LIBRARY: CO2&#60;br /&#62;FILE: +two+fluid+accumulator_+prescribed.eds&#60;br /&#62;AUTHOR: kferjaou&#60;br /&#62;DESCRIPTION: Schematic generated automatically from compiled component&#60;br /&#62;CREATION DATE: Thursday, June 15 2023&#60;/p&#62;&#60;/body&#62;&#60;/html&#62;]]>
+	</text>
+
+	<component id="wall" library="CO2" type="LumpedShell_insulated" layer="1" >
+	
+		<symbol cx="104" cy="96" sx="25" sy="17" dx="-88" dy="-80" onLabel="true" />
+	
+		<label cx="15" cy="12" dx="1" dy="25" />
+	
+		<instanceData>
+			<datum id="mat" value="mat" pos="D" />
+			<datum id="Th" value="Th" pos="D" />
+			<datum id="Do" value="Do" pos="D" />
+			<datum id="L" value="L" pos="D" />
+			<datum id="Tw0" value="Tw0" pos="D" />
+		</instanceData>
+	
+	</component>
+
+	<component id="ref" library="CO2" type="TwoFluidBase_Prescribed" layer="1" >
+	
+		<symbol cx="116.5" cy="104" sx="50" sy="33" dx="-48" dy="-80" onLabel="true" />
+	
+		<label cx="11.5" cy="12" dx="57" dy="41" />
+	
+		<instanceData>
+			<datum id="nports_out" value="nports_out" pos="P" />
+			<datum id="AccountforGravity" value="AccountforGravity" pos="P" />
+			<datum id="D_out" value="D_out" pos="P" />
+			<datum id="z_out" value="z_out" pos="P" />
+		</instanceData>
+	
+	</component>
+
+	<port id="K_heat" library="PORTS_LIB" type="analog_signal" layer="1" direction="IN" >
+	
+		<symbol dx="120" dy="8" onLabel="true" />
+	
+		<label cx="24.5" cy="12" dx="95.5" dy="13" />
+	
+	</port>
+
+	<port id="K_cool" library="PORTS_LIB" type="analog_signal" layer="1" direction="IN" >
+	
+		<symbol dx="176" dy="8" onLabel="true" />
+	
+		<label cx="24" cy="12" dx="152" dy="13" />
+	
+	</port>
+
+	<connector id="Connector_1" sPort="K_cool" eShape="ref" ePort="K_cool"  />
+
+	<connector id="Connector_2" sPort="K_heat" eShape="ref" ePort="K_heat"  />
+
+	<bodyEL>
+	<![CDATA[
+COMPONENT %NAME% (INTEGER nports_out = 1,BOOLEAN AccountforGravity =  FALSE ,REAL D_out = 0.05 UNITS &#34;m&#34; &#34;Out Port diameter&#34;,REAL z_out = 0.02 UNITS &#34;m&#34; &#34;Out Port bottom elevation&#34;) 
+DATA
+	ENUM PipeMat  mat = SS_304 &#34;Shell material&#34;
+	REAL Do = 0.6 UNITS &#34;m&#34; &#34;Shell outer diameter&#34;
+	REAL Th = 0.01 UNITS &#34;m&#34; &#34;Shell thickness&#34;
+	REAL L = 1.8 UNITS &#34;m&#34; &#34;Shell height&#34;
+	REAL Tw0 = 243.15 UNITS &#34;K&#34; &#34;Initial wall temperature&#34;
+	REAL Q_cool_max = 1000 UNITS &#34;W&#34; &#34;Maximum cooling capacity&#34;
+	REAL Q_heat_max = 1000 UNITS &#34;W&#34; &#34;Maximum heating capacity&#34;
+
+END COMPONENT
+
+
+]]>
+	</bodyEL>
+
+	<usedLibrary name="PORTS_LIB" version="1.1.4" auto="true" />
+	<usedLibrary name="THERMAL" version="3.5.7" auto="true" />
+</schematic>

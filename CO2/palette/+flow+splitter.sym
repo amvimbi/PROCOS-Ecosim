@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="FlowSplitter" >
+
+		<rect id="Rectangle_1" cx="185.336" cy="112.119" sx="16" sy="16" dx="-97.336" dy="-40.119" color="255,170,0"  />
+
+		<line id="Line_1" points="88,48 72,56 88,64" dx="16" dy="16"  />
+
+		<line id="Line_2" points="72,56 56,56" dx="16" dy="16"  />
+
+		<rect id="Rectangle_2" cx="198" cy="130" sx="4" sy="4" dx="-110" dy="-58" color="0,0,0"  />
+
+		<port id="inlet" library="PORTS_LIB" type="analog_signal"  hotPort="inlet" >
+		
+				<symbol dx="72" dy="72" onLabel="true" />
+		
+				<label cx="16" cy="12" dx="32" dy="60" />
+		
+		</port>
+
+		<port id="outlet1" library="PORTS_LIB" type="analog_signal"  hotPort="outlet1" >
+		
+				<symbol dx="104" dy="64" onLabel="true" />
+		
+				<label cx="23.5" cy="12" dx="112" dy="52" />
+		
+		</port>
+
+		<port id="outlet2" library="PORTS_LIB" type="analog_signal"  hotPort="outlet2" >
+		
+				<symbol dx="104" dy="80" onLabel="true" />
+		
+				<label cx="23.5" cy="12" dx="112" dy="68" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

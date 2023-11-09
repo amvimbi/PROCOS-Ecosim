@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="OnOff" >
+
+		<rect id="Rectangle_2" cx="100" cy="116" sx="16" sy="16" dx="-12" dy="4" color="255,128,0"  />
+
+		<line id="Line_1" points="64,120 80,120"  end_arrow="true"  />
+
+		<line id="Line_2" points="68,120 80,120"  end_arrow="true" dx="28"  />
+
+		<port id="a" library="PORTS_LIB" type="analog_signal"  hotPort="a" >
+		
+				<symbol dx="64" dy="120" onLabel="true" />
+		
+				<label cx="7.5" cy="12" dx="41" dy="108" />
+		
+		</port>
+
+		<port id="b" library="PORTS_LIB" type="analog_signal"  hotPort="b" >
+		
+				<symbol dx="112" dy="120" onLabel="true" />
+		
+				<label cx="7.5" cy="12" dx="120" dy="108" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>

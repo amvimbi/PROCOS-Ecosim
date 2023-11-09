@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+      <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+      <title>Library documentation</title> 
+      <link href="mstyles.css" rel="stylesheet" type="text/css"> 
+      </head><body> 
+      <div class="qindex"><a class="qindex" href="CO2.html">CO2&nbsp;Library</a> |
+	  <a class="qindex" href="CO2.components.html">Components</a> |
+	  <a class="qindex" href="CO2.ports.html">Ports</a> |
+	  <a class="qindex" href="CO2.classes.html">Classes</a> |
+	  <a class="qindex" href="CO2.functions.html">Functions</a> |
+	  <a class="qindex" href="CO2.enumerativeTypes.html">Enumeratives</a> |
+	  <a class="qindex" href="CO2.global.html">Global Variables</a></div>
+<h1 align="center">CO2.TankTwoFluid<br /><small></small></h1><hr><br><font size="5" color="black">ABSTRACT COMPONENT <a name="TankTwoFluid">TankTwoFluid</a>
+</font><br/>
+<br/>
+<font size="4" color="black">DESCRIPTION: </font><br/>
+<font size="3" color="black">Base component for two-fluid accumulator</font><br/>
+<br/>
+<font size="4" color="black">PORTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>DIRECTION&nbsp;</b></color></td>
+<td><color="black"><b>CARDINALITY&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>f_out&nbsp;</td><td><a href="../../CRYOLIB/docs/CRYOLIB.fluid.html">CRYOLIB.fluid</a>&nbsp;</td><td>&nbsp;</td><td>OUT &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DATA:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#FFFFC6" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>DEFAULT&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>D&nbsp;</td><td>REAL &nbsp;</td><td>0.5&nbsp;</td><td>&nbsp;</td><td>Diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>D_out&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Outlet port diameter&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>L&nbsp;</td><td>REAL &nbsp;</td><td>1.96&nbsp;</td><td>&nbsp;</td><td>Height&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>Level0&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Initial liquid level (%)&nbsp;</td><td>%&nbsp;</td></tr>
+
+<tr><td>P0&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Initial pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>Tsat0&nbsp;</td><td>REAL &nbsp;</td><td>20&nbsp;</td><td>&nbsp;</td><td>Initial saturation temperature (°C)&nbsp;</td><td>degC&nbsp;</td></tr>
+
+<tr><td>init&nbsp;</td><td>ENUM <a href="CO2.enumerativeTypes.html#InitialConditions2FM">InitialConditions2FM</a>&nbsp;</td><td>P_level&nbsp;</td><td>&nbsp;</td><td>Specify initial condition variables&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>tau_l&nbsp;</td><td>REAL &nbsp;</td><td>1&nbsp;</td><td>&nbsp;</td><td>Time constant for evaporation&nbsp;</td><td>s&nbsp;</td></tr>
+
+<tr><td>tau_v&nbsp;</td><td>REAL &nbsp;</td><td>1&nbsp;</td><td>&nbsp;</td><td>Time constant for condensation&nbsp;</td><td>s&nbsp;</td></tr>
+
+<tr><td>x0&nbsp;</td><td>REAL &nbsp;</td><td>0.1&nbsp;</td><td>&nbsp;</td><td>Initial vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>z_out&nbsp;</td><td>REAL &nbsp;</td><td>0.01&nbsp;</td><td>&nbsp;</td><td>Elevation of bottom of outlet port, 0 if underneath the vessel&nbsp;</td><td>m&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">DECLS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>TYPE&nbsp;</b></color></td>
+<td><color="black"><b>INITIAL&nbsp;</b></color></td>
+<td><color="black"><b>RANGE&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION&nbsp;</b></color></td>
+<td><color="black"><b>UNITS
+&nbsp;</b></color></td>
+</tr>
+<tr><td>Ac&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Cross-sectional area&nbsp;</td><td>m^2&nbsp;</td></tr>
+
+<tr><td>M&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Total refrigerant charge&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>Ml&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour phase masses&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>Mv&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour phase masses&nbsp;</td><td>kg&nbsp;</td></tr>
+
+<tr><td>P&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>P_Pa&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Pressure in Pascal&nbsp;</td><td>Pa&nbsp;</td></tr>
+
+<tr><td>Pcrit&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Critical pressure&nbsp;</td><td>bar&nbsp;</td></tr>
+
+<tr><td>Tl&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Temperatures of liquid and vapour phases&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>Tv&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Temperatures of liquid and vapour phases&nbsp;</td><td>K&nbsp;</td></tr>
+
+<tr><td>V&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Volume&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>Vl&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Volume occupied by phases&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>Vol&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Volume in Litres&nbsp;</td><td>dm^3&nbsp;</td></tr>
+
+<tr><td>Vv&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Volume occupied by phases&nbsp;</td><td>m^3&nbsp;</td></tr>
+
+<tr><td>d1&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>d2&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>drhol_dP&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Partial density derivatives&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>drhol_dh&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Partial density derivatives&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>drhov_dP&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Partial density derivatives&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>drhov_dh&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Partial density derivatives&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>gamma&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Void fraction&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>h&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Averaged enthalpy&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>hl&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour phase enthalpies&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>hls&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour saturation enthalpies&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>hv&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour phase enthalpies&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>hvs&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour saturation enthalpies&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>ier&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Error codes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>jx&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Error codes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>jy&nbsp;</td><td>INTEGER &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Error codes&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>level&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Height of liquid column inside the vessel&nbsp;</td><td>m&nbsp;</td></tr>
+
+<tr><td>level_frac&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Fractional liquid level in the vessel&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>m_cond&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Evaporation and condensation flow rates&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>m_evap&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Evaporation and condensation flow rates&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>mhout_l&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>mhout_v&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>J/kg&nbsp;</td></tr>
+
+<tr><td>mout_l&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour portions of the outlet flow rate&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>mout_v&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour portions of the outlet flow rate&nbsp;</td><td>kg/s&nbsp;</td></tr>
+
+<tr><td>rhocrit&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Critical density&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+<tr><td>rhol&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour densities&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+<tr><td>rhov&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Liquid and vapour densities&nbsp;</td><td>kg/m^3&nbsp;</td></tr>
+
+<tr><td>x&nbsp;</td><td>REAL &nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Vapour quality&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+<br/>
+<font size="4" color="black">OBJECTS:</font><br/>
+<table border="1" cellspacing="0" bgcolor="#EAFFE8" ><tr><td><color="black"><b>NAME&nbsp;</b></color></td>
+<td><color="black"><b>PARAMETERS&nbsp;</b></color></td>
+<td><color="black"><b>CLASS&nbsp;</b></color></td>
+<td><color="black"><b>DESCRIPTION
+&nbsp;</b></color></td>
+</tr>
+<tr><td>geo&nbsp;</td><td>&nbsp;</td><td><a href="CO2.RefGeometryRecord.html">RefGeometryRecord</a>&nbsp;</td><td></tr>
+
+</table>
+<font size="4" color="black">FORMULATION:</font><br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><p><font size="2">Document generated automatically (Date: 2021:03:16, Time: 14:29:39)</font></p>
+</body>
+</html>

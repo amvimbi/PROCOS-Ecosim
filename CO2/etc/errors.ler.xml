@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<LibraryErrors version="1.0">
+ <errors>
+  <error code="312" sev="8" cat="22" src="23" msg="Two-Phase HTC choice not found"/>
+ </errors>
+</LibraryErrors>

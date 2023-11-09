@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE sym SYSTEM "DTDFILE_FULLPATH">
+
+<palette version="1.2.0" sx="480" sy="320" aliasingInShapes="true" aliasingInUnitSymbols="true" simulation-status="allshowed" >
+
+	<grid enabled="true" snap="true" hspacing="4" vspacing="4" colorMain="210,210,210" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<componentType id="CartridgeHeaterCtrlTout" >
+
+		<closedBezier id="ClosedBezier_1" points="80.0398,139.994 80.0625,155.994 80.0625,155.994 80.0625,155.994 80.0682,159.994 88.0682,159.983 88.0626,155.983 88.0398,139.983 88.0569,151.983 87.9943,107.983 87.9886,103.983 79.9884,103.994 79.9941,107.994" rotation="-90.0815" flipY="true" dx="51.9715" dy="12.0116" lineWidth="0.5"  color="172,172,172" aliasing="true"  />
+
+		<bezier id="Bezier_2" points="208,204 212,204 212,196 208,196" rotation="180" flipY="true" dx="-51.0002" dy="-56.0002" lineWidth="0.5"  aliasing="true"  />
+
+		<line id="Line_1" points="120,124 120,116"  end_arrow="true" dx="16" dy="16"  />
+
+		<line id="Line_2" points="80,128 92,128" dx="17" dy="16"  />
+
+		<port id="K" library="PORTS_LIB" type="analog_signal"  hotPort="K" >
+		
+				<symbol dx="96" dy="144" onLabel="true" />
+		
+				<label cx="8.5" cy="12" dx="71" dy="132" />
+		
+		</port>
+
+		<port id="tp_out" library="PORTS_LIB" type="thermal"  hotPort="tp_out" >
+		
+				<symbol dx="136" dy="128" onLabel="true" />
+		
+				<label cx="22" cy="12" dx="144" dy="116" />
+		
+		</port>
+
+		<port id="Tout" library="PORTS_LIB" type="analog_signal"  hotPort="Tout" >
+		
+				<symbol dx="160" dy="144" onLabel="true" />
+		
+				<label cx="16" cy="12" dx="168" dy="132" />
+		
+		</port>
+
+		<editor used="false">
+		</editor>
+
+	</componentType>
+</palette>
