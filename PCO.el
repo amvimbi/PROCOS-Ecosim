@@ -240,7 +240,7 @@ SEQUENTIAL
 			DPC1s14_TR_S = TRUE
 			DPC1s14_PosR = 0 // Normally Closed (NC)
 			DPC1s14_SP = DP1s14
-			PC9082_TR_S = TRUE
+			PC9082_TR_S = TRUE //Name mismatch
 			PC9082_PosR = 0 // NC
 			EV9s82 = FALSE // NC
 			// Chiller
@@ -256,7 +256,7 @@ SEQUENTIAL
 			DPC1014_PosR = 100
 			DPC1014_SP = DP1014
 			DPC1016_TR_S = TRUE
-			DPC1016_PosR = CV1a16_p1
+			DPC1016_PosR = 100
 			DPC1016_SP = DP1016
 			DPC2022_TR_S = TRUE
 			DPC2022_PosR = CV1a16_p1
@@ -281,7 +281,7 @@ SEQUENTIAL
 			DPC1014_PosR = 0
 			DPC1014_SP = DP1014
 			DPC1016_TR_S = TRUE
-			DPC1016_PosR = CV1a16_p1
+			DPC1016_PosR = 100
 			DPC1016_SP = DP1016
 			DPC2022_TR_S = TRUE
 			DPC2022_PosR = CV1a16_p1
@@ -299,13 +299,13 @@ SEQUENTIAL
 			SHC5x40_PosR = 0
 		ELSEIF (Stp==3) THEN
 		// Pump run
-			LP1002 = LP1002_p1
+			LP1002 = LP1002_p1 + LP1002_p1
 			// Valves
 			DPC1014_TR_S = TRUE
 			DPC1014_PosR = 0
 			DPC1014_SP = DP1014
 			DPC1016_TR_S = TRUE
-			DPC1016_PosR = CV1a16_p1
+			DPC1016_PosR = 100
 			DPC1016_SP = DP1016
 			DPC2022_TR_S = TRUE
 			DPC2022_PosR = CV1a16_p1
@@ -327,19 +327,19 @@ SEQUENTIAL
 			SHC5x40_PosR = 0
 		ELSEIF (Stp==4) THEN
 		// Deliver liquid
-			LP1002 = LP1002_p1
+			LP1002 = LP1002_p1 + LP1002_p1
 			// Valves
 			DPC1014_TR_S = FALSE
 			DPC1014_PosR = 0
 			DPC1014_SP = DPC1014_SPreq
 			DPC1016_TR_S = TRUE
-			DPC1016_PosR = CV1a16_p1
+			DPC1016_PosR = 100
 			DPC1016_SP = DP1016
 			DPC2022_TR_S = FALSE
 			DPC2022_PosR = 0
 			DPC2022_SP = DP2022_SPreq
 			DPC1s14_TR_S = FALSE
-			DPC1s14_PosR = 100
+			DPC1s14_PosR = 0
 			DPC1s14_SP = DPC1s14_SPreq
 			PC9082_PosR = 100
 			PC9082_TR_S = TRUE
@@ -358,7 +358,7 @@ SEQUENTIAL
 			DPC1014_SP = DPC1014_SPreq
 			DPC1016_TR_S = TRUE
 			DPC1016_PosR = CV1a16_p1
-			DPC1016_SP = DP1016
+			DPC1016_SP = 100
 			DPC2022_TR_S = FALSE
 			DPC2022_PosR = 0
 			DPC2022_SP = DP2022_SPreq
@@ -366,7 +366,7 @@ SEQUENTIAL
 			DPC1s14_PosR = CV1s14_Rq1 // Accu emptying position request
 			DPC1s14_SP = DP1s14
 			PC9082_TR_S = TRUE
-			PC9082_PosR = CV9s82_Rq1 // Accu filling position request
+			PC9082_PosR = 0.0 // Accu filling position request
 			PC9082_SP = PT9082
 			EV9s82 = FALSE
 			// Chiller
@@ -386,7 +386,7 @@ SEQUENTIAL
 		// Safety position
 			LP1002 = 0
 			// Valves
-			DPC1014_TR_S = TRUE
+			DPC1014_TR_S = TRUE //Reg off
 			DPC1014_PosR = 100 // Normally Open (NO)
 			DPC1014_SP = DP1014
 			DPC1016_TR_S = TRUE
@@ -395,16 +395,16 @@ SEQUENTIAL
 			DPC2022_TR_S = TRUE
 			DPC2022_PosR = 100 // NO
 			DPC2022_SP = DP2022
-			DPC1s14_TR_S = TRUE
+			DPC1s14_TR_S = TRUE //Reg off
 			DPC1s14_PosR = 0 // Normally Closed (NC)
-			DPC1s14_SP = DP1s14
-			PC9082_TR_S = TRUE
+			DPC1s14_SP = DP1s14 
+			PC9082_TR_S = TRUE //Reg off
 			PC9082_PosR = 0 // NC
 			PC9082_SP = PT9082
 			EV9s82 = FALSE // NC
 			// Chiller
 			DTC5x40_TR_S = TRUE
-			DTC5x40_PosR = 0 // NC
+			DTC5x40_PosR = 0 // Normally Closed (NC)
 			SHC5x40_TR_S = TRUE
 			SHC5x40_PosR = 0 // NC
 		ELSEIF (Stp==1) THEN
@@ -415,7 +415,7 @@ SEQUENTIAL
 			DPC1014_PosR = 100
 			DPC1014_SP = DP1014
 			DPC1016_TR_S = TRUE
-			DPC1016_PosR = CV1a16_p1 // close
+			DPC1016_PosR = 100 // close
 			DPC1016_SP = DP1016
 			DPC2022_TR_S = TRUE
 			DPC2022_PosR = CV1a16_p2
@@ -436,13 +436,13 @@ SEQUENTIAL
 		// Pump run
 			LP1002 = LP1002_p1
 			// Valves
-			DPC1014_TR_S = FALSE // not in tracking mode now
+			DPC1014_TR_S = TRUE // not in tracking mode now
 			DPC1014_PosR = 100
 			DPC1014_SP = DPC1014_SPreq
 			DPC1016_TR_S = FALSE // not in tracking mode now
 			DPC1016_PosR = CV1a16_p2
-			DPC1016_SP = P9_DP1016_SP - P1_DPC1016_P1 // stay below P9 DP to not accidentally take over
-			DPC2022_TR_S = TRUE // still in tracking mode
+			DPC1016_SP = P9_DP1016_SP// - P1_DPC1016_P1 // stay below P9 DP to not accidentally take over
+			DPC2022_TR_S = FALSE // still in tracking mode
 			DPC2022_PosR = CV1a16_p1
 			DPC2022_SP = DP2022
 			DPC1s14_TR_S = TRUE // no s0 use
@@ -453,7 +453,7 @@ SEQUENTIAL
 			PC9082_SP = PT9082
 			EV9s82 = FALSE
 			// Chiller
-			DTC5x40_TR_S = TRUE
+			DTC5x40_TR_S = FALSE
 			DTC5x40_PosR = 0
 			SHC5x40_TR_S = FALSE
 			SHC5x40_PosR = 0
@@ -461,13 +461,13 @@ SEQUENTIAL
 		// Ready for substitution
 			LP1002 = LP1002_p1
 			// Valves
-			DPC1014_TR_S = FALSE
+			DPC1014_TR_S = TRUE
 			DPC1014_PosR = 100
 			DPC1014_SP = DPC1014_SPreq
-			DPC1016_TR_S = FALSE
+			DPC1016_TR_S = TRUE
 			DPC1016_PosR = CV1a16_p1
 			DPC1016_SP = P9_DP1016_SP // now match P9 DP set point // TODO actual value
-			DPC2022_TR_S = TRUE
+			DPC2022_TR_S = FALSE
 			DPC2022_PosR = CV1a16_p1
 			DPC2022_SP = DP2022
 			DPC1s14_TR_S = TRUE
@@ -478,7 +478,7 @@ SEQUENTIAL
 			PC9082_SP = PT9082
 			EV9s82 = FALSE
 			// Chiller
-			DTC5x40_TR_S = TRUE
+			DTC5x40_TR_S = FALSE
 			DTC5x40_PosR = 0
 			SHC5x40_TR_S = FALSE
 			SHC5x40_PosR = 0
@@ -487,7 +487,7 @@ SEQUENTIAL
 			// Pump
 			LP1002 = LP1002_p1
 			// Valves
-			DPC1014_TR_S = FALSE
+			DPC1014_TR_S = FALSE //Regulation on
 			DPC1014_PosR = 0
 			DPC1014_SP = DPC1014_SPreq
 			DPC1016_TR_S = TRUE
@@ -504,7 +504,7 @@ SEQUENTIAL
 			PC9082_SP = PT9082
 			EV9s82 = FALSE
 			// Chiller
-			DTC5x40_TR_S = TRUE
+			DTC5x40_TR_S = FALSE
 			DTC5x40_PosR = 0
 			SHC5x40_TR_S = FALSE
 			SHC5x40_PosR = 0
