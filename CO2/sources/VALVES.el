@@ -164,8 +164,6 @@ CONTINUOUS
 	A = MATH.PI*D**2/4
 END COMPONENT
 
-
-
 COMPONENT ControlValve IS_A GenericOrifice (
 	BOOLEAN delayOpening = FALSE "If TRUE, adds a time constant for changes in opening"
 )
@@ -197,7 +195,6 @@ CONTINUOUS
 		vDot = m / rho * (60/1000)
 	END IF
 END COMPONENT
-
 
 
 COMPONENT TXV IS_A AbsJunction
@@ -436,7 +433,7 @@ CONTINUOUS
 	x := CRYO_PF_prop_vs_ph(f_in.fluid,Pin,hin,fprop_quality,ier,jx,jy)
 	rhoRef := CRYO_PF_prop_vs_pT(f_in.fluid,1.01325,293.15,fprop_density,ier,jx,jy)
 	G := rho/998 // OTHERS rhoRef/1.205
-<:m> 	IF (eqnChoice==Swagelok) INSERT
+ 	IF (eqnChoice==Swagelok) INSERT
 		getSwagelokFlow(f_in.fluid,Cv,f_in.P,f_in.h,f_out.P,f_out.h,mDot_dummy,vDot_dummy)
 		m = phi * mDot_dummy
 		vDot = phi * vDot_dummy
@@ -454,7 +451,107 @@ CONTINUOUS
 	K_feedback.signal[1] = feedback
 END COMPONENT
 
-
+COMPONENT FloatingBallValve IS_A dP
+"Cryo-Floating-Ball Valcve Default flow direction is In to Out."
+PORTS
+	IN bool_signal(n=1) K "on/off control signal"
+	IN bool_signal (n=1) Dir "Orientation WRT input output ports. True => Leak hole faces the inlet, False means otherwise."
+	OUT analog_signal(n=1) K_feedback "Position feedback"
+DATA
+	REAL Cv = 1 "Flow coefficient"
+	REAL Cvl = 0.0005 "Flow coefficient"
+	REAL tau = 1 UNITS u_s "Time constant of the valve"
+	REAL phi_min = 0.01 "Minimum opening - 0 to 1"
+	REAL phi_init = 1.0 "Initial opening - 0 to 1"
+	REAL dP_leak = 3 UNITS u_bar "dP above which leak"
+DECLS
+	REAL dP UNITS u_bar
+	REAL Cv_act
+	REAL phi_act
+	REAL Pin UNITS u_bar
+	REAL Pout UNITS u_bar
+	REAL hin
+	REAL G "Specific gravity"
+	REAL phi "Actual opening"
+	REAL phi_l "Leak opening"
+	REAL rho
+	REAL rhoRef "Density of refrigerant at reference conditions"
+	REAL Tin
+	REAL x "Vapour quality"
+	REAL vDot
+	REAL mDot_dummy, vDot_dummy
+	CONST REAL N1 = 14.42 "Swagelok CV constant"
+	CONST REAL N2 = 6950
+	REAL feedback "Actual valve position"
+	INTEGER ier,jx,jy 
+	
+INIT
+	
+	
+DISCRETE
+	ASSERT(phi_min>=0 AND phi_min<=1) FATAL "Minimum opening must be between 0 and 1"
+	ASSERT(phi_init>=0 AND phi_init<=1) FATAL "Initial opening must be between 0 and 1"
+	
+	
+CONTINUOUS
+	feedback = phi*100 //Express feedback as a percentage
+	phi := 1//ZONE (K.signal[1]) 1.0 OTHERS 0 // K!=0 is On mode, during which valve is fully open
+	//phi' := (phi - phi) / tau //
+	phi_l := 0.05//ZONE (NOT K.signal[1]) 0.0005 OTHERS 0
+	dP := f_in.P - f_out.P
+	rho := donor_cell(dP,f_in.rho,f_out.rho)
+	Pin := donor_cell(dP,f_in.P,f_out.P)
+	hin := donor_cell(dP,f_in.h,f_out.h)
+	Tin := CRYO_PF_prop_vs_ph(f_in.fluid,Pin,hin,fprop_temperature,ier,jx,jy)
+	Pout := donor_cell(dP,f_out.P,f_in.P)
+	x := CRYO_PF_prop_vs_ph(f_in.fluid,Pin,hin,fprop_quality,ier,jx,jy)
+	rhoRef := CRYO_PF_prop_vs_pT(f_in.fluid,1.01325,293.15,fprop_density,ier,jx,jy)
+	G := rho/998 // OTHERS rhoRef/1.205
+	Cv_act = Cv
+	/*Cv_act := ZONE (K.signal[1]) Cv\
+				 ZONE (NOT K.signal[1] AND dP>=0 AND NOT Dir.signal[1]) Cvl\
+				 ZONE (NOT K.signal[1] AND dP<=0 AND Dir.signal[1]) Cvl\
+				 OTHERS 0*/
+	
+ 	phi_act := ZONE (NOT K.signal[1] AND dP>=dP_leak AND NOT Dir.signal[1]) phi_l\
+				 ZONE (NOT K.signal[1] AND dP<=-dP_leak AND Dir.signal[1]) phi_l\
+				 OTHERS phi
+	
+	getSwagelokFlow(f_in.fluid,Cv_act,f_in.P,f_in.h,f_out.P,f_out.h,mDot_dummy,vDot_dummy)
+<:m>	m = phi_act * mDot_dummy
+	vDot = phi_act * vDot_dummy
+	
+	/*
+	EXPAND_BLOCK(K.signal[1] AND LStatus==1)
+				getSwagelokFlow(f_in.fluid,Cvl,f_in.P,f_in.h,f_out.P,f_out.h,mDot_dummy,vDot_dummy)
+				m = phi_l * mDot_dummy
+				vDot = phi_l * vDot_dummy
+	END EXPAND_BLOCK
+	
+	EXPAND_BLOCK((NOT k) AND (LStatus == 0))
+				m = 0.00005
+				vDot = m/rho
+				vDot_dummy = m
+				vDot_dummy = vDot
+	END EXPAND_BLOCK
+	*/
+	
+	/*
+	ELSEIF (K.signal[1] == FALSE AND LeakStatus == 1.) INSERT
+			getSwagelokFlow(f_in.fluid,Cvl,f_in.P,f_in.h,f_out.P,f_out.h,mDot_dummy,vDot_dummy)
+			m = phi * mDot_dummy
+			vDot = phi * vDot_dummy
+		ELSE 
+			m = phi * Cvl*D**2 * regRoot2(dP,dP_small) * sqrt(rho*1e5)
+			vDot = m/rho
+			mDot_dummy = m
+			vDot_dummy = vDot
+		END IF
+	ELSEIF (K.signal[1] == FALSE AND LeakStatus == 0.) INSERT
+		m = 0.0001
+	*/
+	K_feedback.signal[1] = feedback	
+END COMPONENT
 
 COMPONENT ReversingValve
 "Reverse flow between two input and two output streams"
@@ -580,3 +677,4 @@ CONTINUOUS
 	getSwagelokFlow(f_in.fluid,Cv,f_in.P,f_in.h,f_out.P+Pcrack,f_out.h,m_dummy,vDot)
 	m = ZONE (dP-Pcrack>=0) m_dummy OTHERS 0
 END COMPONENT
+
