@@ -83,13 +83,12 @@ END COMPONENT
 ENUM Plant_OptionMode = {S2PACL,S2PACL_StB,T2PACL_FastRecover}
 
 
-
 COMPONENT DEMO_PCO_Plant (
 	INTEGER nHead = 3 "Number of heads of plant"
 )
 "Process Control Object for the DEMO plant"
 // Chiller is controlled by max(SHC5x40,DT5x40)
-// TODO: Fix DT5x40 and SH5x40 setpoints → should start with SP:=PV
+// TODO: Fix DT5x40 and SH5x40 setpoints → should start with SP:= PV
 PORTS
 	IN bool_signal(n=2) Bool_in
 	IN analog_signal(n=15) Control_in
@@ -156,6 +155,7 @@ DECLS
 	REAL SHC5x40_PosR UNITS u_pct
 	// States
 	// BOOLEAN LP1002_SC_OK "Pump subcooling OK flag" // TODO Add superheat OK flag as output
+	// BOOLEAN LP1002_SH_OK "Superheat flag"
 	BOOLEAN LP1002_start
 	// Transitions
 	INTEGER Stp "Stepper position"
@@ -165,7 +165,7 @@ DECLS
 	BOOLEAN T0
 	BOOLEAN S2PACL_Tr[6], S2PACL_StB_Tr[5], T2PACL_Tr[5]
 	// Local Variables
-	REAL LP1002_p1 = 35 UNITS u_Hz "Nominal startup value for pump frequency"
+	REAL LP1002_p1 = 40 UNITS u_Hz "Nominal startup value for pump frequency"
 	REAL CV1s14_Rq1
 	REAL CV9s82_Rq1
 	CONST REAL dP_ctrl = 0.1 UNITS u_bar "Deadband dP for checking stepper conditions"
@@ -228,7 +228,7 @@ SEQUENTIAL
 		IF (Stp==0) THEN
 			LP1002 = 0
 			// Valves
-			DPC1014_TR_S = TRUE //TRS Assumes PLC drives???
+			DPC1014_TR_S = TRUE // SP:=PV
 			DPC1014_PosR = 100 // Normally Open (NO)
 			DPC1014_SP = DP1014
 			DPC1016_TR_S = TRUE
@@ -299,7 +299,7 @@ SEQUENTIAL
 			SHC5x40_PosR = 0
 		ELSEIF (Stp==3) THEN
 		// Pump run
-			LP1002 = LP1002_p1 + LP1002_p1
+			LP1002 = LP1002_p1
 			// Valves
 			DPC1014_TR_S = TRUE
 			DPC1014_PosR = 0
@@ -310,7 +310,7 @@ SEQUENTIAL
 			DPC2022_TR_S = TRUE
 			DPC2022_PosR = CV1a16_p1
 			DPC2022_SP = DP2022
-			IF (TT1014>TT1014_p1) THEN
+			IF (TT1014>TT1014_p1) THEN//??
 				DPC1s14_TR_S = TRUE
 				DPC1s14_PosR = 100
 			ELSE
@@ -321,13 +321,13 @@ SEQUENTIAL
 			PC9082_PosR = CV9s82_p1
 			EV9s82 = TRUE
 			// Chiller
-			DTC5x40_TR_S = TRUE
+			DTC5x40_TR_S = FALSE
 			DTC5x40_PosR = 0
-			SHC5x40_TR_S = FALSE
+			SHC5x40_TR_S = TRUE
 			SHC5x40_PosR = 0
 		ELSEIF (Stp==4) THEN
 		// Deliver liquid
-			LP1002 = LP1002_p1 + LP1002_p1
+			LP1002 = LP1002_p1
 			// Valves
 			DPC1014_TR_S = FALSE
 			DPC1014_PosR = 0
@@ -341,7 +341,8 @@ SEQUENTIAL
 			DPC1s14_TR_S = FALSE
 			DPC1s14_PosR = 0
 			DPC1s14_SP = DPC1s14_SPreq
-			PC9082_PosR = 100
+			PC9082_TR_S = TRUE
+			PC9082_PosR = CV9s82_p1
 			PC9082_TR_S = TRUE
 			EV9s82 = TRUE
 			// Chiller
@@ -418,7 +419,7 @@ SEQUENTIAL
 			DPC1016_PosR = 100 // close
 			DPC1016_SP = DP1016
 			DPC2022_TR_S = TRUE
-			DPC2022_PosR = CV1a16_p2
+			DPC2022_PosR = 100
 			DPC2022_SP = DP2022
 			DPC1s14_TR_S = TRUE
 			DPC1s14_PosR = 0
@@ -430,7 +431,7 @@ SEQUENTIAL
 			// Chiller
 			DTC5x40_TR_S = TRUE
 			DTC5x40_PosR = 0
-			SHC5x40_TR_S = FALSE
+			SHC5x40_TR_S = TRUE
 			SHC5x40_PosR = 0
 		ELSEIF (Stp==2) THEN
 		// Pump run
@@ -443,7 +444,7 @@ SEQUENTIAL
 			DPC1016_PosR = CV1a16_p2
 			DPC1016_SP = P9_DP1016_SP// - P1_DPC1016_P1 // stay below P9 DP to not accidentally take over
 			DPC2022_TR_S = FALSE // still in tracking mode
-			DPC2022_PosR = CV1a16_p1
+			DPC2022_PosR = 100
 			DPC2022_SP = DP2022
 			DPC1s14_TR_S = TRUE // no s0 use
 			DPC1s14_PosR = 0
@@ -465,7 +466,7 @@ SEQUENTIAL
 			DPC1014_PosR = 100
 			DPC1014_SP = DPC1014_SPreq
 			DPC1016_TR_S = TRUE
-			DPC1016_PosR = CV1a16_p1
+			DPC1016_PosR = 100
 			DPC1016_SP = P9_DP1016_SP // now match P9 DP set point // TODO actual value
 			DPC2022_TR_S = FALSE
 			DPC2022_PosR = CV1a16_p1
@@ -491,7 +492,7 @@ SEQUENTIAL
 			DPC1014_PosR = 0
 			DPC1014_SP = DPC1014_SPreq
 			DPC1016_TR_S = TRUE
-			DPC1016_PosR = CV1a16_p1 // = 0 (now close the controller)
+			DPC1016_PosR = 100 // = 0 (now close the controller)
 			DPC1016_SP = DP1016
 			DPC2022_TR_S = FALSE // start this one instead
 			DPC2022_PosR = CV1a16_p1
@@ -508,7 +509,7 @@ SEQUENTIAL
 			DTC5x40_PosR = 0
 			SHC5x40_TR_S = FALSE
 			SHC5x40_PosR = 0
-		ELSEIF (Stp==5) THEN
+		/*ELSEIF (Stp==5) THEN
 		// S-2PACL operation
 			// Unable to change ENUMs in EcosimPro, so have to copy this from S2PACL
 			LP1002 = LP1002_p1
@@ -533,7 +534,7 @@ SEQUENTIAL
 			DTC5x40_TR_S = TRUE
 			DTC5x40_PosR = 0
 			SHC5x40_TR_S = FALSE
-			SHC5x40_PosR = 0
+			SHC5x40_PosR = 0*/
 		END IF
 	
 	// Traditional 2PACL startup
@@ -574,11 +575,11 @@ SEQUENTIAL
 			DPC1014_PosR = 100
 			DPC1014_SP = DP1014
 			DPC1016_TR_S = TRUE
-			DPC1016_PosR = CV1a16_p1 // close
+			DPC1016_PosR = 100//CV1a16_p1 // close
 			DPC1016_SP = DP1016
 			DPC2022_TR_S = TRUE
 			DPC2022_PosR = CV1a16_p2 // open
-			DPC2022_SP = DP2022
+			DPC2022_SP = 100
 			DPC1s14_TR_S = TRUE
 			DPC1s14_PosR = 0
 			DPC1s14_SP = DP1s14
@@ -599,15 +600,10 @@ SEQUENTIAL
 			DPC1014_PosR = 100
 			DPC1014_SP = DP1014
 			DPC1016_TR_S = TRUE
-			DPC1016_PosR = CV1a16_p1 // close
+			DPC1016_PosR = 100//CV1a16_p1 // close
 			DPC1016_SP = DP1016
 			DPC2022_TR_S = FALSE
-			IF (AccuStp<4) THEN
-				// Detector pressurisation
-				DPC2022_SP = 1 // bar
-			ELSE
-				DPC2022_SP = DP2022_SPreq
-			END IF
+			DPC2022_SP = DP2022_SPreq
 			DPC1s14_TR_S = TRUE
 			DPC1s14_PosR = 0
 			DPC1s14_SP = DP1s14
@@ -616,9 +612,9 @@ SEQUENTIAL
 			PC9082_SP = PT9082
 			EV9s82 = FALSE
 			// Chiller
-			DTC5x40_TR_S = TRUE
+			DTC5x40_TR_S = FALSE//TRUE
 			DTC5x40_PosR = 0
-			SHC5x40_TR_S = FALSE
+			SHC5x40_TR_S = TRUE
 			SHC5x40_PosR = 0
 		ELSEIF (Stp==3) THEN
 		// 33: Operation 2PACL/AC4080
@@ -629,15 +625,10 @@ SEQUENTIAL
 			DPC1014_PosR = 100
 			DPC1014_SP = DP1014
 			DPC1016_TR_S = TRUE
-			DPC1016_PosR = CV1a16_p1 // close
+			DPC1016_PosR = 100//CV1a16_p1 // close
 			DPC1016_SP = DP1016
 			DPC2022_TR_S = FALSE
-			IF (AccuStp<4) THEN
-				// Detector pressurisation
-				DPC2022_SP = 1 // bar
-			ELSE
-				DPC2022_SP = DP2022_SPreq
-			END IF
+			DPC2022_SP = DP2022_SPreq
 			DPC2022_PosR = DP2022
 			DPC1s14_TR_S = TRUE
 			DPC1s14_PosR = 100
@@ -659,15 +650,10 @@ SEQUENTIAL
 			DPC1014_PosR = 100
 			DPC1014_SP = DPC1014_SPreq
 			DPC1016_TR_S = TRUE
-			DPC1016_PosR = CV1a16_p1 // close
+			DPC1016_PosR = 100//CV1a16_p1 // close
 			DPC1016_SP = DP1016
 			DPC2022_TR_S = FALSE
-			IF (AccuStp<4) THEN
-				// Detector pressurisation
-				DPC2022_SP = 1 // bar
-			ELSE
-				DPC2022_SP = DP2022_SPreq
-			END IF
+			DPC2022_SP = DP2022_SPreq
 			DPC2022_PosR = DP2022
 			DPC1s14_TR_S = TRUE
 			DPC1s14_PosR = 0
